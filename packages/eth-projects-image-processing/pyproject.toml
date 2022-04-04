@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "eth-projects-image-processing"
+version = "0.1.0"
+description = ""
+authors = ["Clement Walter <clement0walter@gmail.com>"]
+packages = [
+    { include = "image_processing" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+pandas = "^1.3.5"
+svgpathtools = "^1.4.4"
+Pillow = "^9.0.0"
+matplotlib = "^3.5.1"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+isort = "^5.10.1"
+mypy = "^0.942"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
