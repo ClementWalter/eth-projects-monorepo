@@ -1,0 +1,18 @@
+node_modules
+.env
+coverage
+coverage.json
+
+# Hardhat files
+cache
+artifacts
+
+# PyCharm files
+.idea/
+
+# Project files
+.DS_Store
+__pycache__
+
+# Typechain files
+typechain

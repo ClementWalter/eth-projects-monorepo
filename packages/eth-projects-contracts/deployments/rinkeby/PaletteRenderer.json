@@ -1,0 +1,762 @@
+{
+  "address": "0x8d6CecD12283987736bc1bd22fc9b9EE8998DfC9",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_size",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_start",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_end",
+          "type": "uint256"
+        }
+      ],
+      "name": "InvalidCodeAtRange",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "WriteError",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "RECT_TAG_END",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "RECT_TAG_START",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SVG_TAG_END",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SVG_TAG_START",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "WH_FILL_TAG",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "Y_TAG",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes1",
+          "name": "_byte",
+          "type": "bytes1"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        }
+      ],
+      "name": "decode1ByteTo2Pixels",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes1",
+          "name": "_byte",
+          "type": "bytes1"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        }
+      ],
+      "name": "decode1ByteTo4Pixels",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes1",
+          "name": "_byte",
+          "type": "bytes1"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        }
+      ],
+      "name": "decode1ByteTo8Pixels",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "pixelIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "paletteIndex",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        }
+      ],
+      "name": "decode1Pixel",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "pixelIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes1",
+          "name": "paletteIndex",
+          "type": "bytes1"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        }
+      ],
+      "name": "decode1Pixel",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes3",
+          "name": "_bytes",
+          "type": "bytes3"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        }
+      ],
+      "name": "decode3BytesTo4Pixels",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes3",
+          "name": "_bytes",
+          "type": "bytes3"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        }
+      ],
+      "name": "decode3BytesTo8Pixels",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes5",
+          "name": "_bytes",
+          "type": "bytes5"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        }
+      ],
+      "name": "decode5BytesTo8Pixels",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes7",
+          "name": "_bytes",
+          "type": "bytes7"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        }
+      ],
+      "name": "decode7BytesTo8Pixels",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_image",
+          "type": "bytes"
+        },
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "imageWidth",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "bitsPerPixel",
+          "type": "uint256"
+        }
+      ],
+      "name": "decodeImage",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "palette",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFill",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pointer",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFill",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pointer",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "bitsPaletteSize",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "pixelsCount",
+          "type": "uint256"
+        }
+      ],
+      "name": "getImageBytes",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pointer",
+          "type": "address"
+        }
+      ],
+      "name": "getPalette",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "palette",
+          "type": "bytes"
+        }
+      ],
+      "name": "getPalette",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x127fd2b11a1033a92e5ca9e63450ed8b62537d1071735ea827969a69254b11a5",
+  "receipt": {
+    "to": null,
+    "from": "0x6966Bdb480e7f7A48A7f6B198eE8b9462A265401",
+    "contractAddress": "0x8d6CecD12283987736bc1bd22fc9b9EE8998DfC9",
+    "transactionIndex": 37,
+    "gasUsed": "2341654",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x9d9ff16dd6b4344291a2ba395819f645f228d040d81328a284841084e03a8716",
+    "transactionHash": "0x127fd2b11a1033a92e5ca9e63450ed8b62537d1071735ea827969a69254b11a5",
+    "logs": [],
+    "blockNumber": 10462398,
+    "cumulativeGasUsed": "15574811",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "a729ebf854c20c760b44a22dc9354a8f",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_size\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_end\",\"type\":\"uint256\"}],\"name\":\"InvalidCodeAtRange\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WriteError\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RECT_TAG_END\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"RECT_TAG_START\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SVG_TAG_END\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SVG_TAG_START\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"WH_FILL_TAG\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"Y_TAG\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes1\",\"name\":\"_byte\",\"type\":\"bytes1\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"}],\"name\":\"decode1ByteTo2Pixels\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes1\",\"name\":\"_byte\",\"type\":\"bytes1\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"}],\"name\":\"decode1ByteTo4Pixels\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes1\",\"name\":\"_byte\",\"type\":\"bytes1\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"}],\"name\":\"decode1ByteTo8Pixels\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"pixelIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"paletteIndex\",\"type\":\"uint8\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"}],\"name\":\"decode1Pixel\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"pixelIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes1\",\"name\":\"paletteIndex\",\"type\":\"bytes1\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"}],\"name\":\"decode1Pixel\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes3\",\"name\":\"_bytes\",\"type\":\"bytes3\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"}],\"name\":\"decode3BytesTo4Pixels\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes3\",\"name\":\"_bytes\",\"type\":\"bytes3\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"}],\"name\":\"decode3BytesTo8Pixels\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes5\",\"name\":\"_bytes\",\"type\":\"bytes5\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"}],\"name\":\"decode5BytesTo8Pixels\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"startIndex\",\"type\":\"uint256\"},{\"internalType\":\"bytes7\",\"name\":\"_bytes\",\"type\":\"bytes7\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"}],\"name\":\"decode7BytesTo8Pixels\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_image\",\"type\":\"bytes\"},{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"imageWidth\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bitsPerPixel\",\"type\":\"uint256\"}],\"name\":\"decodeImage\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"palette\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getFill\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pointer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getFill\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pointer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bitsPaletteSize\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"pixelsCount\",\"type\":\"uint256\"}],\"name\":\"getImageBytes\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pointer\",\"type\":\"address\"}],\"name\":\"getPalette\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"palette\",\"type\":\"bytes\"}],\"name\":\"getPalette\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Clement Walter <clement0walter@gmail.com>\",\"kind\":\"dev\",\"methods\":{\"decode1ByteTo2Pixels(uint256,bytes1,string[],uint256)\":{\"details\":\"This function can be used as a base decoding function when using 4 bits per pixel. In this case, one byte is       actually 2 rects.\",\"params\":{\"_byte\":\"The single byte containing 2 palette indexes.\",\"imageWidth\":\"Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\",\"palette\":\"The array of decoded colors as hex strings.\",\"startIndex\":\"The index of the current pixel in the image flatten array.\"},\"returns\":{\"_0\":\"Two filled <rect> with appropriate parameters as a string.\"}},\"decode1ByteTo4Pixels(uint256,bytes1,string[],uint256)\":{\"details\":\"This function can be used as a base decoding function when using 2 bits per pixel. In this case, one byte is       actually 4 rects.\",\"params\":{\"_byte\":\"The single byte containing 4 palette indexes.\",\"imageWidth\":\"Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\",\"palette\":\"The array of decoded colors as hex strings.\",\"startIndex\":\"The index of the current pixel in the image flatten array.\"},\"returns\":{\"_0\":\"Four filled <rect> with appropriate parameters as a string.\"}},\"decode1ByteTo8Pixels(uint256,bytes1,string[],uint256)\":{\"details\":\"This function can be used as a base decoding function when using 1 bit per pixel. In this case, one byte is       actually eight rects.\",\"params\":{\"_byte\":\"The single byte containing 8 palette indexes.\",\"imageWidth\":\"Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\",\"palette\":\"The array of decoded colors as hex strings.\",\"startIndex\":\"The index of the current pixel in the image flatten array.\"},\"returns\":{\"_0\":\"Eight filled <rect> with appropriate parameters as a string.\"}},\"decode1Pixel(uint256,uint8,string[],uint256)\":{\"details\":\"Decode one single pixel, i.e. retrieve the color at the given index and produce a <rect> with appropriate parameters.      This is used as a base function for writing rect and is also relevant for cases where the palette uses 8 bits.\",\"params\":{\"imageWidth\":\"Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\",\"palette\":\"The array of decoded colors as hex strings.\",\"paletteIndex\":\"The value of the pixel at the given index, i.e. the index of the color in the palette.\",\"pixelIndex\":\"The index of the current pixel in the image flatten array.\"},\"returns\":{\"_0\":\"A filled <rect> with appropriate parameters as a string.\"}},\"decode3BytesTo4Pixels(uint256,bytes3,string[],uint256)\":{\"details\":\"This function can be used as a base decoding function when using 5 bits per pixel. In this case, one has       indeed 4 * 6 = 24 bits = 8 * 3 = 3 bytes as a minimal bytes array to decode.\",\"params\":{\"_bytes\":\"The bytes5 containing 4 palette indexes.\",\"imageWidth\":\"Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\",\"palette\":\"The array of decoded colors as hex strings.\",\"startIndex\":\"The index of the current pixel in the image flatten array.\"},\"returns\":{\"_0\":\"Four filled <rect> with appropriate parameters as a string.\"}},\"decode3BytesTo8Pixels(uint256,bytes3,string[],uint256)\":{\"details\":\"This function can be used as a base decoding function when using 3 bits per pixel. In this case, one has       indeed 3 * 8 = 24 bits = 8 * 3 = 3 bytes as a minimal bytes array to decode.\",\"params\":{\"_bytes\":\"The bytes3 containing 8 palette indexes.\",\"imageWidth\":\"Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\",\"palette\":\"The array of decoded colors as hex strings.\",\"startIndex\":\"The index of the current pixel in the image flatten array.\"},\"returns\":{\"_0\":\"Eight filled <rect> with appropriate parameters as a string.\"}},\"decode5BytesTo8Pixels(uint256,bytes5,string[],uint256)\":{\"details\":\"This function can be used as a base decoding function when using 5 bits per pixel. In this case, one has       indeed 5 * 8 = 40 bits = 8 * 5 = 5 bytes as a minimal bytes array to decode.\",\"params\":{\"_bytes\":\"The bytes5 containing 8 palette indexes.\",\"imageWidth\":\"Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\",\"palette\":\"The array of decoded colors as hex strings.\",\"startIndex\":\"The index of the current pixel in the image flatten array.\"},\"returns\":{\"_0\":\"Eight filled <rect> with appropriate parameters as a string.\"}},\"decode7BytesTo8Pixels(uint256,bytes7,string[],uint256)\":{\"details\":\"This function can be used as a base decoding function when using 5 bits per pixel. In this case, one has       indeed 7 * 8 = 56 bits = 8 * 7 = 7 bytes as a minimal bytes array to decode.\",\"params\":{\"_bytes\":\"The bytes7 containing 8 palette indexes.\",\"imageWidth\":\"Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\",\"palette\":\"The array of decoded colors as hex strings.\",\"startIndex\":\"The index of the current pixel in the image flatten array.\"},\"returns\":{\"_0\":\"Eight filled <rect> with appropriate parameters as a string.\"}},\"decodeImage(bytes,string[],uint256,uint256)\":{\"details\":\"This function can be used to decode a whole rectangular image\",\"params\":{\"_image\":\"The whole image as a flatten bytes array\",\"bitsPerPixel\":\"the number of bits used to encode a pixel.\",\"imageWidth\":\"Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\",\"palette\":\"The array of decoded colors as hex strings.\"},\"returns\":{\"_0\":\"The image part of the final svg image. To be concatenated with SVG_TAG_START and SVG_TAG_END, and         eventually some <style> tags.\"}},\"getFill(address,uint256)\":{\"details\":\"Returns one single color reading directly from the storage.\",\"params\":{\"index\":\"The index of the color to retrieve\",\"pointer\":\"The pointer to the palette bytes array where each color is R, G, B at storage i, i+1, i+2.\"},\"returns\":{\"_0\":\"The hexstring representation of the color, e.g. \\\"a3120f\\\".\"}},\"getFill(bytes,uint256)\":{\"details\":\"Returns one single color from a pre-loaded whole palette as a bytes array.\",\"params\":{\"index\":\"The index of the color to retrieve\",\"palette\":\"A bytes array encoding several RGB colors. Length should be a multiple of 3.\"},\"returns\":{\"_0\":\"The hexstring representation of the color, e.g. \\\"a3120f\\\".\"}},\"getImageBytes(address,uint256,uint256,uint256)\":{\"details\":\"All images have a constant number of pixels and consequently a constant number of bytes.       The function reads the corresponding number of bytes at the given _pointer_ address (written with SSTORE2.write).       It is more efficient to concat all the bytes of all the images in one single bytes (<24k) to save on gas       This function eventually helps retrieve one image given its index from the bytes array.\",\"params\":{\"bitsPaletteSize\":\"The number of bits used to index the palette, e.g. 3 bits for 2^3 = 8 colors, 8 bits for 2^8 = 256 colors.\",\"index\":\"The index of the image to retrieve.\",\"pixelsCount\":\"The number of pixels of the image, e.g. 32x32 = 1024 pixels. This function hence reads pixelsCount * bitsPaletteSize / 8 bytes.\",\"pointer\":\"The pointer returned by the SSTORE2.write function (or storeBytes for instance).\"},\"returns\":{\"_0\":\"The bytes of the image.\"}},\"getPalette(address)\":{\"details\":\"Decode the whole palette once for all and returns an array of hexstrings.\",\"params\":{\"pointer\":\"The pointer to the palette bytes array where each color is at storage at i, i+1, i+2.\"},\"returns\":{\"_0\":\"An array of hexstring representation of the color, e.g. \\\"a3120f\\\".\"}}},\"title\":\"PaletteRenderer This library can be used to render a palette encoded image on-chain. Palette encoding means that each pixel does not store the color itself, but rather the index of the color in the palette. The returned images is an url safe encoded image uri.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/lib/PaletteRenderer.sol\":\"PaletteRenderer\"},\"evmVersion\":\"london\",\"libraries\":{\":__CACHE_BREAKER__\":\"0x00000000d41867734bbee4c6863d9255b2b06ac1\"},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"details\":{\"constantOptimizer\":true,\"cse\":true,\"deduplicate\":true,\"inliner\":true,\"jumpdestRemover\":true,\"orderLiterals\":true,\"peephole\":true,\"yul\":true,\"yulDetails\":{\"optimizerSteps\":\"dhfoDgvulfnTUtnIf\",\"stackAllocation\":true}},\"runs\":2000},\"remappings\":[]},\"sources\":{\"@0xsequence/sstore2/contracts/SSTORE2.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport \\\"./utils/Bytecode.sol\\\";\\n\\n/**\\n  @title A key-value storage with auto-generated keys for storing chunks of data with a lower write & read cost.\\n  @author Agustin Aguilar <aa@horizon.io>\\n\\n  Readme: https://github.com/0xsequence/sstore2#readme\\n*/\\nlibrary SSTORE2 {\\n  error WriteError();\\n\\n  /**\\n    @notice Stores `_data` and returns `pointer` as key for later retrieval\\n    @dev The pointer is a contract address with `_data` as code\\n    @param _data to be written\\n    @return pointer Pointer to the written `_data`\\n  */\\n  function write(bytes memory _data) internal returns (address pointer) {\\n    // Append 00 to _data so contract can't be called\\n    // Build init code\\n    bytes memory code = Bytecode.creationCodeFor(\\n      abi.encodePacked(\\n        hex'00',\\n        _data\\n      )\\n    );\\n\\n    // Deploy contract using create\\n    assembly { pointer := create(0, add(code, 32), mload(code)) }\\n\\n    // Address MUST be non-zero\\n    if (pointer == address(0)) revert WriteError();\\n  }\\n\\n  /**\\n    @notice Reads the contents of the `_pointer` code as data, skips the first byte \\n    @dev The function is intended for reading pointers generated by `write`\\n    @param _pointer to be read\\n    @return data read from `_pointer` contract\\n  */\\n  function read(address _pointer) internal view returns (bytes memory) {\\n    return Bytecode.codeAt(_pointer, 1, type(uint256).max);\\n  }\\n\\n  /**\\n    @notice Reads the contents of the `_pointer` code as data, skips the first byte \\n    @dev The function is intended for reading pointers generated by `write`\\n    @param _pointer to be read\\n    @param _start number of bytes to skip\\n    @return data read from `_pointer` contract\\n  */\\n  function read(address _pointer, uint256 _start) internal view returns (bytes memory) {\\n    return Bytecode.codeAt(_pointer, _start + 1, type(uint256).max);\\n  }\\n\\n  /**\\n    @notice Reads the contents of the `_pointer` code as data, skips the first byte \\n    @dev The function is intended for reading pointers generated by `write`\\n    @param _pointer to be read\\n    @param _start number of bytes to skip\\n    @param _end index before which to end extraction\\n    @return data read from `_pointer` contract\\n  */\\n  function read(address _pointer, uint256 _start, uint256 _end) internal view returns (bytes memory) {\\n    return Bytecode.codeAt(_pointer, _start + 1, _end + 1);\\n  }\\n}\\n\",\"keccak256\":\"0x79e6f5c7bb6b22d142ad0ec37e00930cdbef28ab405214f7c0f94cbd58255383\",\"license\":\"MIT\"},\"@0xsequence/sstore2/contracts/utils/Bytecode.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\n\\nlibrary Bytecode {\\n  error InvalidCodeAtRange(uint256 _size, uint256 _start, uint256 _end);\\n\\n  /**\\n    @notice Generate a creation code that results on a contract with `_code` as bytecode\\n    @param _code The returning value of the resulting `creationCode`\\n    @return creationCode (constructor) for new contract\\n  */\\n  function creationCodeFor(bytes memory _code) internal pure returns (bytes memory) {\\n    /*\\n      0x00    0x63         0x63XXXXXX  PUSH4 _code.length  size\\n      0x01    0x80         0x80        DUP1                size size\\n      0x02    0x60         0x600e      PUSH1 14            14 size size\\n      0x03    0x60         0x6000      PUSH1 00            0 14 size size\\n      0x04    0x39         0x39        CODECOPY            size\\n      0x05    0x60         0x6000      PUSH1 00            0 size\\n      0x06    0xf3         0xf3        RETURN\\n      <CODE>\\n    */\\n\\n    return abi.encodePacked(\\n      hex\\\"63\\\",\\n      uint32(_code.length),\\n      hex\\\"80_60_0E_60_00_39_60_00_F3\\\",\\n      _code\\n    );\\n  }\\n\\n  /**\\n    @notice Returns the size of the code on a given address\\n    @param _addr Address that may or may not contain code\\n    @return size of the code on the given `_addr`\\n  */\\n  function codeSize(address _addr) internal view returns (uint256 size) {\\n    assembly { size := extcodesize(_addr) }\\n  }\\n\\n  /**\\n    @notice Returns the code of a given address\\n    @dev It will fail if `_end < _start`\\n    @param _addr Address that may or may not contain code\\n    @param _start number of bytes of code to skip on read\\n    @param _end index before which to end extraction\\n    @return oCode read from `_addr` deployed bytecode\\n\\n    Forked from: https://gist.github.com/KardanovIR/fe98661df9338c842b4a30306d507fbd\\n  */\\n  function codeAt(address _addr, uint256 _start, uint256 _end) internal view returns (bytes memory oCode) {\\n    uint256 csize = codeSize(_addr);\\n    if (csize == 0) return bytes(\\\"\\\");\\n\\n    if (_start > csize) return bytes(\\\"\\\");\\n    if (_end < _start) revert InvalidCodeAtRange(csize, _start, _end); \\n\\n    unchecked {\\n      uint256 reqSize = _end - _start;\\n      uint256 maxSize = csize - _start;\\n\\n      uint256 size = maxSize < reqSize ? maxSize : reqSize;\\n\\n      assembly {\\n        // allocate output byte array - this could also be done without assembly\\n        // by using o_code = new bytes(size)\\n        oCode := mload(0x40)\\n        // new \\\"memory end\\\" including padding\\n        mstore(0x40, add(oCode, and(add(add(size, 0x20), 0x1f), not(0x1f))))\\n        // store length in memory\\n        mstore(oCode, size)\\n        // actually retrieve the code, this needs assembly\\n        extcodecopy(_addr, add(oCode, 0x20), _start, size)\\n      }\\n    }\\n  }\\n}\\n\",\"keccak256\":\"0x40ef4ee5697507566574eda36358a76b523b3dfe7cb65da1630004fe6c5a7a45\",\"license\":\"MIT\"},\"contracts/lib/Array.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.12;\\n\\nlibrary Array {\\n    function join(string[] memory a) public pure returns (string memory) {\\n        bytes memory tempBytes;\\n\\n        assembly {\\n            // Get a location of some free memory and store it in tempBytes as\\n            // Solidity does for memory variables.\\n            tempBytes := mload(0x40)\\n\\n            // Skip the first 32 bytes where we will store the length of the result\\n            let memoryPointer := add(tempBytes, 0x20)\\n\\n            // Load the length (first 32 bytes)\\n            let inputLength := mload(a)\\n            let inputData := add(a, 0x20)\\n            let end := add(inputData, mul(inputLength, 0x20))\\n\\n            // Initialize the length of the final string\\n            let stringLength := 0\\n\\n            // Iterate over all strings (a string is itself an array in solidity).\\n            for {\\n                let pointer := inputData\\n            } lt(pointer, end) {\\n                pointer := add(pointer, 0x20)\\n            } {\\n                let currentStringArray := mload(pointer)\\n                let currentStringLength := mload(currentStringArray)\\n                stringLength := add(stringLength, currentStringLength)\\n                let currentStringBytesCount := add(\\n                    div(currentStringLength, 0x20),\\n                    gt(mod(currentStringLength, 0x20), 0)\\n                )\\n\\n                let currentPointer := add(currentStringArray, 0x20)\\n\\n                for {\\n                    let copiedBytesCount := 0\\n                } lt(copiedBytesCount, currentStringBytesCount) {\\n                    copiedBytesCount := add(copiedBytesCount, 1)\\n                } {\\n                    mstore(\\n                        add(memoryPointer, mul(copiedBytesCount, 0x20)),\\n                        mload(currentPointer)\\n                    )\\n                    currentPointer := add(currentPointer, 0x20)\\n                }\\n                memoryPointer := add(memoryPointer, currentStringLength)\\n            }\\n\\n            mstore(tempBytes, stringLength)\\n            mstore(0x40, and(add(memoryPointer, 31), not(31)))\\n        }\\n        return string(tempBytes);\\n    }\\n}\\n\",\"keccak256\":\"0x0d8de398f0457cfbe77721a97d7a46d4da6349233e24566bfd174b84587104fb\",\"license\":\"MIT\"},\"contracts/lib/Bytes.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\n/*\\n * @title Solidity Bytes Arrays Utils\\n * @author Clement Walter <clement0walter@gmail.com> from Gon\\u00e7alo S\\u00e1 <goncalo.sa@consensys.net>\\n *\\n * @dev Bytes tightly packed arrays utility library for ethereum contracts written in Solidity.\\n *      The library lets you concatenate, slice and type cast bytes arrays both in memory and storage.\\n */\\npragma solidity >=0.8.0 <0.9.0;\\n\\nlibrary Bytes {\\n    function slice(\\n        bytes memory _bytes,\\n        uint256 _start,\\n        uint256 _length\\n    ) public pure returns (bytes memory) {\\n        require(_length + 31 >= _length, \\\"slice_overflow\\\");\\n        require(_bytes.length >= _start + _length, \\\"slice_outOfBounds\\\");\\n\\n        bytes memory tempBytes;\\n\\n        assembly {\\n            switch iszero(_length)\\n            case 0 {\\n                // Get a location of some free memory and store it in tempBytes as\\n                // Solidity does for memory variables.\\n                tempBytes := mload(0x40)\\n\\n                // The first word of the slice result is potentially a partial\\n                // word read from the original array. To read it, we calculate\\n                // the length of that partial word and start copying that many\\n                // bytes into the array. The first word we copy will start with\\n                // data we don't care about, but the last `lengthmod` bytes will\\n                // land at the beginning of the contents of the new array. When\\n                // we're done copying, we overwrite the full first word with\\n                // the actual length of the slice.\\n                let lengthmod := and(_length, 31)\\n\\n                // The multiplication in the next line is necessary\\n                // because when slicing multiples of 32 bytes (lengthmod == 0)\\n                // the following copy loop was copying the origin's length\\n                // and then ending prematurely not copying everything it should.\\n                let mc := add(\\n                    add(tempBytes, lengthmod),\\n                    mul(0x20, iszero(lengthmod))\\n                )\\n                let end := add(mc, _length)\\n\\n                for {\\n                    // The multiplication in the next line has the same exact purpose\\n                    // as the one above.\\n                    let cc := add(\\n                        add(\\n                            add(_bytes, lengthmod),\\n                            mul(0x20, iszero(lengthmod))\\n                        ),\\n                        _start\\n                    )\\n                } lt(mc, end) {\\n                    mc := add(mc, 0x20)\\n                    cc := add(cc, 0x20)\\n                } {\\n                    mstore(mc, mload(cc))\\n                }\\n\\n                mstore(tempBytes, _length)\\n\\n                //update free-memory pointer\\n                //allocating the array padded to 32 bytes like the compiler does now\\n                mstore(0x40, and(add(mc, 31), not(31)))\\n            }\\n            //if we want a zero-length slice let's just return a zero-length array\\n            default {\\n                tempBytes := mload(0x40)\\n                //zero out the 32 bytes slice we are about to return\\n                //we need to do it because Solidity does not garbage collect\\n                mstore(tempBytes, 0)\\n\\n                mstore(0x40, add(tempBytes, 0x20))\\n            }\\n        }\\n\\n        return tempBytes;\\n    }\\n\\n    function toAddress(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (address)\\n    {\\n        require(_bytes.length >= _start + 20, \\\"toAddress_outOfBounds\\\");\\n        address tempAddress;\\n\\n        assembly {\\n            tempAddress := div(\\n                mload(add(add(_bytes, 0x20), _start)),\\n                0x1000000000000000000000000\\n            )\\n        }\\n\\n        return tempAddress;\\n    }\\n\\n    function toUint8(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint8)\\n    {\\n        require(_bytes.length >= _start + 1, \\\"toUint8_outOfBounds\\\");\\n        uint8 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x1), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint16(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint16)\\n    {\\n        require(_bytes.length >= _start + 2, \\\"toUint16_outOfBounds\\\");\\n        uint16 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x2), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint24(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint24)\\n    {\\n        require(_bytes.length >= _start + 3, \\\"toUint24_outOfBounds\\\");\\n        uint16 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x3), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint32(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint32)\\n    {\\n        require(_bytes.length >= _start + 4, \\\"toUint32_outOfBounds\\\");\\n        uint32 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x4), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint40(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint40)\\n    {\\n        require(_bytes.length >= _start + 5, \\\"toUint40_outOfBounds\\\");\\n        uint32 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x5), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint48(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint48)\\n    {\\n        require(_bytes.length >= _start + 6, \\\"toUint48_outOfBounds\\\");\\n        uint32 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x6), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint56(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint56)\\n    {\\n        require(_bytes.length >= _start + 7, \\\"toUint56_outOfBounds\\\");\\n        uint32 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x7), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint64(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint64)\\n    {\\n        require(_bytes.length >= _start + 8, \\\"toUint64_outOfBounds\\\");\\n        uint64 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x8), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint96(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint96)\\n    {\\n        require(_bytes.length >= _start + 12, \\\"toUint96_outOfBounds\\\");\\n        uint96 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0xc), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint128(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint128)\\n    {\\n        require(_bytes.length >= _start + 16, \\\"toUint128_outOfBounds\\\");\\n        uint128 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x10), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toUint256(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (uint256)\\n    {\\n        require(_bytes.length >= _start + 32, \\\"toUint256_outOfBounds\\\");\\n        uint256 tempUint;\\n\\n        assembly {\\n            tempUint := mload(add(add(_bytes, 0x20), _start))\\n        }\\n\\n        return tempUint;\\n    }\\n\\n    function toBytes32(bytes memory _bytes, uint256 _start)\\n        public\\n        pure\\n        returns (bytes32)\\n    {\\n        require(_bytes.length >= _start + 32, \\\"toBytes32_outOfBounds\\\");\\n        bytes32 tempBytes32;\\n\\n        assembly {\\n            tempBytes32 := mload(add(add(_bytes, 0x20), _start))\\n        }\\n\\n        return tempBytes32;\\n    }\\n\\n    function equal(bytes memory _preBytes, bytes memory _postBytes)\\n        public\\n        pure\\n        returns (bool)\\n    {\\n        bool success = true;\\n\\n        assembly {\\n            let length := mload(_preBytes)\\n\\n            // if lengths don't match the arrays are not equal\\n            switch eq(length, mload(_postBytes))\\n            case 1 {\\n                // cb is a circuit breaker in the for loop since there's\\n                //  no said feature for inline assembly loops\\n                // cb = 1 - don't breaker\\n                // cb = 0 - break\\n                let cb := 1\\n\\n                let mc := add(_preBytes, 0x20)\\n                let end := add(mc, length)\\n\\n                for {\\n                    let cc := add(_postBytes, 0x20)\\n                    // the next line is the loop condition:\\n                    // while(uint256(mc < end) + cb == 2)\\n                } eq(add(lt(mc, end), cb), 2) {\\n                    mc := add(mc, 0x20)\\n                    cc := add(cc, 0x20)\\n                } {\\n                    // if any of these checks fails then arrays are not equal\\n                    if iszero(eq(mload(mc), mload(cc))) {\\n                        // unsuccess:\\n                        success := 0\\n                        cb := 0\\n                    }\\n                }\\n            }\\n            default {\\n                // unsuccess:\\n                success := 0\\n            }\\n        }\\n\\n        return success;\\n    }\\n\\n    function equalStorage(bytes storage _preBytes, bytes memory _postBytes)\\n        public\\n        view\\n        returns (bool)\\n    {\\n        bool success = true;\\n\\n        assembly {\\n            // we know _preBytes_offset is 0\\n            let fslot := sload(_preBytes.slot)\\n            // Decode the length of the stored array like in concatStorage().\\n            let slength := div(\\n                and(fslot, sub(mul(0x100, iszero(and(fslot, 1))), 1)),\\n                2\\n            )\\n            let mlength := mload(_postBytes)\\n\\n            // if lengths don't match the arrays are not equal\\n            switch eq(slength, mlength)\\n            case 1 {\\n                // slength can contain both the length and contents of the array\\n                // if length < 32 bytes so let's prepare for that\\n                // v. http://solidity.readthedocs.io/en/latest/miscellaneous.html#layout-of-state-variables-in-storage\\n                if iszero(iszero(slength)) {\\n                    switch lt(slength, 32)\\n                    case 1 {\\n                        // blank the last byte which is the length\\n                        fslot := mul(div(fslot, 0x100), 0x100)\\n\\n                        if iszero(eq(fslot, mload(add(_postBytes, 0x20)))) {\\n                            // unsuccess:\\n                            success := 0\\n                        }\\n                    }\\n                    default {\\n                        // cb is a circuit breaker in the for loop since there's\\n                        //  no said feature for inline assembly loops\\n                        // cb = 1 - don't breaker\\n                        // cb = 0 - break\\n                        let cb := 1\\n\\n                        // get the keccak hash to get the contents of the array\\n                        mstore(0x0, _preBytes.slot)\\n                        let sc := keccak256(0x0, 0x20)\\n\\n                        let mc := add(_postBytes, 0x20)\\n                        let end := add(mc, mlength)\\n\\n                        // the next line is the loop condition:\\n                        // while(uint256(mc < end) + cb == 2)\\n                        for {\\n\\n                        } eq(add(lt(mc, end), cb), 2) {\\n                            sc := add(sc, 1)\\n                            mc := add(mc, 0x20)\\n                        } {\\n                            if iszero(eq(sload(sc), mload(mc))) {\\n                                // unsuccess:\\n                                success := 0\\n                                cb := 0\\n                            }\\n                        }\\n                    }\\n                }\\n            }\\n            default {\\n                // unsuccess:\\n                success := 0\\n            }\\n        }\\n\\n        return success;\\n    }\\n}\\n\",\"keccak256\":\"0xbfa194bafd9f4a76aaa5807ee8d215c9b3c6fa8114d10ff8e8f8a7158cb34e52\",\"license\":\"MIT\"},\"contracts/lib/Integers.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * Integers Library updated from https://github.com/willitscale/solidity-util\\n *\\n * In summary this is a simple library of integer functions which allow a simple\\n * conversion to and from strings\\n *\\n * @author Clement Walter <clement0walter@gmail.com>\\n */\\nlibrary Integers {\\n    /**\\n     * To String\\n     *\\n     * Converts an unsigned integer to the string equivalent value, returned as bytes\\n     * Equivalent to javascript's toString(base)\\n     *\\n     * @param _number The unsigned integer to be converted to a string\\n     * @param _base The base to convert the number to\\n     * @param  _padding The target length of the string; result will be padded with 0 to reach this length while padding\\n     *         of 0 means no padding\\n     * @return bytes The resulting ASCII string value\\n     */\\n    function toString(\\n        uint256 _number,\\n        uint8 _base,\\n        uint8 _padding\\n    ) public pure returns (string memory) {\\n        uint256 count = 0;\\n        uint256 b = _number;\\n        while (b != 0) {\\n            count++;\\n            b /= _base;\\n        }\\n        if (_number == 0) {\\n            count++;\\n        }\\n        bytes memory res;\\n        if (_padding == 0) {\\n            res = new bytes(count);\\n        } else {\\n            res = new bytes(_padding);\\n        }\\n        for (uint256 i = 0; i < res.length; ++i) {\\n            b = _number % _base;\\n            if (b < 10) {\\n                res[res.length - i - 1] = bytes1(uint8(b + 48)); // 0-9\\n            } else {\\n                res[res.length - i - 1] = bytes1(uint8((b % 10) + 65)); // A-F\\n            }\\n            _number /= _base;\\n        }\\n\\n        for (uint256 i = count; i < _padding; ++i) {\\n            res[res.length - i - 1] = hex\\\"30\\\"; // 0\\n        }\\n\\n        return string(res);\\n    }\\n\\n    function toString(uint256 _number) public pure returns (string memory) {\\n        return toString(_number, 10, 0);\\n    }\\n\\n    function toString(uint256 _number, uint8 _base)\\n        public\\n        pure\\n        returns (string memory)\\n    {\\n        return toString(_number, _base, 0);\\n    }\\n\\n    /**\\n     * Load 16\\n     *\\n     * Converts two bytes to a 16 bit unsigned integer\\n     *\\n     * @param _leadingBytes the first byte of the unsigned integer in [256, 65536]\\n     * @param _endingBytes the second byte of the unsigned integer in [0, 255]\\n     * @return uint16 The resulting integer value\\n     */\\n    function load16(bytes1 _leadingBytes, bytes1 _endingBytes)\\n        public\\n        pure\\n        returns (uint16)\\n    {\\n        return\\n            (uint16(uint8(_leadingBytes)) << 8) + uint16(uint8(_endingBytes));\\n    }\\n\\n    /**\\n     * Load 12\\n     *\\n     * Converts three bytes into two uint12 integers\\n     *\\n     * @return (uint16, uint16) The two uint16 values up to 2^12 each\\n     */\\n    function load12x2(\\n        bytes1 first,\\n        bytes1 second,\\n        bytes1 third\\n    ) public pure returns (uint16, uint16) {\\n        return (\\n            (uint16(uint8(first)) << 4) + (uint16(uint8(second)) >> 4),\\n            (uint16(uint8(second & hex\\\"0f\\\")) << 8) + uint16(uint8(third))\\n        );\\n    }\\n}\\n\",\"keccak256\":\"0x42f71f264b8797e10a1f3dbbab5de74f29935cdcf29162b15d1fae47c6563f75\",\"license\":\"MIT\"},\"contracts/lib/PaletteRenderer.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.12;\\n\\nimport \\\"@0xsequence/sstore2/contracts/SSTORE2.sol\\\";\\n\\nimport {Integers} from \\\"../lib/Integers.sol\\\";\\nimport {Bytes} from \\\"../lib/Bytes.sol\\\";\\nimport {Array} from \\\"../lib/Array.sol\\\";\\n\\n/**\\n * @title PaletteRenderer\\n *\\n * This library can be used to render a palette encoded image on-chain.\\n * Palette encoding means that each pixel does not store the color itself, but rather the index of the\\n * color in the palette.\\n *\\n * The returned images is an url safe encoded image uri.\\n *\\n * @author Clement Walter <clement0walter@gmail.com>\\n */\\nlibrary PaletteRenderer {\\n    using Integers for uint256;\\n    using Integers for uint8;\\n    using Array for string[];\\n    using Bytes for bytes;\\n\\n    string public constant RECT_TAG_START = \\\"%3crect%20x=%27\\\";\\n    string public constant Y_TAG = \\\"%27%20y=%27\\\";\\n    string public constant WH_FILL_TAG =\\n        \\\"%27%20width=%271%27%20height=%271%27%20fill=%27%23\\\";\\n    string public constant RECT_TAG_END = \\\"%27/%3e\\\";\\n    string public constant SVG_TAG_START =\\n        \\\"%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2036%2036%27%20width=%27360px%27%20height=%27360px%27%3e\\\";\\n    string public constant SVG_TAG_END = \\\"%3c/svg%3e\\\";\\n\\n    /* @dev This can be used to store both images bytes and palettes bytes. It uses the SSTORE2 lib and returns the\\n     *      pointer to the storage address to be used, for example, in getImageBytes and getFill.\\n     * @param bytes The bytes to store.\\n     * @return The pointer to the storage address.\\n     */\\n    function storeBytes(bytes calldata _bytes) external returns (address) {\\n        return SSTORE2.write(_bytes);\\n    }\\n\\n    /** @dev All images have a constant number of pixels and consequently a constant number of bytes.\\n     *       The function reads the corresponding number of bytes at the given _pointer_ address (written with SSTORE2.write).\\n     *       It is more efficient to concat all the bytes of all the images in one single bytes (<24k) to save on gas\\n     *       This function eventually helps retrieve one image given its index from the bytes array.\\n     * @param pointer The pointer returned by the SSTORE2.write function (or storeBytes for instance).\\n     * @param index The index of the image to retrieve.\\n     * @param bitsPaletteSize The number of bits used to index the palette, e.g. 3 bits for 2^3 = 8 colors, 8 bits for 2^8 = 256 colors.\\n     * @param pixelsCount The number of pixels of the image, e.g. 32x32 = 1024 pixels. This function hence reads pixelsCount * bitsPaletteSize / 8 bytes.\\n     * @return The bytes of the image.\\n     */\\n    function getImageBytes(\\n        address pointer,\\n        uint256 index,\\n        uint256 bitsPaletteSize,\\n        uint256 pixelsCount\\n    ) public view returns (bytes memory) {\\n        uint256 start = index > 0\\n            ? ((index - 1) * bitsPaletteSize * pixelsCount) / 8\\n            : 0;\\n        return\\n            SSTORE2.read(\\n                pointer,\\n                start,\\n                start + (bitsPaletteSize * pixelsCount) / 8\\n            );\\n    }\\n\\n    /** @dev Returns one single color reading directly from the storage.\\n     * @param pointer The pointer to the palette bytes array where each color is R, G, B at storage i, i+1, i+2.\\n     * @param index The index of the color to retrieve\\n     * @return The hexstring representation of the color, e.g. \\\"a3120f\\\".\\n     */\\n    function getFill(address pointer, uint256 index)\\n        public\\n        view\\n        returns (string memory)\\n    {\\n        bytes memory palette = SSTORE2.read(pointer, index, index + 3);\\n        return\\n            string.concat(\\n                uint8(palette[0]).toString(16, 2),\\n                uint8(palette[1]).toString(16, 2),\\n                uint8(palette[2]).toString(16, 2)\\n            );\\n    }\\n\\n    /** @dev Returns one single color from a pre-loaded whole palette as a bytes array.\\n     * @param palette A bytes array encoding several RGB colors. Length should be a multiple of 3.\\n     * @param index The index of the color to retrieve\\n     * @return The hexstring representation of the color, e.g. \\\"a3120f\\\".\\n     */\\n    function getFill(bytes memory palette, uint256 index)\\n        public\\n        pure\\n        returns (string memory)\\n    {\\n        return\\n            string.concat(\\n                uint8(palette[3 * index]).toString(16, 2),\\n                uint8(palette[3 * index + 1]).toString(16, 2),\\n                uint8(palette[3 * index + 2]).toString(16, 2)\\n            );\\n    }\\n\\n    /** @dev Decode the whole palette once for all and returns an array of hexstrings.\\n     * @param pointer The pointer to the palette bytes array where each color is at storage at i, i+1, i+2.\\n     * @return An array of hexstring representation of the color, e.g. \\\"a3120f\\\".\\n     */\\n    function getPalette(address pointer) public view returns (string[] memory) {\\n        bytes memory palette = SSTORE2.read(pointer);\\n        return getPalette(palette);\\n    }\\n\\n    function getPalette(bytes memory palette)\\n        public\\n        pure\\n        returns (string[] memory)\\n    {\\n        uint256 paletteSize = palette.length / 3;\\n        string[] memory paletteHex = new string[](paletteSize);\\n        for (uint256 i = 0; i < paletteSize; i++) {\\n            paletteHex[i] = getFill(palette, i);\\n        }\\n        return paletteHex;\\n    }\\n\\n    /**\\n     * @dev Decode one single pixel, i.e. retrieve the color at the given index and produce a <rect> with appropriate parameters.\\n     *      This is used as a base function for writing rect and is also relevant for cases where the palette uses 8 bits.\\n     * @param pixelIndex The index of the current pixel in the image flatten array.\\n     * @param paletteIndex The value of the pixel at the given index, i.e. the index of the color in the palette.\\n     * @param imageWidth Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\\n     * @param palette The array of decoded colors as hex strings.\\n     * @return A filled <rect> with appropriate parameters as a string.\\n     */\\n    function decode1Pixel(\\n        uint256 pixelIndex,\\n        uint8 paletteIndex,\\n        string[] memory palette,\\n        uint256 imageWidth\\n    ) public pure returns (string memory) {\\n        return\\n            string.concat(\\n                RECT_TAG_START,\\n                (pixelIndex % imageWidth).toString(),\\n                Y_TAG,\\n                (pixelIndex / imageWidth).toString(),\\n                WH_FILL_TAG,\\n                palette[paletteIndex],\\n                RECT_TAG_END\\n            );\\n    }\\n\\n    function decode1Pixel(\\n        uint256 pixelIndex,\\n        bytes1 paletteIndex,\\n        string[] memory palette,\\n        uint256 imageWidth\\n    ) public pure returns (string memory) {\\n        return\\n            decode1Pixel(pixelIndex, uint8(paletteIndex), palette, imageWidth);\\n    }\\n\\n    /** @dev This function can be used as a base decoding function when using 1 bit per pixel. In this case, one byte is\\n     *       actually eight rects.\\n     * @param startIndex The index of the current pixel in the image flatten array.\\n     * @param _byte The single byte containing 8 palette indexes.\\n     * @param palette The array of decoded colors as hex strings.\\n     * @param imageWidth Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\\n     * @return Eight filled <rect> with appropriate parameters as a string.\\n     */\\n    function decode1ByteTo8Pixels(\\n        uint256 startIndex,\\n        bytes1 _byte,\\n        string[] memory palette,\\n        uint256 imageWidth\\n    ) public pure returns (string memory) {\\n        return\\n            string.concat(\\n                decode1Pixel(startIndex, _byte >> 7, palette, imageWidth),\\n                decode1Pixel(\\n                    startIndex + 1,\\n                    (_byte >> 6) & 0x01,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 2,\\n                    (_byte >> 5) & 0x01,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 3,\\n                    (_byte >> 4) & 0x01,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 4,\\n                    (_byte >> 3) & 0x01,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 5,\\n                    (_byte >> 2) & 0x01,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 6,\\n                    (_byte >> 1) & 0x01,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 7,\\n                    (_byte >> 0) & 0x01,\\n                    palette,\\n                    imageWidth\\n                )\\n            );\\n    }\\n\\n    /** @dev This function can be used as a base decoding function when using 2 bits per pixel. In this case, one byte is\\n     *       actually 4 rects.\\n     * @param startIndex The index of the current pixel in the image flatten array.\\n     * @param _byte The single byte containing 4 palette indexes.\\n     * @param palette The array of decoded colors as hex strings.\\n     * @param imageWidth Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\\n     * @return Four filled <rect> with appropriate parameters as a string.\\n     */\\n    function decode1ByteTo4Pixels(\\n        uint256 startIndex,\\n        bytes1 _byte,\\n        string[] memory palette,\\n        uint256 imageWidth\\n    ) public pure returns (string memory) {\\n        return\\n            string.concat(\\n                decode1Pixel(startIndex, _byte >> 6, palette, imageWidth),\\n                decode1Pixel(\\n                    startIndex + 1,\\n                    (_byte >> 4) & 0x03,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 2,\\n                    (_byte >> 2) & 0x03,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(startIndex + 3, _byte & 0x03, palette, imageWidth)\\n            );\\n    }\\n\\n    /** @dev This function can be used as a base decoding function when using 3 bits per pixel. In this case, one has\\n     *       indeed 3 * 8 = 24 bits = 8 * 3 = 3 bytes as a minimal bytes array to decode.\\n     * @param startIndex The index of the current pixel in the image flatten array.\\n     * @param _bytes The bytes3 containing 8 palette indexes.\\n     * @param palette The array of decoded colors as hex strings.\\n     * @param imageWidth Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\\n     * @return Eight filled <rect> with appropriate parameters as a string.\\n     */\\n    function decode3BytesTo8Pixels(\\n        uint256 startIndex,\\n        bytes3 _bytes,\\n        string[] memory palette,\\n        uint256 imageWidth\\n    ) public pure returns (string memory) {\\n        return\\n            string.concat(\\n                decode1Pixel(\\n                    startIndex,\\n                    uint8(uint24(_bytes >> 21)),\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 1,\\n                    uint8(uint24(_bytes >> 18)) & 0x07,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 2,\\n                    uint8(uint24(_bytes >> 15)) & 0x07,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 3,\\n                    uint8(uint24(_bytes >> 12)) & 0x07,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 4,\\n                    uint8(uint24(_bytes >> 9)) & 0x07,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 5,\\n                    uint8(uint24(_bytes >> 6)) & 0x07,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 6,\\n                    uint8(uint24(_bytes >> 3)) & 0x07,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 7,\\n                    uint8(uint24(_bytes >> 0)) & 0x07,\\n                    palette,\\n                    imageWidth\\n                )\\n            );\\n    }\\n\\n    /** @dev This function can be used as a base decoding function when using 4 bits per pixel. In this case, one byte is\\n     *       actually 2 rects.\\n     * @param startIndex The index of the current pixel in the image flatten array.\\n     * @param _byte The single byte containing 2 palette indexes.\\n     * @param palette The array of decoded colors as hex strings.\\n     * @param imageWidth Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\\n     * @return Two filled <rect> with appropriate parameters as a string.\\n     */\\n    function decode1ByteTo2Pixels(\\n        uint256 startIndex,\\n        bytes1 _byte,\\n        string[] memory palette,\\n        uint256 imageWidth\\n    ) public pure returns (string memory) {\\n        return\\n            string.concat(\\n                decode1Pixel(startIndex, _byte >> 4, palette, imageWidth),\\n                decode1Pixel(startIndex + 1, _byte & 0x0f, palette, imageWidth)\\n            );\\n    }\\n\\n    /** @dev This function can be used as a base decoding function when using 5 bits per pixel. In this case, one has\\n     *       indeed 5 * 8 = 40 bits = 8 * 5 = 5 bytes as a minimal bytes array to decode.\\n     * @param startIndex The index of the current pixel in the image flatten array.\\n     * @param _bytes The bytes5 containing 8 palette indexes.\\n     * @param palette The array of decoded colors as hex strings.\\n     * @param imageWidth Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\\n     * @return Eight filled <rect> with appropriate parameters as a string.\\n     */\\n    function decode5BytesTo8Pixels(\\n        uint256 startIndex,\\n        bytes5 _bytes,\\n        string[] memory palette,\\n        uint256 imageWidth\\n    ) public pure returns (string memory) {\\n        return\\n            string.concat(\\n                decode1Pixel(\\n                    startIndex,\\n                    uint8(uint40(_bytes >> 35)),\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 1,\\n                    uint8(uint40(_bytes >> 30)) & 0x1f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 2,\\n                    uint8(uint40(_bytes >> 25)) & 0x1f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 3,\\n                    uint8(uint40(_bytes >> 20)) & 0x1f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 4,\\n                    uint8(uint40(_bytes >> 15)) & 0x1f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 5,\\n                    uint8(uint40(_bytes >> 10)) & 0x1f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 6,\\n                    uint8(uint40(_bytes >> 5)) & 0x1f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 7,\\n                    uint8(uint40(_bytes >> 0)) & 0x1f,\\n                    palette,\\n                    imageWidth\\n                )\\n            );\\n    }\\n\\n    /** @dev This function can be used as a base decoding function when using 5 bits per pixel. In this case, one has\\n     *       indeed 4 * 6 = 24 bits = 8 * 3 = 3 bytes as a minimal bytes array to decode.\\n     * @param startIndex The index of the current pixel in the image flatten array.\\n     * @param _bytes The bytes5 containing 4 palette indexes.\\n     * @param palette The array of decoded colors as hex strings.\\n     * @param imageWidth Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\\n     * @return Four filled <rect> with appropriate parameters as a string.\\n     */\\n    function decode3BytesTo4Pixels(\\n        uint256 startIndex,\\n        bytes3 _bytes,\\n        string[] memory palette,\\n        uint256 imageWidth\\n    ) public pure returns (string memory) {\\n        return\\n            string.concat(\\n                decode1Pixel(\\n                    startIndex,\\n                    uint8(uint24(_bytes >> 18)),\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 1,\\n                    uint8(uint24(_bytes >> 12)) & 0x3f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 2,\\n                    uint8(uint24(_bytes >> 6)) & 0x3f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 3,\\n                    uint8(uint24(_bytes >> 0)) & 0x3f,\\n                    palette,\\n                    imageWidth\\n                )\\n            );\\n    }\\n\\n    /** @dev This function can be used as a base decoding function when using 5 bits per pixel. In this case, one has\\n     *       indeed 7 * 8 = 56 bits = 8 * 7 = 7 bytes as a minimal bytes array to decode.\\n     * @param startIndex The index of the current pixel in the image flatten array.\\n     * @param _bytes The bytes7 containing 8 palette indexes.\\n     * @param palette The array of decoded colors as hex strings.\\n     * @param imageWidth Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\\n     * @return Eight filled <rect> with appropriate parameters as a string.\\n     */\\n    function decode7BytesTo8Pixels(\\n        uint256 startIndex,\\n        bytes7 _bytes,\\n        string[] memory palette,\\n        uint256 imageWidth\\n    ) public pure returns (string memory) {\\n        return\\n            string.concat(\\n                decode1Pixel(\\n                    startIndex,\\n                    uint8(uint56(_bytes >> 49)),\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 1,\\n                    uint8(uint56(_bytes >> 42)) & 0x7f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 2,\\n                    uint8(uint56(_bytes >> 35)) & 0x7f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 3,\\n                    uint8(uint56(_bytes >> 28)) & 0x7f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 4,\\n                    uint8(uint56(_bytes >> 21)) & 0x7f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 5,\\n                    uint8(uint56(_bytes >> 14)) & 0x7f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 6,\\n                    uint8(uint56(_bytes >> 7)) & 0x7f,\\n                    palette,\\n                    imageWidth\\n                ),\\n                decode1Pixel(\\n                    startIndex + 7,\\n                    uint8(uint56(_bytes >> 0)) & 0x7f,\\n                    palette,\\n                    imageWidth\\n                )\\n            );\\n    }\\n\\n    /** @dev This function can be used to decode a whole rectangular image\\n     * @param _image The whole image as a flatten bytes array\\n     * @param palette The array of decoded colors as hex strings.\\n     * @param imageWidth Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.\\n     * @param bitsPerPixel the number of bits used to encode a pixel.\\n     * @return The image part of the final svg image. To be concatenated with SVG_TAG_START and SVG_TAG_END, and\\n     *         eventually some <style> tags.\\n     */\\n    function decodeImage(\\n        bytes memory _image,\\n        string[] memory palette,\\n        uint256 imageWidth,\\n        uint256 bitsPerPixel\\n    ) public pure returns (string memory) {\\n        string[] memory image;\\n        if (bitsPerPixel == 1) {\\n            image = new string[](_image.length);\\n            for (uint256 i = 0; i < image.length; i++) {\\n                image[i] = decode1ByteTo8Pixels(\\n                    i * 8,\\n                    _image[i],\\n                    palette,\\n                    imageWidth\\n                );\\n            }\\n        } else if (bitsPerPixel == 2) {\\n            image = new string[](_image.length);\\n            for (uint256 i = 0; i < image.length; i++) {\\n                image[i] = decode1ByteTo4Pixels(\\n                    i * 4,\\n                    _image[i],\\n                    palette,\\n                    imageWidth\\n                );\\n            }\\n        } else if (bitsPerPixel == 3) {\\n            image = new string[]((_image.length * 8) / bitsPerPixel);\\n            for (uint256 i = 0; i < image.length; i++) {\\n                image[i] = decode3BytesTo8Pixels(\\n                    i * 8,\\n                    bytes3(_image.toUint24(i * bitsPerPixel)),\\n                    palette,\\n                    imageWidth\\n                );\\n            }\\n        } else if (bitsPerPixel == 4) {\\n            image = new string[](_image.length);\\n            for (uint256 i = 0; i < image.length; i++) {\\n                image[i] = decode1ByteTo2Pixels(\\n                    i * 2,\\n                    _image[i],\\n                    palette,\\n                    imageWidth\\n                );\\n            }\\n        } else if (bitsPerPixel == 5) {\\n            image = new string[]((_image.length * 8) / bitsPerPixel);\\n            for (uint256 i = 0; i < image.length; i++) {\\n                image[i] = decode5BytesTo8Pixels(\\n                    i * 8,\\n                    bytes5(_image.toUint40(i * bitsPerPixel)),\\n                    palette,\\n                    imageWidth\\n                );\\n            }\\n        } else if (bitsPerPixel == 6) {\\n            image = new string[]((_image.length * 8) / bitsPerPixel);\\n            for (uint256 i = 0; i < image.length; i++) {\\n                image[i] = decode3BytesTo4Pixels(\\n                    i * 4,\\n                    bytes3(_image.toUint24(i * bitsPerPixel)),\\n                    palette,\\n                    imageWidth\\n                );\\n            }\\n        } else if (bitsPerPixel == 7) {\\n            image = new string[]((_image.length * 8) / bitsPerPixel);\\n            for (uint256 i = 0; i < image.length; i++) {\\n                image[i] = decode7BytesTo8Pixels(\\n                    i * 8,\\n                    bytes7(_image.toUint56(i * bitsPerPixel)),\\n                    palette,\\n                    imageWidth\\n                );\\n            }\\n        } else if (bitsPerPixel == 8) {\\n            image = new string[](_image.length);\\n            for (uint256 i = 0; i < image.length; i++) {\\n                image[i] = decode1Pixel(i, _image[i], palette, imageWidth);\\n            }\\n        }\\n        return image.join();\\n    }\\n}\\n\",\"keccak256\":\"0xa69421c4df0e2e5f50fb274f9722a1a26d0623764bba4b05ede60d6b94e3acbb\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x61298861003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361061018c5760003560e01c806369db9ed0116100e2578063a87e8f7c11610096578063d4488d4811610070578063d4488d48146103c5578063f2d87244146103d8578063f9e06417146103eb57600080fd5b8063a87e8f7c1461038c578063c030f08d1461039f578063ce5652a4146103b257600080fd5b8063890a161a116100c7578063890a161a1461035357806392caa7361461036657806393cdbc711461037957600080fd5b806369db9ed0146102db5780636f5c723b1461031757600080fd5b8063365c4c7911610144578063480bc3c81161011e578063480bc3c8146102775780634d32bd7d1461027f578063657fb2e1146102bb57600080fd5b8063365c4c79146102155780633774c79814610228578063407134de1461023b57600080fd5b806314f8e1d41161017557806314f8e1d4146101c2578063159c13ad146101d55780631e6f1fb41461020257600080fd5b8063030f53b4146101915780630a41f5da146101ba575b600080fd5b6101a461019f366004611e7c565b6103fe565b6040516101b19190611f5d565b60405180910390f35b6101a4610641565b6101a46101d0366004611fa1565b61065d565b8180156101e157600080fd5b506101f56101f0366004612029565b6106d9565b6040516101b1919061209e565b6101a46102103660046120df565b610723565b6101a4610223366004612148565b61073d565b6101a461023636600461217e565b610831565b6101a46040518060400160405280600781526020017f2532372f2533650000000000000000000000000000000000000000000000000081525081565b6101a4610a61565b6101a46040518060400160405280600b81526020017f253237253230793d25323700000000000000000000000000000000000000000081525081565b6102ce6102c93660046121e9565b610a7d565b6040516101b1919061227a565b6101a46040518060400160405280600f81526020017f25336372656374253230783d253237000000000000000000000000000000000081525081565b6101a46040518060400160405280600a81526020017f2533632f7376672533650000000000000000000000000000000000000000000081525081565b6101a461036136600461228b565b610a9c565b6101a46103743660046120df565b610cb5565b6101a4610387366004611fa1565b610d32565b6101a461039a3660046120df565b610e0f565b6102ce6103ad3660046122ad565b610e9f565b6101a46103c036600461231b565b610f51565b6101a46103d33660046120df565b61102e565b6101a46103e6366004612351565b61113e565b6101a46103f93660046123cd565b611a86565b60408051808201909152600f81527f25336372656374253230783d2532370000000000000000000000000000000000602082015260609061043f8387612419565b6040517f6900a3ae00000000000000000000000000000000000000000000000000000000815273faE147127d2956b50cD2c331113cbb7DC73B861491636900a3ae9161048e9190600401612433565b600060405180830381865af41580156104ab573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526104d39190810190612499565b60408051808201909152600b81527f253237253230793d253237000000000000000000000000000000000000000000602082015261051185896124ea565b6040517f6900a3ae00000000000000000000000000000000000000000000000000000000815273faE147127d2956b50cD2c331113cbb7DC73B861491636900a3ae916105609190600401612433565b600060405180830381865af415801561057d573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526105a59190810190612499565b60405180606001604052806032815260200161292160329139878960ff16815181106105d3576105d36124fe565b60200260200101516040518060400160405280600781526020017f2532372f253365000000000000000000000000000000000000000000000000008152506040516020016106279796959493929190612536565b60405160208183030381529060405290505b949350505050565b6040518060600160405280603281526020016129216032913981565b606061066f8560fa86901c85856103fe565b61068c61067d876001612594565b603f60f488901c1686866103fe565b6106a961069a886002612594565b603f60ee89901c1687876103fe565b6106c66106b7896003612594565b603f60e88a901c1688886103fe565b60405160200161062794939291906125ac565b600061071a83838080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250611aec92505050565b90505b92915050565b6060610734858560f81c85856103fe565b95945050505050565b606061074f8560fb86901c85856103fe565b61076c61075d876001612594565b601f60f688901c1686866103fe565b61078961077a886002612594565b601f60f189901c1687876103fe565b6107a6610797896003612594565b601f60ec8a901c1688886103fe565b6107c36107b48a6004612594565b601f60e78b901c1689896103fe565b6107e06107d18b6005612594565b601f60e28c901c168a8a6103fe565b6107fd6107ee8c6006612594565b601f60dd8d901c168b8b6103fe565b61081a61080b8d6007612594565b601f60d88e901c168c8c6103fe565b6040516020016106279897969594939291906125da565b60608261083f836003612645565b8151811061084f5761084f6124fe565b016020015160405163c1338a6960e01b815273faE147127d2956b50cD2c331113cbb7DC73B86149163c1338a69916108939160f81c90601090600290600401612678565b600060405180830381865af41580156108b0573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526108d89190810190612499565b836108e4846003612645565b6108ef906001612594565b815181106108ff576108ff6124fe565b016020015160405163c1338a6960e01b815273faE147127d2956b50cD2c331113cbb7DC73B86149163c1338a69916109439160f81c90601090600290600401612678565b600060405180830381865af4158015610960573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526109889190810190612499565b84610994856003612645565b61099f906002612594565b815181106109af576109af6124fe565b016020015160405163c1338a6960e01b815273faE147127d2956b50cD2c331113cbb7DC73B86149163c1338a69916109f39160f81c90601090600290600401612678565b600060405180830381865af4158015610a10573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610a389190810190612499565b604051602001610a4a939291906126a0565b604051602081830303815290604052905092915050565b6040518060a00160405280607b81526020016128a6607b913981565b60606000610a8a83611b77565b9050610a9581610e9f565b9392505050565b60606000610ab58484610ab0816003612594565b611b87565b905080600081518110610aca57610aca6124fe565b016020015160405163c1338a6960e01b815273faE147127d2956b50cD2c331113cbb7DC73B86149163c1338a6991610b0e9160f81c90601090600290600401612678565b600060405180830381865af4158015610b2b573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610b539190810190612499565b81600181518110610b6657610b666124fe565b016020015160405163c1338a6960e01b815273faE147127d2956b50cD2c331113cbb7DC73B86149163c1338a6991610baa9160f81c90601090600290600401612678565b600060405180830381865af4158015610bc7573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610bef9190810190612499565b82600281518110610c0257610c026124fe565b016020015160405163c1338a6960e01b815273faE147127d2956b50cD2c331113cbb7DC73B86149163c1338a6991610c469160f81c90601090600290600401612678565b600060405180830381865af4158015610c63573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610c8b9190810190612499565b604051602001610c9d939291906126a0565b60405160208183030381529060405291505092915050565b6060610ce9857f0ff0000000000000000000000000000000000000000000000000000000000000600487901c168585610723565b610d21610cf7876001612594565b7f0f0000000000000000000000000000000000000000000000000000000000000087168686610723565b6040516020016106279291906126c2565b6060610d448560fd86901c85856103fe565b610d61610d52876001612594565b600760fa88901c1686866103fe565b610d7e610d6f886002612594565b600760f789901c1687876103fe565b610d9b610d8c896003612594565b600760f48a901c1688886103fe565b610db8610da98a6004612594565b600760f18b901c1689896103fe565b610dd5610dc68b6005612594565b600760ee8c901c168a8a6103fe565b610df2610de38c6006612594565b600760eb8d901c168b8b6103fe565b61081a610e008d6007612594565b600760e88e901c168c8c6103fe565b6060610e43857f03fc000000000000000000000000000000000000000000000000000000000000600687901c168585610723565b610e63610e51876001612594565b600360f81b600488901c168686610723565b610e83610e71886002612594565b600360f81b600289901c168787610723565b6106c6610e91896003612594565b600360f81b89168888610723565b6060600060038351610eb191906124ea565b905060008167ffffffffffffffff811115610ece57610ece611ccb565b604051908082528060200260200182016040528015610f0157816020015b6060815260200190600190039081610eec5790505b50905060005b82811015610f4957610f198582610831565b828281518110610f2b57610f2b6124fe565b60200260200101819052508080610f41906126d8565b915050610f07565b509392505050565b6060610f638560f986901c85856103fe565b610f80610f71876001612594565b607f60f288901c1686866103fe565b610f9d610f8e886002612594565b607f60eb89901c1687876103fe565b610fba610fab896003612594565b607f60e48a901c1688886103fe565b610fd7610fc88a6004612594565b607f60dd8b901c1689896103fe565b610ff4610fe58b6005612594565b607f60d68c901c168a8a6103fe565b6110116110028c6006612594565b607f60cf8d901c168b8b6103fe565b61081a61101f8d6007612594565b607f60c88e901c168c8c6103fe565b6060611062857f01fe000000000000000000000000000000000000000000000000000000000000600787901c168585610723565b611082611070876001612594565b600160f81b600688901c168686610723565b6110a2611090886002612594565b600160f81b600589901c168787610723565b6110c26110b0896003612594565b600160f81b60048a901c168888610723565b6110e26110d08a6004612594565b600160f81b60038b901c168989610723565b6111026110f08b6005612594565b600160f81b60028c901c168a8a610723565b6111226111108c6006612594565b600160f81b60018d901c168b8b610723565b61081a6111308d6007612594565b600160f81b8d168c8c610723565b606080826001141561122a57855167ffffffffffffffff81111561116457611164611ccb565b60405190808252806020026020018201604052801561119757816020015b60608152602001906001900390816111825790505b50905060005b8151811015611224576111f46111b4826008612645565b8883815181106111c6576111c66124fe565b01602001517fff0000000000000000000000000000000000000000000000000000000000000016888861102e565b828281518110611206576112066124fe565b6020026020010181905250808061121c906126d8565b91505061119d565b506119e7565b826002141561130d57855167ffffffffffffffff81111561124d5761124d611ccb565b60405190808252806020026020018201604052801561128057816020015b606081526020019060019003908161126b5790505b50905060005b8151811015611224576112dd61129d826004612645565b8883815181106112af576112af6124fe565b01602001517fff00000000000000000000000000000000000000000000000000000000000000168888610e0f565b8282815181106112ef576112ef6124fe565b60200260200101819052508080611305906126d8565b915050611286565b82600314156114545782865160086113259190612645565b61132f91906124ea565b67ffffffffffffffff81111561134757611347611ccb565b60405190808252806020026020018201604052801561137a57816020015b60608152602001906001900390816113655790505b50905060005b815181101561122457611424611397826008612645565b73101FD37102769C7a57d0A1b55DF347C662C14B7d63a5eb31ee8a6113bc8987612645565b6040518363ffffffff1660e01b81526004016113d99291906126f3565b602060405180830381865af41580156113f6573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061141a9190612729565b60e81b8888610d32565b828281518110611436576114366124fe565b6020026020010181905250808061144c906126d8565b915050611380565b826004141561153757855167ffffffffffffffff81111561147757611477611ccb565b6040519080825280602002602001820160405280156114aa57816020015b60608152602001906001900390816114955790505b50905060005b8151811015611224576115076114c7826002612645565b8883815181106114d9576114d96124fe565b01602001517fff00000000000000000000000000000000000000000000000000000000000000168888610cb5565b828281518110611519576115196124fe565b6020026020010181905250808061152f906126d8565b9150506114b0565b826005141561167e57828651600861154f9190612645565b61155991906124ea565b67ffffffffffffffff81111561157157611571611ccb565b6040519080825280602002602001820160405280156115a457816020015b606081526020019060019003908161158f5790505b50905060005b81518110156112245761164e6115c1826008612645565b73101FD37102769C7a57d0A1b55DF347C662C14B7d63d442584f8a6115e68987612645565b6040518363ffffffff1660e01b81526004016116039291906126f3565b602060405180830381865af4158015611620573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906116449190612762565b60d81b888861073d565b828281518110611660576116606124fe565b60200260200101819052508080611676906126d8565b9150506115aa565b82600614156117c55782865160086116969190612645565b6116a091906124ea565b67ffffffffffffffff8111156116b8576116b8611ccb565b6040519080825280602002602001820160405280156116eb57816020015b60608152602001906001900390816116d65790505b50905060005b815181101561122457611795611708826004612645565b73101FD37102769C7a57d0A1b55DF347C662C14B7d63a5eb31ee8a61172d8987612645565b6040518363ffffffff1660e01b815260040161174a9291906126f3565b602060405180830381865af4158015611767573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061178b9190612729565b60e81b888861065d565b8282815181106117a7576117a76124fe565b602002602001018190525080806117bd906126d8565b9150506116f1565b826007141561190c5782865160086117dd9190612645565b6117e791906124ea565b67ffffffffffffffff8111156117ff576117ff611ccb565b60405190808252806020026020018201604052801561183257816020015b606081526020019060019003908161181d5790505b50905060005b8151811015611224576118dc61184f826008612645565b73101FD37102769C7a57d0A1b55DF347C662C14B7d63a8d8f00f8a6118748987612645565b6040518363ffffffff1660e01b81526004016118919291906126f3565b602060405180830381865af41580156118ae573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906118d2919061279d565b60c81b8888610f51565b8282815181106118ee576118ee6124fe565b60200260200101819052508080611904906126d8565b915050611838565b82600814156119e757855167ffffffffffffffff81111561192f5761192f611ccb565b60405190808252806020026020018201604052801561196257816020015b606081526020019060019003908161194d5790505b50905060005b81518110156119e5576119b581888381518110611987576119876124fe565b01602001517fff00000000000000000000000000000000000000000000000000000000000000168888610723565b8282815181106119c7576119c76124fe565b602002602001018190525080806119dd906126d8565b915050611968565b505b6040517f9bce4e1400000000000000000000000000000000000000000000000000000000815273c1694e1FA02247DEB49C9BDA378aFbd0190fC9b290639bce4e1490611a3790849060040161227a565b600060405180830381865af4158015611a54573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052611a7c9190810190612499565b9695505050505050565b60606000808511611a98576000611ac5565b60088385611aa76001896127be565b611ab19190612645565b611abb9190612645565b611ac591906124ea565b9050611a7c86826008611ad88789612645565b611ae291906124ea565b610ab09085612594565b600080611b1783604051602001611b0391906127e0565b604051602081830303815290604052611ba8565b90508051602082016000f0915073ffffffffffffffffffffffffffffffffffffffff8216611b71576040517f08d4abb600000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b50919050565b606061071d826001600019611bd4565b606061063984611b98856001612594565b611ba3856001612594565b611bd4565b6060815182604051602001611bbe929190612838565b6040516020818303038152906040529050919050565b6060833b80611bf3575050604080516020810190915260008152610a95565b80841115611c11575050604080516020810190915260008152610a95565b83831015611c5a578084846040517f2c4a89fa000000000000000000000000000000000000000000000000000000008152600401611c519392919061287d565b60405180910390fd5b8383038482036000828210611c6f5782611c71565b815b60408051603f8301601f19168101909152818152955090508087602087018a3c505050509392505050565b805b8114611ca957600080fd5b50565b803561071d81611c9c565b60ff8116611c9e565b803561071d81611cb7565b634e487b7160e01b600052604160045260246000fd5b601f19601f830116810181811067ffffffffffffffff82111715611d0757611d07611ccb565b6040525050565b6000611d1960405190565b9050611d258282611ce1565b919050565b600067ffffffffffffffff821115611d4457611d44611ccb565b5060209081020190565b600067ffffffffffffffff821115611d6857611d68611ccb565b601f19601f83011660200192915050565b82818337506000910152565b6000611d98611d9384611d4e565b611d0e565b905082815260208101848484011115611db357611db3600080fd5b610f49848285611d79565b600082601f830112611dd257611dd2600080fd5b8135610639848260208601611d85565b6000611df0611d9384611d2a565b83815290506020808201908402830185811115611e0f57611e0f600080fd5b835b81811015611e4e57803567ffffffffffffffff811115611e3357611e33600080fd5b8501611e3f8882611dbe565b84525060209283019201611e11565b5050509392505050565b600082601f830112611e6c57611e6c600080fd5b8135610639848260208601611de2565b60008060008060808587031215611e9557611e95600080fd5b6000611ea18787611cac565b9450506020611eb287828801611cc0565b935050604085013567ffffffffffffffff811115611ed257611ed2600080fd5b611ede87828801611e58565b9250506060611eef87828801611cac565b91505092959194509250565b60005b83811015611f16578181015183820152602001611efe565b83811115611f25576000848401525b50505050565b6000611f35825190565b808452602084019350611f4c818560208601611efb565b601f01601f19169290920192915050565b6020808252810161071a8184611f2b565b7fffffff00000000000000000000000000000000000000000000000000000000008116611c9e565b803561071d81611f6e565b60008060008060808587031215611fba57611fba600080fd5b6000611fc68787611cac565b9450506020611eb287828801611f96565b60008083601f840112611fec57611fec600080fd5b50813567ffffffffffffffff81111561200757612007600080fd5b60208301915083600182028301111561202257612022600080fd5b9250929050565b6000806020838503121561203f5761203f600080fd5b823567ffffffffffffffff81111561205957612059600080fd5b61206585828601611fd7565b92509250509250929050565b600073ffffffffffffffffffffffffffffffffffffffff821661071d565b61209881612071565b82525050565b6020810161071d828461208f565b7fff000000000000000000000000000000000000000000000000000000000000008116611c9e565b803561071d816120ac565b600080600080608085870312156120f8576120f8600080fd5b60006121048787611cac565b9450506020611eb2878288016120d4565b7fffffffffff0000000000000000000000000000000000000000000000000000008116611c9e565b803561071d81612115565b6000806000806080858703121561216157612161600080fd5b600061216d8787611cac565b9450506020611eb28782880161213d565b6000806040838503121561219457612194600080fd5b823567ffffffffffffffff8111156121ae576121ae600080fd5b6121ba85828601611dbe565b92505060206121cb85828601611cac565b9150509250929050565b611c9e81612071565b803561071d816121d5565b6000602082840312156121fe576121fe600080fd5b600061063984846121de565b600061071a8383611f2b565b6000612220825190565b8084526020840193508360208202850161223a8560200190565b60005b8481101561226e5783830388528151612256848261220a565b9350506020820160209890980197915060010161223d565b50909695505050505050565b6020808252810161071a8184612216565b600080604083850312156122a1576122a1600080fd5b60006121ba85856121de565b6000602082840312156122c2576122c2600080fd5b813567ffffffffffffffff8111156122dc576122dc600080fd5b61063984828501611dbe565b7fffffffffffffff000000000000000000000000000000000000000000000000008116611c9e565b803561071d816122e8565b6000806000806080858703121561233457612334600080fd5b60006123408787611cac565b9450506020611eb287828801612310565b6000806000806080858703121561236a5761236a600080fd5b843567ffffffffffffffff81111561238457612384600080fd5b61239087828801611dbe565b945050602085013567ffffffffffffffff8111156123b0576123b0600080fd5b6123bc87828801611e58565b9350506040611ede87828801611cac565b600080600080608085870312156123e6576123e6600080fd5b60006123f287876121de565b94505060206123bc87828801611cac565b634e487b7160e01b600052601260045260246000fd5b60008261242857612428612403565b500690565b80612098565b6020810161071d828461242d565b600061244f611d9384611d4e565b90508281526020810184848401111561246a5761246a600080fd5b610f49848285611efb565b600082601f83011261248957612489600080fd5b8151610639848260208601612441565b6000602082840312156124ae576124ae600080fd5b815167ffffffffffffffff8111156124c8576124c8600080fd5b61063984828501612475565b634e487b7160e01b600052601160045260246000fd5b6000826124f9576124f9612403565b500490565b634e487b7160e01b600052603260045260246000fd5b600061251e825190565b61252c818560208601611efb565b9290920192915050565b6125408189612514565b905061254c8188612514565b90506125588187612514565b90506125648186612514565b90506125708185612514565b905061257c8184612514565b90506125888183612514565b98975050505050505050565b600082198211156125a7576125a76124d4565b500190565b6125b68186612514565b90506125c28185612514565b90506125ce8184612514565b90506107348183612514565b6125e4818a612514565b90506125f08189612514565b90506125fc8188612514565b90506126088187612514565b90506126148186612514565b90506126208185612514565b905061262c8184612514565b90506126388183612514565b9998505050505050505050565b600081600019048311821515161561265f5761265f6124d4565b500290565b600060ff821661071d565b61209881612664565b60608101612686828661242d565b612693602083018561266f565b610639604083018461266f565b6126aa8185612514565b90506126b68184612514565b90506106398183612514565b6126cc8184612514565b9050610a958183612514565b60006000198214156126ec576126ec6124d4565b5060010190565b604080825281016127048185611f2b565b9050610a95602083018461242d565b62ffffff8116611c9e565b805161071d81612713565b60006020828403121561273e5761273e600080fd5b6000610639848461271e565b64ffffffffff8116611c9e565b805161071d8161274a565b60006020828403121561277757612777600080fd5b60006106398484612757565b66ffffffffffffff8116611c9e565b805161071d81612783565b6000602082840312156127b2576127b2600080fd5b60006106398484612792565b6000828210156127d0576127d06124d4565b500390565b600081525b60010190565b6127e9816127d5565b905061071d8183612514565b7f630000000000000000000000000000000000000000000000000000000000000081526127da565b600061071d8260e01b90565b61209863ffffffff821661281d565b612841816127f5565b905061284d8184612829565b6004016126cc817f80600e6000396000f30000000000000000000000000000000000000000000000815260090190565b6060810161288b828661242d565b612898602083018561242d565b610639604083018461242d56fe253363737667253230786d6c6e733d253237687474703a2f2f7777772e77332e6f72672f323030302f73766725323725323076696577426f783d25323730253230302532303336253230333625323725323077696474683d25323733363070782532372532306865696768743d253237333630707825323725336525323725323077696474683d253237312532372532306865696768743d2532373125323725323066696c6c3d253237253233a26469706673582212208d54a50e991b2f9396cd14a002a49e2c75ac1acc9025365a66a840508bf7b92b64736f6c634300080c0033",
+  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040526004361061018c5760003560e01c806369db9ed0116100e2578063a87e8f7c11610096578063d4488d4811610070578063d4488d48146103c5578063f2d87244146103d8578063f9e06417146103eb57600080fd5b8063a87e8f7c1461038c578063c030f08d1461039f578063ce5652a4146103b257600080fd5b8063890a161a116100c7578063890a161a1461035357806392caa7361461036657806393cdbc711461037957600080fd5b806369db9ed0146102db5780636f5c723b1461031757600080fd5b8063365c4c7911610144578063480bc3c81161011e578063480bc3c8146102775780634d32bd7d1461027f578063657fb2e1146102bb57600080fd5b8063365c4c79146102155780633774c79814610228578063407134de1461023b57600080fd5b806314f8e1d41161017557806314f8e1d4146101c2578063159c13ad146101d55780631e6f1fb41461020257600080fd5b8063030f53b4146101915780630a41f5da146101ba575b600080fd5b6101a461019f366004611e7c565b6103fe565b6040516101b19190611f5d565b60405180910390f35b6101a4610641565b6101a46101d0366004611fa1565b61065d565b8180156101e157600080fd5b506101f56101f0366004612029565b6106d9565b6040516101b1919061209e565b6101a46102103660046120df565b610723565b6101a4610223366004612148565b61073d565b6101a461023636600461217e565b610831565b6101a46040518060400160405280600781526020017f2532372f2533650000000000000000000000000000000000000000000000000081525081565b6101a4610a61565b6101a46040518060400160405280600b81526020017f253237253230793d25323700000000000000000000000000000000000000000081525081565b6102ce6102c93660046121e9565b610a7d565b6040516101b1919061227a565b6101a46040518060400160405280600f81526020017f25336372656374253230783d253237000000000000000000000000000000000081525081565b6101a46040518060400160405280600a81526020017f2533632f7376672533650000000000000000000000000000000000000000000081525081565b6101a461036136600461228b565b610a9c565b6101a46103743660046120df565b610cb5565b6101a4610387366004611fa1565b610d32565b6101a461039a3660046120df565b610e0f565b6102ce6103ad3660046122ad565b610e9f565b6101a46103c036600461231b565b610f51565b6101a46103d33660046120df565b61102e565b6101a46103e6366004612351565b61113e565b6101a46103f93660046123cd565b611a86565b60408051808201909152600f81527f25336372656374253230783d2532370000000000000000000000000000000000602082015260609061043f8387612419565b6040517f6900a3ae00000000000000000000000000000000000000000000000000000000815273__$6cc8f8b41053aebd660af83ec8df928129$__91636900a3ae9161048e9190600401612433565b600060405180830381865af41580156104ab573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526104d39190810190612499565b60408051808201909152600b81527f253237253230793d253237000000000000000000000000000000000000000000602082015261051185896124ea565b6040517f6900a3ae00000000000000000000000000000000000000000000000000000000815273__$6cc8f8b41053aebd660af83ec8df928129$__91636900a3ae916105609190600401612433565b600060405180830381865af415801561057d573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526105a59190810190612499565b60405180606001604052806032815260200161292160329139878960ff16815181106105d3576105d36124fe565b60200260200101516040518060400160405280600781526020017f2532372f253365000000000000000000000000000000000000000000000000008152506040516020016106279796959493929190612536565b60405160208183030381529060405290505b949350505050565b6040518060600160405280603281526020016129216032913981565b606061066f8560fa86901c85856103fe565b61068c61067d876001612594565b603f60f488901c1686866103fe565b6106a961069a886002612594565b603f60ee89901c1687876103fe565b6106c66106b7896003612594565b603f60e88a901c1688886103fe565b60405160200161062794939291906125ac565b600061071a83838080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250611aec92505050565b90505b92915050565b6060610734858560f81c85856103fe565b95945050505050565b606061074f8560fb86901c85856103fe565b61076c61075d876001612594565b601f60f688901c1686866103fe565b61078961077a886002612594565b601f60f189901c1687876103fe565b6107a6610797896003612594565b601f60ec8a901c1688886103fe565b6107c36107b48a6004612594565b601f60e78b901c1689896103fe565b6107e06107d18b6005612594565b601f60e28c901c168a8a6103fe565b6107fd6107ee8c6006612594565b601f60dd8d901c168b8b6103fe565b61081a61080b8d6007612594565b601f60d88e901c168c8c6103fe565b6040516020016106279897969594939291906125da565b60608261083f836003612645565b8151811061084f5761084f6124fe565b016020015160405163c1338a6960e01b815273__$6cc8f8b41053aebd660af83ec8df928129$__9163c1338a69916108939160f81c90601090600290600401612678565b600060405180830381865af41580156108b0573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526108d89190810190612499565b836108e4846003612645565b6108ef906001612594565b815181106108ff576108ff6124fe565b016020015160405163c1338a6960e01b815273__$6cc8f8b41053aebd660af83ec8df928129$__9163c1338a69916109439160f81c90601090600290600401612678565b600060405180830381865af4158015610960573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526109889190810190612499565b84610994856003612645565b61099f906002612594565b815181106109af576109af6124fe565b016020015160405163c1338a6960e01b815273__$6cc8f8b41053aebd660af83ec8df928129$__9163c1338a69916109f39160f81c90601090600290600401612678565b600060405180830381865af4158015610a10573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610a389190810190612499565b604051602001610a4a939291906126a0565b604051602081830303815290604052905092915050565b6040518060a00160405280607b81526020016128a6607b913981565b60606000610a8a83611b77565b9050610a9581610e9f565b9392505050565b60606000610ab58484610ab0816003612594565b611b87565b905080600081518110610aca57610aca6124fe565b016020015160405163c1338a6960e01b815273__$6cc8f8b41053aebd660af83ec8df928129$__9163c1338a6991610b0e9160f81c90601090600290600401612678565b600060405180830381865af4158015610b2b573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610b539190810190612499565b81600181518110610b6657610b666124fe565b016020015160405163c1338a6960e01b815273__$6cc8f8b41053aebd660af83ec8df928129$__9163c1338a6991610baa9160f81c90601090600290600401612678565b600060405180830381865af4158015610bc7573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610bef9190810190612499565b82600281518110610c0257610c026124fe565b016020015160405163c1338a6960e01b815273__$6cc8f8b41053aebd660af83ec8df928129$__9163c1338a6991610c469160f81c90601090600290600401612678565b600060405180830381865af4158015610c63573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610c8b9190810190612499565b604051602001610c9d939291906126a0565b60405160208183030381529060405291505092915050565b6060610ce9857f0ff0000000000000000000000000000000000000000000000000000000000000600487901c168585610723565b610d21610cf7876001612594565b7f0f0000000000000000000000000000000000000000000000000000000000000087168686610723565b6040516020016106279291906126c2565b6060610d448560fd86901c85856103fe565b610d61610d52876001612594565b600760fa88901c1686866103fe565b610d7e610d6f886002612594565b600760f789901c1687876103fe565b610d9b610d8c896003612594565b600760f48a901c1688886103fe565b610db8610da98a6004612594565b600760f18b901c1689896103fe565b610dd5610dc68b6005612594565b600760ee8c901c168a8a6103fe565b610df2610de38c6006612594565b600760eb8d901c168b8b6103fe565b61081a610e008d6007612594565b600760e88e901c168c8c6103fe565b6060610e43857f03fc000000000000000000000000000000000000000000000000000000000000600687901c168585610723565b610e63610e51876001612594565b600360f81b600488901c168686610723565b610e83610e71886002612594565b600360f81b600289901c168787610723565b6106c6610e91896003612594565b600360f81b89168888610723565b6060600060038351610eb191906124ea565b905060008167ffffffffffffffff811115610ece57610ece611ccb565b604051908082528060200260200182016040528015610f0157816020015b6060815260200190600190039081610eec5790505b50905060005b82811015610f4957610f198582610831565b828281518110610f2b57610f2b6124fe565b60200260200101819052508080610f41906126d8565b915050610f07565b509392505050565b6060610f638560f986901c85856103fe565b610f80610f71876001612594565b607f60f288901c1686866103fe565b610f9d610f8e886002612594565b607f60eb89901c1687876103fe565b610fba610fab896003612594565b607f60e48a901c1688886103fe565b610fd7610fc88a6004612594565b607f60dd8b901c1689896103fe565b610ff4610fe58b6005612594565b607f60d68c901c168a8a6103fe565b6110116110028c6006612594565b607f60cf8d901c168b8b6103fe565b61081a61101f8d6007612594565b607f60c88e901c168c8c6103fe565b6060611062857f01fe000000000000000000000000000000000000000000000000000000000000600787901c168585610723565b611082611070876001612594565b600160f81b600688901c168686610723565b6110a2611090886002612594565b600160f81b600589901c168787610723565b6110c26110b0896003612594565b600160f81b60048a901c168888610723565b6110e26110d08a6004612594565b600160f81b60038b901c168989610723565b6111026110f08b6005612594565b600160f81b60028c901c168a8a610723565b6111226111108c6006612594565b600160f81b60018d901c168b8b610723565b61081a6111308d6007612594565b600160f81b8d168c8c610723565b606080826001141561122a57855167ffffffffffffffff81111561116457611164611ccb565b60405190808252806020026020018201604052801561119757816020015b60608152602001906001900390816111825790505b50905060005b8151811015611224576111f46111b4826008612645565b8883815181106111c6576111c66124fe565b01602001517fff0000000000000000000000000000000000000000000000000000000000000016888861102e565b828281518110611206576112066124fe565b6020026020010181905250808061121c906126d8565b91505061119d565b506119e7565b826002141561130d57855167ffffffffffffffff81111561124d5761124d611ccb565b60405190808252806020026020018201604052801561128057816020015b606081526020019060019003908161126b5790505b50905060005b8151811015611224576112dd61129d826004612645565b8883815181106112af576112af6124fe565b01602001517fff00000000000000000000000000000000000000000000000000000000000000168888610e0f565b8282815181106112ef576112ef6124fe565b60200260200101819052508080611305906126d8565b915050611286565b82600314156114545782865160086113259190612645565b61132f91906124ea565b67ffffffffffffffff81111561134757611347611ccb565b60405190808252806020026020018201604052801561137a57816020015b60608152602001906001900390816113655790505b50905060005b815181101561122457611424611397826008612645565b73__$c92e858653f909770dcddf307338f0c79a$__63a5eb31ee8a6113bc8987612645565b6040518363ffffffff1660e01b81526004016113d99291906126f3565b602060405180830381865af41580156113f6573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061141a9190612729565b60e81b8888610d32565b828281518110611436576114366124fe565b6020026020010181905250808061144c906126d8565b915050611380565b826004141561153757855167ffffffffffffffff81111561147757611477611ccb565b6040519080825280602002602001820160405280156114aa57816020015b60608152602001906001900390816114955790505b50905060005b8151811015611224576115076114c7826002612645565b8883815181106114d9576114d96124fe565b01602001517fff00000000000000000000000000000000000000000000000000000000000000168888610cb5565b828281518110611519576115196124fe565b6020026020010181905250808061152f906126d8565b9150506114b0565b826005141561167e57828651600861154f9190612645565b61155991906124ea565b67ffffffffffffffff81111561157157611571611ccb565b6040519080825280602002602001820160405280156115a457816020015b606081526020019060019003908161158f5790505b50905060005b81518110156112245761164e6115c1826008612645565b73__$c92e858653f909770dcddf307338f0c79a$__63d442584f8a6115e68987612645565b6040518363ffffffff1660e01b81526004016116039291906126f3565b602060405180830381865af4158015611620573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906116449190612762565b60d81b888861073d565b828281518110611660576116606124fe565b60200260200101819052508080611676906126d8565b9150506115aa565b82600614156117c55782865160086116969190612645565b6116a091906124ea565b67ffffffffffffffff8111156116b8576116b8611ccb565b6040519080825280602002602001820160405280156116eb57816020015b60608152602001906001900390816116d65790505b50905060005b815181101561122457611795611708826004612645565b73__$c92e858653f909770dcddf307338f0c79a$__63a5eb31ee8a61172d8987612645565b6040518363ffffffff1660e01b815260040161174a9291906126f3565b602060405180830381865af4158015611767573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061178b9190612729565b60e81b888861065d565b8282815181106117a7576117a76124fe565b602002602001018190525080806117bd906126d8565b9150506116f1565b826007141561190c5782865160086117dd9190612645565b6117e791906124ea565b67ffffffffffffffff8111156117ff576117ff611ccb565b60405190808252806020026020018201604052801561183257816020015b606081526020019060019003908161181d5790505b50905060005b8151811015611224576118dc61184f826008612645565b73__$c92e858653f909770dcddf307338f0c79a$__63a8d8f00f8a6118748987612645565b6040518363ffffffff1660e01b81526004016118919291906126f3565b602060405180830381865af41580156118ae573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906118d2919061279d565b60c81b8888610f51565b8282815181106118ee576118ee6124fe565b60200260200101819052508080611904906126d8565b915050611838565b82600814156119e757855167ffffffffffffffff81111561192f5761192f611ccb565b60405190808252806020026020018201604052801561196257816020015b606081526020019060019003908161194d5790505b50905060005b81518110156119e5576119b581888381518110611987576119876124fe565b01602001517fff00000000000000000000000000000000000000000000000000000000000000168888610723565b8282815181106119c7576119c76124fe565b602002602001018190525080806119dd906126d8565b915050611968565b505b6040517f9bce4e1400000000000000000000000000000000000000000000000000000000815273__$a99766af9711f1c7448251d3194543b532$__90639bce4e1490611a3790849060040161227a565b600060405180830381865af4158015611a54573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052611a7c9190810190612499565b9695505050505050565b60606000808511611a98576000611ac5565b60088385611aa76001896127be565b611ab19190612645565b611abb9190612645565b611ac591906124ea565b9050611a7c86826008611ad88789612645565b611ae291906124ea565b610ab09085612594565b600080611b1783604051602001611b0391906127e0565b604051602081830303815290604052611ba8565b90508051602082016000f0915073ffffffffffffffffffffffffffffffffffffffff8216611b71576040517f08d4abb600000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b50919050565b606061071d826001600019611bd4565b606061063984611b98856001612594565b611ba3856001612594565b611bd4565b6060815182604051602001611bbe929190612838565b6040516020818303038152906040529050919050565b6060833b80611bf3575050604080516020810190915260008152610a95565b80841115611c11575050604080516020810190915260008152610a95565b83831015611c5a578084846040517f2c4a89fa000000000000000000000000000000000000000000000000000000008152600401611c519392919061287d565b60405180910390fd5b8383038482036000828210611c6f5782611c71565b815b60408051603f8301601f19168101909152818152955090508087602087018a3c505050509392505050565b805b8114611ca957600080fd5b50565b803561071d81611c9c565b60ff8116611c9e565b803561071d81611cb7565b634e487b7160e01b600052604160045260246000fd5b601f19601f830116810181811067ffffffffffffffff82111715611d0757611d07611ccb565b6040525050565b6000611d1960405190565b9050611d258282611ce1565b919050565b600067ffffffffffffffff821115611d4457611d44611ccb565b5060209081020190565b600067ffffffffffffffff821115611d6857611d68611ccb565b601f19601f83011660200192915050565b82818337506000910152565b6000611d98611d9384611d4e565b611d0e565b905082815260208101848484011115611db357611db3600080fd5b610f49848285611d79565b600082601f830112611dd257611dd2600080fd5b8135610639848260208601611d85565b6000611df0611d9384611d2a565b83815290506020808201908402830185811115611e0f57611e0f600080fd5b835b81811015611e4e57803567ffffffffffffffff811115611e3357611e33600080fd5b8501611e3f8882611dbe565b84525060209283019201611e11565b5050509392505050565b600082601f830112611e6c57611e6c600080fd5b8135610639848260208601611de2565b60008060008060808587031215611e9557611e95600080fd5b6000611ea18787611cac565b9450506020611eb287828801611cc0565b935050604085013567ffffffffffffffff811115611ed257611ed2600080fd5b611ede87828801611e58565b9250506060611eef87828801611cac565b91505092959194509250565b60005b83811015611f16578181015183820152602001611efe565b83811115611f25576000848401525b50505050565b6000611f35825190565b808452602084019350611f4c818560208601611efb565b601f01601f19169290920192915050565b6020808252810161071a8184611f2b565b7fffffff00000000000000000000000000000000000000000000000000000000008116611c9e565b803561071d81611f6e565b60008060008060808587031215611fba57611fba600080fd5b6000611fc68787611cac565b9450506020611eb287828801611f96565b60008083601f840112611fec57611fec600080fd5b50813567ffffffffffffffff81111561200757612007600080fd5b60208301915083600182028301111561202257612022600080fd5b9250929050565b6000806020838503121561203f5761203f600080fd5b823567ffffffffffffffff81111561205957612059600080fd5b61206585828601611fd7565b92509250509250929050565b600073ffffffffffffffffffffffffffffffffffffffff821661071d565b61209881612071565b82525050565b6020810161071d828461208f565b7fff000000000000000000000000000000000000000000000000000000000000008116611c9e565b803561071d816120ac565b600080600080608085870312156120f8576120f8600080fd5b60006121048787611cac565b9450506020611eb2878288016120d4565b7fffffffffff0000000000000000000000000000000000000000000000000000008116611c9e565b803561071d81612115565b6000806000806080858703121561216157612161600080fd5b600061216d8787611cac565b9450506020611eb28782880161213d565b6000806040838503121561219457612194600080fd5b823567ffffffffffffffff8111156121ae576121ae600080fd5b6121ba85828601611dbe565b92505060206121cb85828601611cac565b9150509250929050565b611c9e81612071565b803561071d816121d5565b6000602082840312156121fe576121fe600080fd5b600061063984846121de565b600061071a8383611f2b565b6000612220825190565b8084526020840193508360208202850161223a8560200190565b60005b8481101561226e5783830388528151612256848261220a565b9350506020820160209890980197915060010161223d565b50909695505050505050565b6020808252810161071a8184612216565b600080604083850312156122a1576122a1600080fd5b60006121ba85856121de565b6000602082840312156122c2576122c2600080fd5b813567ffffffffffffffff8111156122dc576122dc600080fd5b61063984828501611dbe565b7fffffffffffffff000000000000000000000000000000000000000000000000008116611c9e565b803561071d816122e8565b6000806000806080858703121561233457612334600080fd5b60006123408787611cac565b9450506020611eb287828801612310565b6000806000806080858703121561236a5761236a600080fd5b843567ffffffffffffffff81111561238457612384600080fd5b61239087828801611dbe565b945050602085013567ffffffffffffffff8111156123b0576123b0600080fd5b6123bc87828801611e58565b9350506040611ede87828801611cac565b600080600080608085870312156123e6576123e6600080fd5b60006123f287876121de565b94505060206123bc87828801611cac565b634e487b7160e01b600052601260045260246000fd5b60008261242857612428612403565b500690565b80612098565b6020810161071d828461242d565b600061244f611d9384611d4e565b90508281526020810184848401111561246a5761246a600080fd5b610f49848285611efb565b600082601f83011261248957612489600080fd5b8151610639848260208601612441565b6000602082840312156124ae576124ae600080fd5b815167ffffffffffffffff8111156124c8576124c8600080fd5b61063984828501612475565b634e487b7160e01b600052601160045260246000fd5b6000826124f9576124f9612403565b500490565b634e487b7160e01b600052603260045260246000fd5b600061251e825190565b61252c818560208601611efb565b9290920192915050565b6125408189612514565b905061254c8188612514565b90506125588187612514565b90506125648186612514565b90506125708185612514565b905061257c8184612514565b90506125888183612514565b98975050505050505050565b600082198211156125a7576125a76124d4565b500190565b6125b68186612514565b90506125c28185612514565b90506125ce8184612514565b90506107348183612514565b6125e4818a612514565b90506125f08189612514565b90506125fc8188612514565b90506126088187612514565b90506126148186612514565b90506126208185612514565b905061262c8184612514565b90506126388183612514565b9998505050505050505050565b600081600019048311821515161561265f5761265f6124d4565b500290565b600060ff821661071d565b61209881612664565b60608101612686828661242d565b612693602083018561266f565b610639604083018461266f565b6126aa8185612514565b90506126b68184612514565b90506106398183612514565b6126cc8184612514565b9050610a958183612514565b60006000198214156126ec576126ec6124d4565b5060010190565b604080825281016127048185611f2b565b9050610a95602083018461242d565b62ffffff8116611c9e565b805161071d81612713565b60006020828403121561273e5761273e600080fd5b6000610639848461271e565b64ffffffffff8116611c9e565b805161071d8161274a565b60006020828403121561277757612777600080fd5b60006106398484612757565b66ffffffffffffff8116611c9e565b805161071d81612783565b6000602082840312156127b2576127b2600080fd5b60006106398484612792565b6000828210156127d0576127d06124d4565b500390565b600081525b60010190565b6127e9816127d5565b905061071d8183612514565b7f630000000000000000000000000000000000000000000000000000000000000081526127da565b600061071d8260e01b90565b61209863ffffffff821661281d565b612841816127f5565b905061284d8184612829565b6004016126cc817f80600e6000396000f30000000000000000000000000000000000000000000000815260090190565b6060810161288b828661242d565b612898602083018561242d565b610639604083018461242d56fe253363737667253230786d6c6e733d253237687474703a2f2f7777772e77332e6f72672f323030302f73766725323725323076696577426f783d25323730253230302532303336253230333625323725323077696474683d25323733363070782532372532306865696768743d253237333630707825323725336525323725323077696474683d253237312532372532306865696768743d2532373125323725323066696c6c3d253237253233a26469706673582212208d54a50e991b2f9396cd14a002a49e2c75ac1acc9025365a66a840508bf7b92b64736f6c634300080c0033",
+  "libraries": {
+    "Array": "0xc1694e1FA02247DEB49C9BDA378aFbd0190fC9b2",
+    "Bytes": "0x101FD37102769C7a57d0A1b55DF347C662C14B7d",
+    "Integers": "0xfaE147127d2956b50cD2c331113cbb7DC73B8614"
+  },
+  "devdoc": {
+    "author": "Clement Walter <clement0walter@gmail.com>",
+    "kind": "dev",
+    "methods": {
+      "decode1ByteTo2Pixels(uint256,bytes1,string[],uint256)": {
+        "details": "This function can be used as a base decoding function when using 4 bits per pixel. In this case, one byte is       actually 2 rects.",
+        "params": {
+          "_byte": "The single byte containing 2 palette indexes.",
+          "imageWidth": "Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.",
+          "palette": "The array of decoded colors as hex strings.",
+          "startIndex": "The index of the current pixel in the image flatten array."
+        },
+        "returns": {
+          "_0": "Two filled <rect> with appropriate parameters as a string."
+        }
+      },
+      "decode1ByteTo4Pixels(uint256,bytes1,string[],uint256)": {
+        "details": "This function can be used as a base decoding function when using 2 bits per pixel. In this case, one byte is       actually 4 rects.",
+        "params": {
+          "_byte": "The single byte containing 4 palette indexes.",
+          "imageWidth": "Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.",
+          "palette": "The array of decoded colors as hex strings.",
+          "startIndex": "The index of the current pixel in the image flatten array."
+        },
+        "returns": {
+          "_0": "Four filled <rect> with appropriate parameters as a string."
+        }
+      },
+      "decode1ByteTo8Pixels(uint256,bytes1,string[],uint256)": {
+        "details": "This function can be used as a base decoding function when using 1 bit per pixel. In this case, one byte is       actually eight rects.",
+        "params": {
+          "_byte": "The single byte containing 8 palette indexes.",
+          "imageWidth": "Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.",
+          "palette": "The array of decoded colors as hex strings.",
+          "startIndex": "The index of the current pixel in the image flatten array."
+        },
+        "returns": {
+          "_0": "Eight filled <rect> with appropriate parameters as a string."
+        }
+      },
+      "decode1Pixel(uint256,uint8,string[],uint256)": {
+        "details": "Decode one single pixel, i.e. retrieve the color at the given index and produce a <rect> with appropriate parameters.      This is used as a base function for writing rect and is also relevant for cases where the palette uses 8 bits.",
+        "params": {
+          "imageWidth": "Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.",
+          "palette": "The array of decoded colors as hex strings.",
+          "paletteIndex": "The value of the pixel at the given index, i.e. the index of the color in the palette.",
+          "pixelIndex": "The index of the current pixel in the image flatten array."
+        },
+        "returns": {
+          "_0": "A filled <rect> with appropriate parameters as a string."
+        }
+      },
+      "decode3BytesTo4Pixels(uint256,bytes3,string[],uint256)": {
+        "details": "This function can be used as a base decoding function when using 5 bits per pixel. In this case, one has       indeed 4 * 6 = 24 bits = 8 * 3 = 3 bytes as a minimal bytes array to decode.",
+        "params": {
+          "_bytes": "The bytes5 containing 4 palette indexes.",
+          "imageWidth": "Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.",
+          "palette": "The array of decoded colors as hex strings.",
+          "startIndex": "The index of the current pixel in the image flatten array."
+        },
+        "returns": {
+          "_0": "Four filled <rect> with appropriate parameters as a string."
+        }
+      },
+      "decode3BytesTo8Pixels(uint256,bytes3,string[],uint256)": {
+        "details": "This function can be used as a base decoding function when using 3 bits per pixel. In this case, one has       indeed 3 * 8 = 24 bits = 8 * 3 = 3 bytes as a minimal bytes array to decode.",
+        "params": {
+          "_bytes": "The bytes3 containing 8 palette indexes.",
+          "imageWidth": "Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.",
+          "palette": "The array of decoded colors as hex strings.",
+          "startIndex": "The index of the current pixel in the image flatten array."
+        },
+        "returns": {
+          "_0": "Eight filled <rect> with appropriate parameters as a string."
+        }
+      },
+      "decode5BytesTo8Pixels(uint256,bytes5,string[],uint256)": {
+        "details": "This function can be used as a base decoding function when using 5 bits per pixel. In this case, one has       indeed 5 * 8 = 40 bits = 8 * 5 = 5 bytes as a minimal bytes array to decode.",
+        "params": {
+          "_bytes": "The bytes5 containing 8 palette indexes.",
+          "imageWidth": "Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.",
+          "palette": "The array of decoded colors as hex strings.",
+          "startIndex": "The index of the current pixel in the image flatten array."
+        },
+        "returns": {
+          "_0": "Eight filled <rect> with appropriate parameters as a string."
+        }
+      },
+      "decode7BytesTo8Pixels(uint256,bytes7,string[],uint256)": {
+        "details": "This function can be used as a base decoding function when using 5 bits per pixel. In this case, one has       indeed 7 * 8 = 56 bits = 8 * 7 = 7 bytes as a minimal bytes array to decode.",
+        "params": {
+          "_bytes": "The bytes7 containing 8 palette indexes.",
+          "imageWidth": "Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.",
+          "palette": "The array of decoded colors as hex strings.",
+          "startIndex": "The index of the current pixel in the image flatten array."
+        },
+        "returns": {
+          "_0": "Eight filled <rect> with appropriate parameters as a string."
+        }
+      },
+      "decodeImage(bytes,string[],uint256,uint256)": {
+        "details": "This function can be used to decode a whole rectangular image",
+        "params": {
+          "_image": "The whole image as a flatten bytes array",
+          "bitsPerPixel": "the number of bits used to encode a pixel.",
+          "imageWidth": "Since the image array is flatten, we use the imageWidth to retrieve the x and y coordinates of the rect.",
+          "palette": "The array of decoded colors as hex strings."
+        },
+        "returns": {
+          "_0": "The image part of the final svg image. To be concatenated with SVG_TAG_START and SVG_TAG_END, and         eventually some <style> tags."
+        }
+      },
+      "getFill(address,uint256)": {
+        "details": "Returns one single color reading directly from the storage.",
+        "params": {
+          "index": "The index of the color to retrieve",
+          "pointer": "The pointer to the palette bytes array where each color is R, G, B at storage i, i+1, i+2."
+        },
+        "returns": {
+          "_0": "The hexstring representation of the color, e.g. \"a3120f\"."
+        }
+      },
+      "getFill(bytes,uint256)": {
+        "details": "Returns one single color from a pre-loaded whole palette as a bytes array.",
+        "params": {
+          "index": "The index of the color to retrieve",
+          "palette": "A bytes array encoding several RGB colors. Length should be a multiple of 3."
+        },
+        "returns": {
+          "_0": "The hexstring representation of the color, e.g. \"a3120f\"."
+        }
+      },
+      "getImageBytes(address,uint256,uint256,uint256)": {
+        "details": "All images have a constant number of pixels and consequently a constant number of bytes.       The function reads the corresponding number of bytes at the given _pointer_ address (written with SSTORE2.write).       It is more efficient to concat all the bytes of all the images in one single bytes (<24k) to save on gas       This function eventually helps retrieve one image given its index from the bytes array.",
+        "params": {
+          "bitsPaletteSize": "The number of bits used to index the palette, e.g. 3 bits for 2^3 = 8 colors, 8 bits for 2^8 = 256 colors.",
+          "index": "The index of the image to retrieve.",
+          "pixelsCount": "The number of pixels of the image, e.g. 32x32 = 1024 pixels. This function hence reads pixelsCount * bitsPaletteSize / 8 bytes.",
+          "pointer": "The pointer returned by the SSTORE2.write function (or storeBytes for instance)."
+        },
+        "returns": {
+          "_0": "The bytes of the image."
+        }
+      },
+      "getPalette(address)": {
+        "details": "Decode the whole palette once for all and returns an array of hexstrings.",
+        "params": {
+          "pointer": "The pointer to the palette bytes array where each color is at storage at i, i+1, i+2."
+        },
+        "returns": {
+          "_0": "An array of hexstring representation of the color, e.g. \"a3120f\"."
+        }
+      }
+    },
+    "title": "PaletteRenderer This library can be used to render a palette encoded image on-chain. Palette encoding means that each pixel does not store the color itself, but rather the index of the color in the palette. The returned images is an url safe encoded image uri.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
