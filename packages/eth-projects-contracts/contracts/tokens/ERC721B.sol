@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 
-import {Bytes} from "../lib/Bytes.sol";
+import {Bytes} from "../lib/utils/Bytes.sol";
 
 /**
  * @title ERC-721 Non-Fungible Token optimized for batch minting
@@ -55,7 +55,7 @@ contract ERC721B is IERC721, IERC721Metadata, Context, ERC165 {
         return _symbol;
     }
 
-    function tokenURI(uint256 tokenId)
+    function tokenURI(uint256)
         public
         view
         virtual

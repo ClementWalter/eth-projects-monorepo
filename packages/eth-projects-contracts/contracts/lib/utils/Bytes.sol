@@ -87,199 +87,280 @@ library Bytes {
     function toAddress(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (address)
+        returns (address tmp)
     {
         require(_bytes.length >= _start + 20, "toAddress_outOfBounds");
-        address tempAddress;
 
         assembly {
-            tempAddress := div(
+            tmp := div(
                 mload(add(add(_bytes, 0x20), _start)),
                 0x1000000000000000000000000
             )
         }
-
-        return tempAddress;
     }
 
     function toUint8(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint8)
+        returns (uint8 tmp)
     {
         require(_bytes.length >= _start + 1, "toUint8_outOfBounds");
-        uint8 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x1), _start))
+            tmp := mload(add(add(_bytes, 0x1), _start))
         }
+    }
 
-        return tempUint;
+    function toBytes1(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (bytes1 tmp)
+    {
+        require(_bytes.length >= _start + 1, "toBytes1_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0x1), _start))
+        }
     }
 
     function toUint16(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint16)
+        returns (uint16 tmp)
     {
         require(_bytes.length >= _start + 2, "toUint16_outOfBounds");
-        uint16 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x2), _start))
+            tmp := mload(add(add(_bytes, 0x2), _start))
         }
+    }
 
-        return tempUint;
+    function toBytes2(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (bytes2 tmp)
+    {
+        require(_bytes.length >= _start + 2, "toBytes2_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0x2), _start))
+        }
     }
 
     function toUint24(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint24)
+        returns (uint24 tmp)
     {
         require(_bytes.length >= _start + 3, "toUint24_outOfBounds");
-        uint16 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x3), _start))
+            tmp := mload(add(add(_bytes, 0x3), _start))
         }
+    }
 
-        return tempUint;
+    function toBytes3(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (bytes3 tmp)
+    {
+        require(_bytes.length >= _start + 3, "toBytes3_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0x3), _start))
+        }
     }
 
     function toUint32(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint32)
+        returns (uint32 tmp)
     {
         require(_bytes.length >= _start + 4, "toUint32_outOfBounds");
-        uint32 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x4), _start))
+            tmp := mload(add(add(_bytes, 0x4), _start))
         }
+    }
 
-        return tempUint;
+    function toBytes4(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (bytes4 tmp)
+    {
+        require(_bytes.length >= _start + 4, "toBytes4_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0x4), _start))
+        }
     }
 
     function toUint40(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint40)
+        returns (uint40 tmp)
     {
         require(_bytes.length >= _start + 5, "toUint40_outOfBounds");
-        uint32 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x5), _start))
+            tmp := mload(add(add(_bytes, 0x5), _start))
         }
+    }
 
-        return tempUint;
+    function toBytes5(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (bytes5 tmp)
+    {
+        require(_bytes.length >= _start + 5, "toBytes5_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0x5), _start))
+        }
     }
 
     function toUint48(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint48)
+        returns (uint48 tmp)
     {
         require(_bytes.length >= _start + 6, "toUint48_outOfBounds");
-        uint32 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x6), _start))
+            tmp := mload(add(add(_bytes, 0x6), _start))
         }
+    }
 
-        return tempUint;
+    function toBytes6(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (bytes6 tmp)
+    {
+        require(_bytes.length >= _start + 6, "toBytes6_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0x6), _start))
+        }
     }
 
     function toUint56(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint56)
+        returns (uint56 tmp)
     {
         require(_bytes.length >= _start + 7, "toUint56_outOfBounds");
-        uint32 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x7), _start))
+            tmp := mload(add(add(_bytes, 0x7), _start))
         }
+    }
 
-        return tempUint;
+    function toByes7(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (bytes7 tmp)
+    {
+        require(_bytes.length >= _start + 7, "toBytes7_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0x7), _start))
+        }
     }
 
     function toUint64(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint64)
+        returns (uint64 tmp)
     {
         require(_bytes.length >= _start + 8, "toUint64_outOfBounds");
-        uint64 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x8), _start))
+            tmp := mload(add(add(_bytes, 0x8), _start))
         }
+    }
 
-        return tempUint;
+    function toBytes8(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (uint64 tmp)
+    {
+        require(_bytes.length >= _start + 8, "toBytes8_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0x8), _start))
+        }
     }
 
     function toUint96(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint96)
+        returns (uint96 tmp)
     {
         require(_bytes.length >= _start + 12, "toUint96_outOfBounds");
-        uint96 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0xc), _start))
+            tmp := mload(add(add(_bytes, 0xc), _start))
         }
+    }
 
-        return tempUint;
+    function toBytes12(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (bytes12 tmp)
+    {
+        require(_bytes.length >= _start + 12, "toBytes12_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0xc), _start))
+        }
     }
 
     function toUint128(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint128)
+        returns (uint128 tmp)
     {
         require(_bytes.length >= _start + 16, "toUint128_outOfBounds");
-        uint128 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x10), _start))
+            tmp := mload(add(add(_bytes, 0x10), _start))
         }
+    }
 
-        return tempUint;
+    function toBytes16(bytes memory _bytes, uint256 _start)
+        public
+        pure
+        returns (bytes12 tmp)
+    {
+        require(_bytes.length >= _start + 16, "toBytes16_outOfBounds");
+
+        assembly {
+            tmp := mload(add(add(_bytes, 0x10), _start))
+        }
     }
 
     function toUint256(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (uint256)
+        returns (uint256 tmp)
     {
         require(_bytes.length >= _start + 32, "toUint256_outOfBounds");
-        uint256 tempUint;
 
         assembly {
-            tempUint := mload(add(add(_bytes, 0x20), _start))
+            tmp := mload(add(add(_bytes, 0x20), _start))
         }
-
-        return tempUint;
     }
 
     function toBytes32(bytes memory _bytes, uint256 _start)
         public
         pure
-        returns (bytes32)
+        returns (bytes32 tmp)
     {
         require(_bytes.length >= _start + 32, "toBytes32_outOfBounds");
-        bytes32 tempBytes32;
 
         assembly {
-            tempBytes32 := mload(add(add(_bytes, 0x20), _start))
+            tmp := mload(add(add(_bytes, 0x20), _start))
         }
-
-        return tempBytes32;
     }
 
     function equal(bytes memory _preBytes, bytes memory _postBytes)

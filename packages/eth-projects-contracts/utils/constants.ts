@@ -38,7 +38,9 @@ export const loadPalettesEncoded = (): PalettesStorage => {
 // Deploy constants
 export const TAGS = {
   INTEGERS: "Integers",
+  RENDERER_COMMONS: "RendererCommons",
   PALETTE_RENDERER: "PaletteRenderer",
+  RECT_RENDERER: "RectRenderer",
   ARRAY: "Array",
   BYTES: "Bytes",
 };

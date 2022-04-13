@@ -71,40 +71,4 @@ library Integers {
     {
         return toString(_number, _base, 0);
     }
-
-    /**
-     * Load 16
-     *
-     * Converts two bytes to a 16 bit unsigned integer
-     *
-     * @param _leadingBytes the first byte of the unsigned integer in [256, 65536]
-     * @param _endingBytes the second byte of the unsigned integer in [0, 255]
-     * @return uint16 The resulting integer value
-     */
-    function load16(bytes1 _leadingBytes, bytes1 _endingBytes)
-        public
-        pure
-        returns (uint16)
-    {
-        return
-            (uint16(uint8(_leadingBytes)) << 8) + uint16(uint8(_endingBytes));
-    }
-
-    /**
-     * Load 12
-     *
-     * Converts three bytes into two uint12 integers
-     *
-     * @return (uint16, uint16) The two uint16 values up to 2^12 each
-     */
-    function load12x2(
-        bytes1 first,
-        bytes1 second,
-        bytes1 third
-    ) public pure returns (uint16, uint16) {
-        return (
-            (uint16(uint8(first)) << 4) + (uint16(uint8(second)) >> 4),
-            (uint16(uint8(second & hex"0f")) << 8) + uint16(uint8(third))
-        );
-    }
 }

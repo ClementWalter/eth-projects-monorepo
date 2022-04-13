@@ -1,5 +1,11 @@
 // SPDX-License-Identifier: MIT
 
+/*
+ * @title Arrays Utils
+ * @author Clement Walter <clement0walter@gmail.com>
+ *
+ * @notice An attempt at implementing some of the widely used javascript's Array functions in solidity.
+ */
 pragma solidity ^0.8.12;
 
 library Array {
@@ -22,7 +28,7 @@ library Array {
             // Initialize the length of the final string
             let stringLength := 0
 
-            // Iterate over all strings (a string is itself an array in solidity).
+            // Iterate over all strings (a string is itself an array).
             for {
                 let pointer := inputData
             } lt(pointer, end) {

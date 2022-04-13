@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 import {ERC721B} from "./ERC721B.sol";
 import {IERC721Enumerable} from "@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol";
 import {IERC165} from "@openzeppelin/contracts/utils/introspection/IERC165.sol";
-import {Bytes} from "../lib/Bytes.sol";
+import {Bytes} from "../lib/utils/Bytes.sol";
 
 /**
  * @title ERC-721 Non-Fungible Token optimized for batch minting with enumerable interface
