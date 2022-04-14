@@ -21,7 +21,7 @@ const setup = async () => {
 
 describe("Array", function () {
   describe("join", async function () {
-    describe("join(string[])", async function () {
+    describe.only("join(string[])", async function () {
       [...Array(100).keys()].forEach((stringCount) => {
         [...Array(100).keys()].forEach((stringLength) => {
           it(`should return the correct string for ${
@@ -44,7 +44,7 @@ describe("Array", function () {
         key: `join(bytes${l}[])`,
       }))
       .forEach((type) => {
-        describe.only(`bytes${type.length}[]`, function () {
+        describe(`bytes${type.length}[]`, function () {
           [...Array(100).keys()].forEach((length) => {
             it(`should return the correct bytes for bytes${type.length}[${
               length + 1

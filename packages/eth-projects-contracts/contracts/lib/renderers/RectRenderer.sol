@@ -9,6 +9,7 @@ import {Bytes} from "../utils/Bytes.sol";
 import {Array} from "../utils/Array.sol";
 
 error InvalidLength(uint256 length);
+error CoordinatesOutOfRange(uint256 coordinate);
 
 /**  @title RectRenderer
  *
@@ -17,17 +18,13 @@ error InvalidLength(uint256 length);
  *
  * @author Clement Walter <clement0walter@gmail.com>
  */
-library RectRenderer {
+contract RectRenderer {
     using Integers for uint8;
     using Integers for uint32;
     using Integers for uint256;
     using Bytes for bytes;
     using Array for string[];
-
-    // We have a total of 4 * 6 = 24 bits = 3 bytes for coordinates + 1 byte for the color
-    // Hence each rect is 4 bytes
-    uint8 public constant BITS_PER_COORDINATES = 6;
-    uint8 public constant BITS_PER_FILL_INDEX = 8;
+    using Array for bytes4[];
 
     string public constant RECT_TAG_START = "%3crect%20x=%27";
     string public constant Y_TAG = "%27%20y=%27";
