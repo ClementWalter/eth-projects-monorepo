@@ -21,7 +21,7 @@ const setup = async () => {
 
 describe("Array", function () {
   describe("join", async function () {
-    describe.only("join(string[])", async function () {
+    describe("join(string[])", async function () {
       [...Array(100).keys()].forEach((stringCount) => {
         [...Array(100).keys()].forEach((stringLength) => {
           it(`should return the correct string for ${
@@ -38,7 +38,7 @@ describe("Array", function () {
       });
     });
 
-    [1, 2, 3, 4, 8, 16, 32]
+    [2, 3, 4, 8, 16, 32]
       .map((l) => ({
         length: l,
         key: `join(bytes${l}[])`,
@@ -59,6 +59,33 @@ describe("Array", function () {
                 inputArray.map((b) => "0x" + b)
               );
               expect(result).to.equal("0x" + inputArray.join(""));
+            });
+          });
+        });
+      });
+
+    [16]
+      .map((l) => ({
+        length: l,
+        key: `join(uint${l}[])`,
+      }))
+      .forEach((type) => {
+        describe.only(`uint${type.length}[]`, function () {
+          [...Array(100).keys()].forEach((length) => {
+            it(`should return the correct bytes for uint${type.length}[${
+              length + 1
+            }]`, async function () {
+              const { ArraySol } = await setup();
+              const inputArray = [...Array(length + 1).keys()];
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              const result = await ArraySol[type.key](inputArray);
+              expect(result).to.equal(
+                "0x" +
+                  inputArray
+                    .map((i) => i.toString(16).padStart(4, "0"))
+                    .join("")
+              );
             });
           });
         });

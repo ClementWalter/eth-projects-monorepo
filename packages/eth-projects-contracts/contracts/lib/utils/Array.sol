@@ -29,98 +29,80 @@ library Array {
         return _joinReferenceType(pointer);
     }
 
-    function join(bytes1[] memory a) public pure returns (bytes memory) {
-        uint256 inputLength = a.length;
-        if (inputLength == 0) revert EmptyArray();
-        uint256 typeLength = a[0].length;
+    function join(bytes2[] memory a) public pure returns (bytes memory) {
+        uint256 pointer;
 
-        uint256 inputData;
         assembly {
-            inputData := add(a, 0x20)
+            pointer := a
         }
-        return _joinValueType(typeLength, inputLength, inputData);
+        return _joinValueType(pointer, 2, 0);
     }
 
-    function join(bytes2[] memory a) public pure returns (bytes memory) {
-        uint256 inputLength = a.length;
-        if (inputLength == 0) revert EmptyArray();
-        uint256 typeLength = a[0].length;
+    /// @dev Join the underlying array of bytes2 to a string.
+    function join(uint16[] memory a) public pure returns (bytes memory) {
+        uint256 pointer;
 
-        uint256 inputData;
         assembly {
-            inputData := add(a, 0x20)
+            pointer := a
         }
-        return _joinValueType(typeLength, inputLength, inputData);
+        return _joinValueType(pointer, 2, 256 - 16);
     }
 
     function join(bytes3[] memory a) public pure returns (bytes memory) {
-        uint256 inputLength = a.length;
-        if (inputLength == 0) revert EmptyArray();
-        uint256 typeLength = a[0].length;
+        uint256 pointer;
 
-        uint256 inputData;
         assembly {
-            inputData := add(a, 0x20)
+            pointer := a
         }
-        return _joinValueType(typeLength, inputLength, inputData);
+        return _joinValueType(pointer, 3, 0);
     }
 
     function join(bytes4[] memory a) public pure returns (bytes memory) {
-        uint256 inputLength = a.length;
-        if (inputLength == 0) revert EmptyArray();
-        uint256 typeLength = a[0].length;
+        uint256 pointer;
 
-        uint256 inputData;
         assembly {
-            inputData := add(a, 0x20)
+            pointer := a
         }
-        return _joinValueType(typeLength, inputLength, inputData);
+        return _joinValueType(pointer, 4, 0);
     }
 
     function join(bytes8[] memory a) public pure returns (bytes memory) {
-        uint256 inputLength = a.length;
-        if (inputLength == 0) revert EmptyArray();
-        uint256 typeLength = a[0].length;
+        uint256 pointer;
 
-        uint256 inputData;
         assembly {
-            inputData := add(a, 0x20)
+            pointer := a
         }
-        return _joinValueType(typeLength, inputLength, inputData);
+        return _joinValueType(pointer, 8, 0);
     }
 
     function join(bytes16[] memory a) public pure returns (bytes memory) {
-        uint256 inputLength = a.length;
-        if (inputLength == 0) revert EmptyArray();
-        uint256 typeLength = a[0].length;
+        uint256 pointer;
 
-        uint256 inputData;
         assembly {
-            inputData := add(a, 0x20)
+            pointer := a
         }
-        return _joinValueType(typeLength, inputLength, inputData);
+        return _joinValueType(pointer, 16, 0);
     }
 
     function join(bytes32[] memory a) public pure returns (bytes memory) {
-        uint256 inputLength = a.length;
-        if (inputLength == 0) revert EmptyArray();
-        uint256 typeLength = a[0].length;
+        uint256 pointer;
 
-        uint256 inputData;
         assembly {
-            inputData := add(a, 0x20)
+            pointer := a
         }
-        return _joinValueType(typeLength, inputLength, inputData);
+        return _joinValueType(pointer, 32, 0);
     }
 
     function _joinValueType(
+        uint256 a,
         uint256 typeLength,
-        uint256 inputLength,
-        uint256 inputData
+        uint256 shiftLeft
     ) private pure returns (bytes memory) {
         bytes memory tempBytes;
 
         assembly {
+            let inputLength := mload(a)
+            let inputData := add(a, 0x20)
             let end := add(inputData, mul(inputLength, 0x20))
 
             // Get a location of some free memory and store it in tempBytes as
@@ -137,7 +119,8 @@ library Array {
             } lt(pointer, end) {
                 pointer := add(pointer, 0x20)
             } {
-                mstore(memoryPointer, mload(pointer))
+                let currentSlot := shl(shiftLeft, mload(pointer))
+                mstore(memoryPointer, currentSlot)
                 memoryPointer := add(memoryPointer, typeLength)
             }
 
