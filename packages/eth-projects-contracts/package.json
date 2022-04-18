@@ -1,6 +1,6 @@
 {
   "name": "@clemlaflemme.eth/contracts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Misc. contracts and libs for eth projects",
   "author": "Clement Walter",
   "license": "MIT",
@@ -8,7 +8,9 @@
     "/contracts/**/*.sol",
     "!/contracts/test_utils/**/*",
     "/artifacts/contracts/*.json",
-    "/utils/**/*.ts"
+    "/utils/**/*.ts",
+    "/deploy/**/*.ts",
+    "/tasks/**/*.ts"
   ],
   "publishConfig": {
     "access": "public"
