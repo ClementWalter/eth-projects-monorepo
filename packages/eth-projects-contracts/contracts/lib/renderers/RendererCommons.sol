@@ -12,7 +12,7 @@ import {Integers} from "../utils/Integers.sol";
  *
  * @author Clement Walter <clement0walter@gmail.com>
  */
-library RendererCommons {
+contract RendererCommons {
     using Integers for uint256;
     using Integers for uint8;
 
@@ -25,13 +25,17 @@ library RendererCommons {
     string public constant TAG_START = "%3c";
     string public constant TAG_END = "/%3e";
 
+    event BytesStored(address pointer);
+
     /* @dev This can be used to store both images bytes and palettes bytes. It uses the SSTORE2 lib and returns the
      *      pointer to the storage address to be used, for example, in getImageBytes and getFill.
      * @param bytes The bytes to store.
      * @return The pointer to the storage address.
      */
     function storeBytes(bytes calldata _bytes) external returns (address) {
-        return SSTORE2.write(_bytes);
+        address pointer = SSTORE2.write(_bytes);
+        emit BytesStored(pointer);
+        return pointer;
     }
 
     /** @dev Returns one single color reading directly from the storage.

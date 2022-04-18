@@ -135,6 +135,10 @@ library Bytes {
         }
     }
 
+    function toUint16(bytes memory _bytes) public pure returns (uint16 tmp) {
+        return toUint16(_bytes, 0);
+    }
+
     function toBytes2(bytes memory _bytes, uint256 _start)
         public
         pure

@@ -3,22 +3,20 @@ export type Rect = {
   y: number;
   width: number;
   height: number;
-  fill: number;
+  fillIndex: number;
 };
 
-export type Trait = Rect[];
-
-export type Palettes = {
-  fill: string[];
-  trait: Record<string, Rect[]>;
-  layer: string[];
-  layerIndexes: number[];
-  item: string[];
+export type Trait = {
+  rects: Rect[];
+  name: string;
 };
 
-export type PalettesStorage = {
-  fillBytes: string;
-  traitBytes: string;
-  traitBytesIndexes: string;
-  layerIndexes: string;
+export type Characteristic = {
+  traits: Trait[];
+  name: string;
+};
+
+export type Collection = {
+  characteristics: Characteristic[];
+  description: string;
 };

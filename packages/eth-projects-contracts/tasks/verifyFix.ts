@@ -13,7 +13,6 @@ task(
       });
     } catch (e) {
       console.log(e);
-      console.log("Contract already verified");
     }
   }
 });
