@@ -1,6 +1,6 @@
 {
   "name": "@clemlaflemme.eth/contracts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Misc. contracts and libs for eth projects",
   "author": "Clement Walter",
   "license": "MIT",
