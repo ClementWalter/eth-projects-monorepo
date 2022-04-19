@@ -64,10 +64,6 @@ const config: HardhatUserConfig = {
     hardhat: {
       tags: ["local"],
       blockGasLimit: 10 * 50_000_000, // Geth new default is 50M, increased here for tests
-      accounts: {
-        count: 501,
-        ...accounts(),
-      },
     },
     localhost: {
       tags: ["local"],

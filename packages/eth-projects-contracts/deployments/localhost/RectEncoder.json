@@ -1,0 +1,401 @@
+{
+  "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "coordinate",
+          "type": "uint256"
+        }
+      ],
+      "name": "CoordinatesOutOfRange",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "uint32",
+                      "name": "x",
+                      "type": "uint32"
+                    },
+                    {
+                      "internalType": "uint32",
+                      "name": "y",
+                      "type": "uint32"
+                    },
+                    {
+                      "internalType": "uint32",
+                      "name": "width",
+                      "type": "uint32"
+                    },
+                    {
+                      "internalType": "uint32",
+                      "name": "height",
+                      "type": "uint32"
+                    },
+                    {
+                      "internalType": "uint32",
+                      "name": "fillIndex",
+                      "type": "uint32"
+                    }
+                  ],
+                  "internalType": "struct Rect[]",
+                  "name": "rects",
+                  "type": "tuple[]"
+                },
+                {
+                  "internalType": "string",
+                  "name": "name",
+                  "type": "string"
+                }
+              ],
+              "internalType": "struct Trait[]",
+              "name": "traits",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct Characteristic",
+          "name": "characteristic",
+          "type": "tuple"
+        }
+      ],
+      "name": "encodeCharacteristic",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "traits",
+              "type": "bytes"
+            },
+            {
+              "internalType": "string[]",
+              "name": "names",
+              "type": "string[]"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct CharacteristicEncoded",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint32",
+                          "name": "x",
+                          "type": "uint32"
+                        },
+                        {
+                          "internalType": "uint32",
+                          "name": "y",
+                          "type": "uint32"
+                        },
+                        {
+                          "internalType": "uint32",
+                          "name": "width",
+                          "type": "uint32"
+                        },
+                        {
+                          "internalType": "uint32",
+                          "name": "height",
+                          "type": "uint32"
+                        },
+                        {
+                          "internalType": "uint32",
+                          "name": "fillIndex",
+                          "type": "uint32"
+                        }
+                      ],
+                      "internalType": "struct Rect[]",
+                      "name": "rects",
+                      "type": "tuple[]"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "name",
+                      "type": "string"
+                    }
+                  ],
+                  "internalType": "struct Trait[]",
+                  "name": "traits",
+                  "type": "tuple[]"
+                },
+                {
+                  "internalType": "string",
+                  "name": "name",
+                  "type": "string"
+                }
+              ],
+              "internalType": "struct Characteristic[]",
+              "name": "characteristics",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "string",
+              "name": "description",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct Collection",
+          "name": "collection",
+          "type": "tuple"
+        }
+      ],
+      "name": "encodeCollection",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "traits",
+              "type": "bytes"
+            },
+            {
+              "internalType": "string[][]",
+              "name": "traitNames",
+              "type": "string[][]"
+            },
+            {
+              "internalType": "string[]",
+              "name": "characteristicNames",
+              "type": "string[]"
+            },
+            {
+              "internalType": "string",
+              "name": "description",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct CollectionEncoded",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint32",
+              "name": "x",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "y",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "width",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "height",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "fillIndex",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct Rect",
+          "name": "rect",
+          "type": "tuple"
+        }
+      ],
+      "name": "encodeRect",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "x",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "y",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "width",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "height",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "fillIndex",
+                  "type": "uint32"
+                }
+              ],
+              "internalType": "struct Rect[]",
+              "name": "rects",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct Trait",
+          "name": "trait",
+          "type": "tuple"
+        }
+      ],
+      "name": "encodeTrait",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "rects",
+              "type": "bytes"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct TraitEncoded",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xa7aa6334c9f7a8c435e0f908d8fd0ab35f65591f6fe371df783626cd70e6335a",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+    "transactionIndex": 0,
+    "gasUsed": "1326595",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x485026baa18755f1b22f85fc279c0a5ba10d47f8ffe80913f95d587099bc8c97",
+    "transactionHash": "0xa7aa6334c9f7a8c435e0f908d8fd0ab35f65591f6fe371df783626cd70e6335a",
+    "logs": [],
+    "blockNumber": 4,
+    "cumulativeGasUsed": "1326595",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "76161a4d293fda067ec40d2b20404a49",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"coordinate\",\"type\":\"uint256\"}],\"name\":\"CoordinatesOutOfRange\",\"type\":\"error\"},{\"inputs\":[{\"components\":[{\"components\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"x\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"y\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"width\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"height\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"fillIndex\",\"type\":\"uint32\"}],\"internalType\":\"struct Rect[]\",\"name\":\"rects\",\"type\":\"tuple[]\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"internalType\":\"struct Trait[]\",\"name\":\"traits\",\"type\":\"tuple[]\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"internalType\":\"struct Characteristic\",\"name\":\"characteristic\",\"type\":\"tuple\"}],\"name\":\"encodeCharacteristic\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes\",\"name\":\"traits\",\"type\":\"bytes\"},{\"internalType\":\"string[]\",\"name\":\"names\",\"type\":\"string[]\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"internalType\":\"struct CharacteristicEncoded\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"components\":[{\"components\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"x\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"y\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"width\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"height\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"fillIndex\",\"type\":\"uint32\"}],\"internalType\":\"struct Rect[]\",\"name\":\"rects\",\"type\":\"tuple[]\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"internalType\":\"struct Trait[]\",\"name\":\"traits\",\"type\":\"tuple[]\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"internalType\":\"struct Characteristic[]\",\"name\":\"characteristics\",\"type\":\"tuple[]\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"}],\"internalType\":\"struct Collection\",\"name\":\"collection\",\"type\":\"tuple\"}],\"name\":\"encodeCollection\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes\",\"name\":\"traits\",\"type\":\"bytes\"},{\"internalType\":\"string[][]\",\"name\":\"traitNames\",\"type\":\"string[][]\"},{\"internalType\":\"string[]\",\"name\":\"characteristicNames\",\"type\":\"string[]\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"}],\"internalType\":\"struct CollectionEncoded\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"x\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"y\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"width\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"height\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"fillIndex\",\"type\":\"uint32\"}],\"internalType\":\"struct Rect\",\"name\":\"rect\",\"type\":\"tuple\"}],\"name\":\"encodeRect\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"x\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"y\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"width\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"height\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"fillIndex\",\"type\":\"uint32\"}],\"internalType\":\"struct Rect[]\",\"name\":\"rects\",\"type\":\"tuple[]\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"internalType\":\"struct Trait\",\"name\":\"trait\",\"type\":\"tuple\"}],\"name\":\"encodeTrait\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes\",\"name\":\"rects\",\"type\":\"bytes\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"internalType\":\"struct TraitEncoded\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Clement Walter <clement0walter@gmail.com>\",\"kind\":\"dev\",\"methods\":{\"encodeCharacteristic((((uint32,uint32,uint32,uint32,uint32)[],string)[],string))\":{\"details\":\"Use this function to encode a characteristic, i.e. a list of traits belongings to the same group. Note that       there is no intrinsic difference between a characteristic and a whole collection (all the traits of all the       characteristics) but it's how it's used and expected today so we keep the wording here.       Use this off-chain and push the result using RendererCommon.storeBytes\",\"params\":{\"characteristic\":\"The list of Trait constituting the characteristic.\"},\"returns\":{\"_0\":\"The encoded characteristic (mainly a bytes memory whose encoding somehow follows solidity memory storage rules.)\"}},\"encodeCollection(((((uint32,uint32,uint32,uint32,uint32)[],string)[],string)[],string))\":{\"details\":\"Use this function to encode a full collection, i.e. a list of characteristics.       Use this off-chain and push the result using RendererCommon.storeBytes\",\"params\":{\"collection\":\"The list of Characteristic constituting the collection. The description is just returned in the        new object and can be used to store the description of the collection.\"},\"returns\":{\"_0\":\"The encoded collection (mainly a bytes memory whose encoding somehow follows solidity memory storage rules.)\"}},\"encodeRect((uint32,uint32,uint32,uint32,uint32))\":{\"details\":\"Use this function to encode a single <rect> as expected by the renderer. Use this off-chain!\",\"params\":{\"rect\":\"The <rect> to encode\"},\"returns\":{\"_0\":\"The encoded rectangle as a bytes4\"}},\"encodeTrait(((uint32,uint32,uint32,uint32,uint32)[],string))\":{\"details\":\"Use this function to encode a _trait_, i.e. a list of <rect>s with a name, as expected by the renderer.       Use this off-chain!\",\"params\":{\"trait\":\"The list of <rect>s to encode with a given name; should be shorter than 32 char.\"},\"returns\":{\"_0\":\"The encoded list of rectangle\"}}},\"title\":\"RectEncoder   This library can be used (off-chain !) to encode a collection to be deployed and render on-chain images with the   RectRenderer.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/lib/renderers/RectEncoder.sol\":\"RectEncoder\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"details\":{\"constantOptimizer\":true,\"cse\":true,\"deduplicate\":true,\"inliner\":true,\"jumpdestRemover\":true,\"orderLiterals\":true,\"peephole\":true,\"yul\":true,\"yulDetails\":{\"optimizerSteps\":\"dhfoDgvulfnTUtnIf\",\"stackAllocation\":true}},\"runs\":2000},\"remappings\":[]},\"sources\":{\"contracts/lib/renderers/RectEncoder.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.12;\\n\\nimport {Array} from \\\"../utils/Array.sol\\\";\\n\\nerror CoordinatesOutOfRange(uint256 coordinate);\\n\\nstruct Rect {\\n    uint32 x;\\n    uint32 y;\\n    uint32 width;\\n    uint32 height;\\n    uint32 fillIndex;\\n}\\n\\nstruct Trait {\\n    Rect[] rects;\\n    string name;\\n}\\n\\nstruct TraitEncoded {\\n    bytes rects;\\n    string name;\\n}\\n\\nstruct Characteristic {\\n    Trait[] traits;\\n    string name;\\n}\\n\\nstruct CharacteristicEncoded {\\n    bytes traits;\\n    string[] names;\\n    string name;\\n}\\n\\nstruct Collection {\\n    Characteristic[] characteristics;\\n    string description;\\n}\\n\\nstruct CollectionEncoded {\\n    bytes traits;\\n    string[][] traitNames;\\n    string[] characteristicNames;\\n    string description;\\n}\\n\\n/**  @title RectEncoder\\n *\\n *   This library can be used (off-chain !) to encode a collection to be deployed and render on-chain images with the\\n *   RectRenderer.\\n *\\n * @author Clement Walter <clement0walter@gmail.com>\\n */\\ncontract RectEncoder {\\n    using Array for string[];\\n    using Array for bytes[];\\n    using Array for uint16[];\\n    using Array for bytes4[];\\n\\n    /** @dev Use this function to encode a single <rect> as expected by the renderer. Use this off-chain!\\n     *\\n     * @param rect The <rect> to encode\\n     * @return The encoded rectangle as a bytes4\\n     */\\n    function encodeRect(Rect memory rect) public pure returns (bytes4) {\\n        // each coordinates should use only 6 bits and is consequently stored like 00nnnnnn\\n        if (rect.x > 63) revert CoordinatesOutOfRange(rect.x);\\n        if (rect.y > 63) revert CoordinatesOutOfRange(rect.y);\\n        if (rect.width > 63) revert CoordinatesOutOfRange(rect.width);\\n        if (rect.height > 63) revert CoordinatesOutOfRange(rect.height);\\n        return\\n            bytes4(rect.x << 26) |\\n            bytes4(rect.y << 20) |\\n            bytes4(rect.width << 14) |\\n            bytes4(rect.height << 8) |\\n            bytes4(rect.fillIndex);\\n    }\\n\\n    /** @dev Use this function to encode a _trait_, i.e. a list of <rect>s with a name, as expected by the renderer.\\n     *       Use this off-chain!\\n     *\\n     * @param trait The list of <rect>s to encode with a given name; should be shorter than 32 char.\\n     * @return The encoded list of rectangle\\n     */\\n    function encodeTrait(Trait memory trait)\\n        public\\n        pure\\n        returns (TraitEncoded memory)\\n    {\\n        bytes4[] memory rects = new bytes4[](trait.rects.length);\\n        for (uint256 i = 0; i < trait.rects.length; i++) {\\n            rects[i] = encodeRect(trait.rects[i]);\\n        }\\n        return TraitEncoded(rects.join(), trait.name);\\n    }\\n\\n    /** @dev Use this function to encode a characteristic, i.e. a list of traits belongings to the same group. Note that\\n     *       there is no intrinsic difference between a characteristic and a whole collection (all the traits of all the\\n     *       characteristics) but it's how it's used and expected today so we keep the wording here.\\n     *       Use this off-chain and push the result using RendererCommon.storeBytes\\n     *  @param characteristic The list of Trait constituting the characteristic.\\n     *  @return The encoded characteristic (mainly a bytes memory whose encoding somehow follows solidity memory storage rules.)\\n     */\\n    function encodeCharacteristic(Characteristic memory characteristic)\\n        public\\n        pure\\n        returns (CharacteristicEncoded memory)\\n    {\\n        bytes[] memory rects = new bytes[](characteristic.traits.length);\\n        string[] memory names = new string[](characteristic.traits.length);\\n        uint16[] memory lengths = new uint16[](\\n            characteristic.traits.length + 1\\n        );\\n        uint16 cumSum = 4 +\\n            2 *\\n            uint16(characteristic.traits.length % type(uint16).max); // 2 extra bytes for storing start & end for each trait\\n        for (uint256 i = 0; i < characteristic.traits.length; i++) {\\n            TraitEncoded memory tmp = encodeTrait(characteristic.traits[i]);\\n            rects[i] = tmp.rects;\\n            names[i] = tmp.name;\\n            lengths[i] = cumSum;\\n            cumSum += uint16(rects[i].length % type(uint16).max);\\n        }\\n        lengths[characteristic.traits.length] = cumSum;\\n        return (\\n            CharacteristicEncoded(\\n                bytes.concat(\\n                    bytes2(\\n                        uint16(\\n                            (characteristic.traits.length + 1) %\\n                                type(uint16).max\\n                        )\\n                    ),\\n                    lengths.join(),\\n                    rects.join()\\n                ),\\n                names,\\n                characteristic.name\\n            )\\n        );\\n    }\\n\\n    /** @dev Use this function to encode a full collection, i.e. a list of characteristics.\\n     *       Use this off-chain and push the result using RendererCommon.storeBytes\\n     *\\n     * @param collection The list of Characteristic constituting the collection. The description is just returned in the\\n     *        new object and can be used to store the description of the collection.\\n     * @return The encoded collection (mainly a bytes memory whose encoding somehow follows solidity memory storage rules.)\\n     */\\n    function encodeCollection(Collection memory collection)\\n        public\\n        pure\\n        returns (CollectionEncoded memory)\\n    {\\n        bytes[] memory traits = new bytes[](collection.characteristics.length);\\n        string[] memory characteristicNames = new string[](\\n            collection.characteristics.length\\n        );\\n        string[][] memory traitNames = new string[][](\\n            collection.characteristics.length\\n        );\\n        uint16[] memory lengths = new uint16[](\\n            collection.characteristics.length\\n        );\\n        // init characteristic pointer shift with 2 bytes for length + 2 bytes per characteristic\\n        uint16 cumSum = 2 +\\n            2 *\\n            uint16(collection.characteristics.length % type(uint16).max);\\n        for (uint256 i = 0; i < collection.characteristics.length; i++) {\\n            CharacteristicEncoded memory tmp = encodeCharacteristic(\\n                collection.characteristics[i]\\n            );\\n            lengths[i] = cumSum;\\n            traits[i] = tmp.traits;\\n            traitNames[i] = tmp.names;\\n            characteristicNames[i] = tmp.name;\\n            cumSum += uint16(traits[i].length % type(uint16).max);\\n        }\\n        return (\\n            CollectionEncoded(\\n                bytes.concat(\\n                    bytes2(\\n                        uint16(\\n                            collection.characteristics.length % type(uint16).max\\n                        )\\n                    ),\\n                    lengths.join(),\\n                    traits.join()\\n                ),\\n                traitNames,\\n                characteristicNames,\\n                collection.description\\n            )\\n        );\\n    }\\n}\\n\",\"keccak256\":\"0xd57812e8b557232b4e9dac2d077593b19b4ff2b0ee2daf1cb495c2a86d9c78a6\",\"license\":\"MIT\"},\"contracts/lib/utils/Array.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\n/*\\n * @title Arrays Utils\\n * @author Clement Walter <clement0walter@gmail.com>\\n *\\n * @notice An attempt at implementing some of the widely used javascript's Array functions in solidity.\\n */\\npragma solidity ^0.8.12;\\n\\nerror EmptyArray();\\n\\nlibrary Array {\\n    function join(string[] memory a) public pure returns (string memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return string(_joinReferenceType(pointer));\\n    }\\n\\n    function join(bytes[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinReferenceType(pointer);\\n    }\\n\\n    function join(bytes2[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 2, 0);\\n    }\\n\\n    /// @dev Join the underlying array of bytes2 to a string.\\n    function join(uint16[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 2, 256 - 16);\\n    }\\n\\n    function join(bytes3[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 3, 0);\\n    }\\n\\n    function join(bytes4[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 4, 0);\\n    }\\n\\n    function join(bytes8[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 8, 0);\\n    }\\n\\n    function join(bytes16[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 16, 0);\\n    }\\n\\n    function join(bytes32[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 32, 0);\\n    }\\n\\n    function _joinValueType(\\n        uint256 a,\\n        uint256 typeLength,\\n        uint256 shiftLeft\\n    ) private pure returns (bytes memory) {\\n        bytes memory tempBytes;\\n\\n        assembly {\\n            let inputLength := mload(a)\\n            let inputData := add(a, 0x20)\\n            let end := add(inputData, mul(inputLength, 0x20))\\n\\n            // Get a location of some free memory and store it in tempBytes as\\n            // Solidity does for memory variables.\\n            tempBytes := mload(0x40)\\n\\n            // Initialize the length of the final bytes: length is typeLength x inputLength (array of bytes4)\\n            mstore(tempBytes, mul(inputLength, typeLength))\\n            let memoryPointer := add(tempBytes, 0x20)\\n\\n            // Iterate over all bytes4\\n            for {\\n                let pointer := inputData\\n            } lt(pointer, end) {\\n                pointer := add(pointer, 0x20)\\n            } {\\n                let currentSlot := shl(shiftLeft, mload(pointer))\\n                mstore(memoryPointer, currentSlot)\\n                memoryPointer := add(memoryPointer, typeLength)\\n            }\\n\\n            mstore(0x40, and(add(memoryPointer, 31), not(31)))\\n        }\\n        return tempBytes;\\n    }\\n\\n    function _joinReferenceType(uint256 a)\\n        public\\n        pure\\n        returns (bytes memory tempBytes)\\n    {\\n        assembly {\\n            // Get a location of some free memory and store it in tempBytes as\\n            // Solidity does for memory variables.\\n            tempBytes := mload(0x40)\\n\\n            // Skip the first 32 bytes where we will store the length of the result\\n            let memoryPointer := add(tempBytes, 0x20)\\n\\n            // Load the length (first 32 bytes)\\n            let inputLength := mload(a)\\n            let inputData := add(a, 0x20)\\n            let end := add(inputData, mul(inputLength, 0x20))\\n\\n            // Initialize the length of the final string\\n            let stringLength := 0\\n\\n            // Iterate over all strings (a string is itself an array).\\n            for {\\n                let pointer := inputData\\n            } lt(pointer, end) {\\n                pointer := add(pointer, 0x20)\\n            } {\\n                let currentStringArray := mload(pointer)\\n                let currentStringLength := mload(currentStringArray)\\n                stringLength := add(stringLength, currentStringLength)\\n                let currentStringBytesCount := add(\\n                    div(currentStringLength, 0x20),\\n                    gt(mod(currentStringLength, 0x20), 0)\\n                )\\n\\n                let currentPointer := add(currentStringArray, 0x20)\\n\\n                for {\\n                    let copiedBytesCount := 0\\n                } lt(copiedBytesCount, currentStringBytesCount) {\\n                    copiedBytesCount := add(copiedBytesCount, 1)\\n                } {\\n                    mstore(\\n                        add(memoryPointer, mul(copiedBytesCount, 0x20)),\\n                        mload(currentPointer)\\n                    )\\n                    currentPointer := add(currentPointer, 0x20)\\n                }\\n                memoryPointer := add(memoryPointer, currentStringLength)\\n            }\\n\\n            mstore(tempBytes, stringLength)\\n            mstore(0x40, and(add(memoryPointer, 31), not(31)))\\n        }\\n        return tempBytes;\\n    }\\n}\\n\",\"keccak256\":\"0xce9af799b9822afd98b04a6a909873417cf0b71554d25b624f608b3673feeee1\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50611713806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80632bdda71214610051578063413466e61461007a578063ae0b7a351461009a578063c25c9403146100ba575b600080fd5b61006461005f366004610caa565b6100da565b6040516100719190610cfd565b60405180910390f35b61008d610088366004610ec9565b610205565b6040516100719190610fa1565b6100ad6100a8366004611167565b61039d565b60405161007191906112dc565b6100cd6100c83660046112ed565b6107ca565b6040516100719190611374565b6000603f826000015163ffffffff161115610114578151604051630b51c4b160e41b815261010b91906004016113a3565b60405180910390fd5b603f826020015163ffffffff161115610146578160200151604051630b51c4b160e41b815260040161010b91906113a3565b603f826040015163ffffffff161115610178578160400151604051630b51c4b160e41b815260040161010b91906113a3565b603f826060015163ffffffff1611156101aa578160600151604051630b51c4b160e41b815260040161010b91906113a3565b816080015160e01b6008836060015163ffffffff16901b60e01b600e846040015163ffffffff16901b60e01b6014856020015163ffffffff16901b60e01b601a866000015163ffffffff16901b60e01b171717179050919050565b604080518082019091526060808252602082015281515160009067ffffffffffffffff81111561023757610237610ba6565b604051908082528060200260200182016040528015610260578160200160208202803683370190505b50905060005b8351518110156102eb5761029684600001518281518110610289576102896113b1565b60200260200101516100da565b8282815181106102a8576102a86113b1565b7fffffffff0000000000000000000000000000000000000000000000000000000090921660209283029190910190910152806102e3816113dd565b915050610266565b5060408051808201918290527f2fdc8c200000000000000000000000000000000000000000000000000000000090915280735FbDB2315678afecb367f032d93F642f64180aa3632fdc8c20610343856044850161146e565b600060405180830381865af4158015610360573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261038891908101906114d7565b81526020018460200151815250915050919050565b6103c86040518060800160405280606081526020016060815260200160608152602001606081525090565b81515160009067ffffffffffffffff8111156103e6576103e6610ba6565b60405190808252806020026020018201604052801561041957816020015b60608152602001906001900390816104045790505b509050600083600001515167ffffffffffffffff81111561043c5761043c610ba6565b60405190808252806020026020018201604052801561046f57816020015b606081526020019060019003908161045a5790505b509050600084600001515167ffffffffffffffff81111561049257610492610ba6565b6040519080825280602002602001820160405280156104c557816020015b60608152602001906001900390816104b05790505b509050600085600001515167ffffffffffffffff8111156104e8576104e8610ba6565b604051908082528060200260200182016040528015610511578160200160208202803683370190505b508651519091506000906105289061ffff90611528565b61053390600261153c565b61053e906002611569565b905060005b87515181101561065057600061057589600001518381518110610568576105686113b1565b60200260200101516107ca565b90508284838151811061058a5761058a6113b1565b602002602001019061ffff16908161ffff168152505080600001518783815181106105b7576105b76113b1565b602002602001018190525080602001518583815181106105d9576105d96113b1565b602002602001018190525080604001518683815181106105fb576105fb6113b1565b602002602001018190525061ffff801687838151811061061d5761061d6113b1565b6020026020010151516106309190611528565b61063a9084611569565b9250508080610648906113dd565b915050610543565b506040805160808101909152875151819061066e9061ffff90611528565b60f01b84735FbDB2315678afecb367f032d93F642f64180aa363f25f142d90916040518263ffffffff1660e01b81526004016106aa91906115e3565b600060405180830381865af41580156106c7573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526106ef91908101906114d7565b6040517f2a7f1c04000000000000000000000000000000000000000000000000000000008152735FbDB2315678afecb367f032d93F642f64180aa390632a7f1c049061073f908c9060040161164c565b600060405180830381865af415801561075c573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261078491908101906114d7565b604051602001610796939291906116a7565b6040516020818303038152906040528152602001848152602001858152602001886020015181525095505050505050919050565b6107ee60405180606001604052806060815260200160608152602001606081525090565b81515160009067ffffffffffffffff81111561080c5761080c610ba6565b60405190808252806020026020018201604052801561083f57816020015b606081526020019060019003908161082a5790505b509050600083600001515167ffffffffffffffff81111561086257610862610ba6565b60405190808252806020026020018201604052801561089557816020015b60608152602001906001900390816108805790505b508451519091506000906108aa9060016116ca565b67ffffffffffffffff8111156108c2576108c2610ba6565b6040519080825280602002602001820160405280156108eb578160200160208202803683370190505b508551519091506000906109029061ffff90611528565b61090d90600261153c565b610918906004611569565b905060005b865151811015610a0057600061094f88600001518381518110610942576109426113b1565b6020026020010151610205565b90508060000151868381518110610968576109686113b1565b6020026020010181905250806020015185838151811061098a5761098a6113b1565b6020026020010181905250828483815181106109a8576109a86113b1565b61ffff928316602091820292909201015286518790849081106109cd576109cd6113b1565b6020026020010151516109e09190611528565b6109ea9084611569565b92505080806109f8906113dd565b91505061091d565b50808287600001515181518110610a1957610a196113b1565b61ffff9283166020918202929092010152604080516060810190915287515190918291610a479060016116ca565b610a519190611528565b60f01b84735FbDB2315678afecb367f032d93F642f64180aa363f25f142d90916040518263ffffffff1660e01b8152600401610a8d91906115e3565b600060405180830381865af4158015610aaa573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610ad291908101906114d7565b6040517f2a7f1c04000000000000000000000000000000000000000000000000000000008152735FbDB2315678afecb367f032d93F642f64180aa390632a7f1c0490610b22908b9060040161164c565b600060405180830381865af4158015610b3f573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610b6791908101906114d7565b604051602001610b79939291906116a7565b60405160208183030381529060405281526020018481526020018760200151815250945050505050919050565b634e487b7160e01b600052604160045260246000fd5b601f19601f830116810181811067ffffffffffffffff82111715610be257610be2610ba6565b6040525050565b6000610bf460405190565b9050610c008282610bbc565b919050565b63ffffffff81168114610c1757600080fd5b50565b8035610c2581610c05565b92915050565b600060a08284031215610c4057610c40600080fd5b610c4a60a0610be9565b90506000610c588484610c1a565b908201526020610c6a84848301610c1a565b908201526040610c7c84848301610c1a565b908201526060610c8e84848301610c1a565b908201526080610ca084848301610c1a565b9082015292915050565b600060a08284031215610cbf57610cbf600080fd5b6000610ccb8484610c2b565b949350505050565b7fffffffff0000000000000000000000000000000000000000000000000000000081165b82525050565b60208101610c258284610cd3565b600067ffffffffffffffff821115610d2557610d25610ba6565b5060209081020190565b6000610d42610d3d84610d0b565b610be9565b83815290506020810160a08402830185811115610d6157610d61600080fd5b835b81811015610d8557610d758782610c2b565b835260209092019160a001610d63565b5050509392505050565b600082601f830112610da357610da3600080fd5b8135610ccb848260208601610d2f565b600067ffffffffffffffff821115610dcd57610dcd610ba6565b601f19601f83011660200192915050565b82818337506000910152565b6000610df8610d3d84610db3565b905082815260208101848484011115610e1357610e13600080fd5b610e1e848285610dde565b509392505050565b600082601f830112610e3a57610e3a600080fd5b8135610ccb848260208601610dea565b600060408284031215610e5f57610e5f600080fd5b610e696040610be9565b9050813567ffffffffffffffff811115610e8557610e85600080fd5b610e9184828501610d8f565b825250602082013567ffffffffffffffff811115610eb157610eb1600080fd5b610ebd84828501610e26565b60208301525092915050565b600060208284031215610ede57610ede600080fd5b813567ffffffffffffffff811115610ef857610ef8600080fd5b610ccb84828501610e4a565b60005b83811015610f1f578181015183820152602001610f07565b83811115610f2e576000848401525b50505050565b6000610f3e825190565b808452602084019350610f55818560208601610f04565b601f01601f19169290920192915050565b8051604080845260009190840190610f7e8282610f34565b91505060208301518482036020860152610f988282610f34565b95945050505050565b60208082528101610fb28184610f66565b9392505050565b6000610fc7610d3d84610d0b565b83815290506020808201908402830185811115610fe657610fe6600080fd5b835b81811015610d8557803567ffffffffffffffff81111561100a5761100a600080fd5b85016110168882610e4a565b84525060209283019201610fe8565b600082601f83011261103957611039600080fd5b8135610ccb848260208601610fb9565b60006040828403121561105e5761105e600080fd5b6110686040610be9565b9050813567ffffffffffffffff81111561108457611084600080fd5b610e9184828501611025565b600061109e610d3d84610d0b565b838152905060208082019084028301858111156110bd576110bd600080fd5b835b81811015610d8557803567ffffffffffffffff8111156110e1576110e1600080fd5b85016110ed8882611049565b845250602092830192016110bf565b600082601f83011261111057611110600080fd5b8135610ccb848260208601611090565b60006040828403121561113557611135600080fd5b61113f6040610be9565b9050813567ffffffffffffffff81111561115b5761115b600080fd5b610e91848285016110fc565b60006020828403121561117c5761117c600080fd5b813567ffffffffffffffff81111561119657611196600080fd5b610ccb84828501611120565b6000610fb28383610f34565b60006111b8825190565b808452602084019350836020820285016111d28560200190565b60005b8481101561120657838303885281516111ee84826111a2565b935050602082016020989098019791506001016111d5565b50909695505050505050565b6000610fb283836111ae565b6000611228825190565b808452602084019350836020820285016112428560200190565b60005b84811015611206578383038852815161125e8482611212565b93505060208201602098909801979150600101611245565b805160808084526000919084019061128e8282610f34565b915050602083015184820360208601526112a8828261121e565b915050604083015184820360408601526112c282826111ae565b91505060608301518482036060860152610f988282610f34565b60208082528101610fb28184611276565b60006020828403121561130257611302600080fd5b813567ffffffffffffffff81111561131c5761131c600080fd5b610ccb84828501611049565b80516060808452600091908401906113408282610f34565b9150506020830151848203602086015261135a82826111ae565b91505060408301518482036040860152610f988282610f34565b60208082528101610fb28184611328565b6000610c2561139763ffffffff841681565b90565b610cf781611385565b60208101610c25828461139a565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82141561140f5761140f6113c7565b5060010190565b6114208282610cd3565b5060200190565b6000611431825190565b808452602093840193830160005b828110156114645781516114538782611416565b96505060208201915060010161143f565b5093949350505050565b60208082528101610fb28184611427565b600061148d610d3d84610db3565b9050828152602081018484840111156114a8576114a8600080fd5b610e1e848285610f04565b600082601f8301126114c7576114c7600080fd5b8151610ccb84826020860161147f565b6000602082840312156114ec576114ec600080fd5b815167ffffffffffffffff81111561150657611506600080fd5b610ccb848285016114b3565b634e487b7160e01b600052601260045260246000fd5b60008261153757611537611512565b500690565b61ffff8116905061ffff8216915060008161ffff0483118215151615611564576115646113c7565b500290565b61ffff8116905061ffff8216915060008261ffff0382111561158d5761158d6113c7565b500190565b61ffff8116610cf7565b6114208282611592565b60006115b0825190565b808452602093840193830160005b828110156114645781516115d2878261159c565b9650506020820191506001016115be565b60208082528101610fb281846115a6565b60006115fe825190565b808452602084019350836020820285016116188560200190565b60005b84811015611206578383038852815161163484826111a2565b9350506020820160209890980197915060010161161b565b60208082528101610fb281846115f4565b7fffff0000000000000000000000000000000000000000000000000000000000008116610cf7565b600061168f825190565b61169d818560208601610f04565b9290920192915050565b6116b1818561165d565b6002016116be8184611685565b9050610ccb8183611685565b6000821982111561158d5761158d6113c756fea2646970667358221220586ea11928810e05623f059c66499ca8e7eceffa276dde221fa8650e05f76df964736f6c634300080c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80632bdda71214610051578063413466e61461007a578063ae0b7a351461009a578063c25c9403146100ba575b600080fd5b61006461005f366004610caa565b6100da565b6040516100719190610cfd565b60405180910390f35b61008d610088366004610ec9565b610205565b6040516100719190610fa1565b6100ad6100a8366004611167565b61039d565b60405161007191906112dc565b6100cd6100c83660046112ed565b6107ca565b6040516100719190611374565b6000603f826000015163ffffffff161115610114578151604051630b51c4b160e41b815261010b91906004016113a3565b60405180910390fd5b603f826020015163ffffffff161115610146578160200151604051630b51c4b160e41b815260040161010b91906113a3565b603f826040015163ffffffff161115610178578160400151604051630b51c4b160e41b815260040161010b91906113a3565b603f826060015163ffffffff1611156101aa578160600151604051630b51c4b160e41b815260040161010b91906113a3565b816080015160e01b6008836060015163ffffffff16901b60e01b600e846040015163ffffffff16901b60e01b6014856020015163ffffffff16901b60e01b601a866000015163ffffffff16901b60e01b171717179050919050565b604080518082019091526060808252602082015281515160009067ffffffffffffffff81111561023757610237610ba6565b604051908082528060200260200182016040528015610260578160200160208202803683370190505b50905060005b8351518110156102eb5761029684600001518281518110610289576102896113b1565b60200260200101516100da565b8282815181106102a8576102a86113b1565b7fffffffff0000000000000000000000000000000000000000000000000000000090921660209283029190910190910152806102e3816113dd565b915050610266565b5060408051808201918290527f2fdc8c20000000000000000000000000000000000000000000000000000000009091528073__$3d939fd680257e7df63fc3436eced304ff$__632fdc8c20610343856044850161146e565b600060405180830381865af4158015610360573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261038891908101906114d7565b81526020018460200151815250915050919050565b6103c86040518060800160405280606081526020016060815260200160608152602001606081525090565b81515160009067ffffffffffffffff8111156103e6576103e6610ba6565b60405190808252806020026020018201604052801561041957816020015b60608152602001906001900390816104045790505b509050600083600001515167ffffffffffffffff81111561043c5761043c610ba6565b60405190808252806020026020018201604052801561046f57816020015b606081526020019060019003908161045a5790505b509050600084600001515167ffffffffffffffff81111561049257610492610ba6565b6040519080825280602002602001820160405280156104c557816020015b60608152602001906001900390816104b05790505b509050600085600001515167ffffffffffffffff8111156104e8576104e8610ba6565b604051908082528060200260200182016040528015610511578160200160208202803683370190505b508651519091506000906105289061ffff90611528565b61053390600261153c565b61053e906002611569565b905060005b87515181101561065057600061057589600001518381518110610568576105686113b1565b60200260200101516107ca565b90508284838151811061058a5761058a6113b1565b602002602001019061ffff16908161ffff168152505080600001518783815181106105b7576105b76113b1565b602002602001018190525080602001518583815181106105d9576105d96113b1565b602002602001018190525080604001518683815181106105fb576105fb6113b1565b602002602001018190525061ffff801687838151811061061d5761061d6113b1565b6020026020010151516106309190611528565b61063a9084611569565b9250508080610648906113dd565b915050610543565b506040805160808101909152875151819061066e9061ffff90611528565b60f01b8473__$3d939fd680257e7df63fc3436eced304ff$__63f25f142d90916040518263ffffffff1660e01b81526004016106aa91906115e3565b600060405180830381865af41580156106c7573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526106ef91908101906114d7565b6040517f2a7f1c0400000000000000000000000000000000000000000000000000000000815273__$3d939fd680257e7df63fc3436eced304ff$__90632a7f1c049061073f908c9060040161164c565b600060405180830381865af415801561075c573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261078491908101906114d7565b604051602001610796939291906116a7565b6040516020818303038152906040528152602001848152602001858152602001886020015181525095505050505050919050565b6107ee60405180606001604052806060815260200160608152602001606081525090565b81515160009067ffffffffffffffff81111561080c5761080c610ba6565b60405190808252806020026020018201604052801561083f57816020015b606081526020019060019003908161082a5790505b509050600083600001515167ffffffffffffffff81111561086257610862610ba6565b60405190808252806020026020018201604052801561089557816020015b60608152602001906001900390816108805790505b508451519091506000906108aa9060016116ca565b67ffffffffffffffff8111156108c2576108c2610ba6565b6040519080825280602002602001820160405280156108eb578160200160208202803683370190505b508551519091506000906109029061ffff90611528565b61090d90600261153c565b610918906004611569565b905060005b865151811015610a0057600061094f88600001518381518110610942576109426113b1565b6020026020010151610205565b90508060000151868381518110610968576109686113b1565b6020026020010181905250806020015185838151811061098a5761098a6113b1565b6020026020010181905250828483815181106109a8576109a86113b1565b61ffff928316602091820292909201015286518790849081106109cd576109cd6113b1565b6020026020010151516109e09190611528565b6109ea9084611569565b92505080806109f8906113dd565b91505061091d565b50808287600001515181518110610a1957610a196113b1565b61ffff9283166020918202929092010152604080516060810190915287515190918291610a479060016116ca565b610a519190611528565b60f01b8473__$3d939fd680257e7df63fc3436eced304ff$__63f25f142d90916040518263ffffffff1660e01b8152600401610a8d91906115e3565b600060405180830381865af4158015610aaa573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610ad291908101906114d7565b6040517f2a7f1c0400000000000000000000000000000000000000000000000000000000815273__$3d939fd680257e7df63fc3436eced304ff$__90632a7f1c0490610b22908b9060040161164c565b600060405180830381865af4158015610b3f573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052610b6791908101906114d7565b604051602001610b79939291906116a7565b60405160208183030381529060405281526020018481526020018760200151815250945050505050919050565b634e487b7160e01b600052604160045260246000fd5b601f19601f830116810181811067ffffffffffffffff82111715610be257610be2610ba6565b6040525050565b6000610bf460405190565b9050610c008282610bbc565b919050565b63ffffffff81168114610c1757600080fd5b50565b8035610c2581610c05565b92915050565b600060a08284031215610c4057610c40600080fd5b610c4a60a0610be9565b90506000610c588484610c1a565b908201526020610c6a84848301610c1a565b908201526040610c7c84848301610c1a565b908201526060610c8e84848301610c1a565b908201526080610ca084848301610c1a565b9082015292915050565b600060a08284031215610cbf57610cbf600080fd5b6000610ccb8484610c2b565b949350505050565b7fffffffff0000000000000000000000000000000000000000000000000000000081165b82525050565b60208101610c258284610cd3565b600067ffffffffffffffff821115610d2557610d25610ba6565b5060209081020190565b6000610d42610d3d84610d0b565b610be9565b83815290506020810160a08402830185811115610d6157610d61600080fd5b835b81811015610d8557610d758782610c2b565b835260209092019160a001610d63565b5050509392505050565b600082601f830112610da357610da3600080fd5b8135610ccb848260208601610d2f565b600067ffffffffffffffff821115610dcd57610dcd610ba6565b601f19601f83011660200192915050565b82818337506000910152565b6000610df8610d3d84610db3565b905082815260208101848484011115610e1357610e13600080fd5b610e1e848285610dde565b509392505050565b600082601f830112610e3a57610e3a600080fd5b8135610ccb848260208601610dea565b600060408284031215610e5f57610e5f600080fd5b610e696040610be9565b9050813567ffffffffffffffff811115610e8557610e85600080fd5b610e9184828501610d8f565b825250602082013567ffffffffffffffff811115610eb157610eb1600080fd5b610ebd84828501610e26565b60208301525092915050565b600060208284031215610ede57610ede600080fd5b813567ffffffffffffffff811115610ef857610ef8600080fd5b610ccb84828501610e4a565b60005b83811015610f1f578181015183820152602001610f07565b83811115610f2e576000848401525b50505050565b6000610f3e825190565b808452602084019350610f55818560208601610f04565b601f01601f19169290920192915050565b8051604080845260009190840190610f7e8282610f34565b91505060208301518482036020860152610f988282610f34565b95945050505050565b60208082528101610fb28184610f66565b9392505050565b6000610fc7610d3d84610d0b565b83815290506020808201908402830185811115610fe657610fe6600080fd5b835b81811015610d8557803567ffffffffffffffff81111561100a5761100a600080fd5b85016110168882610e4a565b84525060209283019201610fe8565b600082601f83011261103957611039600080fd5b8135610ccb848260208601610fb9565b60006040828403121561105e5761105e600080fd5b6110686040610be9565b9050813567ffffffffffffffff81111561108457611084600080fd5b610e9184828501611025565b600061109e610d3d84610d0b565b838152905060208082019084028301858111156110bd576110bd600080fd5b835b81811015610d8557803567ffffffffffffffff8111156110e1576110e1600080fd5b85016110ed8882611049565b845250602092830192016110bf565b600082601f83011261111057611110600080fd5b8135610ccb848260208601611090565b60006040828403121561113557611135600080fd5b61113f6040610be9565b9050813567ffffffffffffffff81111561115b5761115b600080fd5b610e91848285016110fc565b60006020828403121561117c5761117c600080fd5b813567ffffffffffffffff81111561119657611196600080fd5b610ccb84828501611120565b6000610fb28383610f34565b60006111b8825190565b808452602084019350836020820285016111d28560200190565b60005b8481101561120657838303885281516111ee84826111a2565b935050602082016020989098019791506001016111d5565b50909695505050505050565b6000610fb283836111ae565b6000611228825190565b808452602084019350836020820285016112428560200190565b60005b84811015611206578383038852815161125e8482611212565b93505060208201602098909801979150600101611245565b805160808084526000919084019061128e8282610f34565b915050602083015184820360208601526112a8828261121e565b915050604083015184820360408601526112c282826111ae565b91505060608301518482036060860152610f988282610f34565b60208082528101610fb28184611276565b60006020828403121561130257611302600080fd5b813567ffffffffffffffff81111561131c5761131c600080fd5b610ccb84828501611049565b80516060808452600091908401906113408282610f34565b9150506020830151848203602086015261135a82826111ae565b91505060408301518482036040860152610f988282610f34565b60208082528101610fb28184611328565b6000610c2561139763ffffffff841681565b90565b610cf781611385565b60208101610c25828461139a565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff82141561140f5761140f6113c7565b5060010190565b6114208282610cd3565b5060200190565b6000611431825190565b808452602093840193830160005b828110156114645781516114538782611416565b96505060208201915060010161143f565b5093949350505050565b60208082528101610fb28184611427565b600061148d610d3d84610db3565b9050828152602081018484840111156114a8576114a8600080fd5b610e1e848285610f04565b600082601f8301126114c7576114c7600080fd5b8151610ccb84826020860161147f565b6000602082840312156114ec576114ec600080fd5b815167ffffffffffffffff81111561150657611506600080fd5b610ccb848285016114b3565b634e487b7160e01b600052601260045260246000fd5b60008261153757611537611512565b500690565b61ffff8116905061ffff8216915060008161ffff0483118215151615611564576115646113c7565b500290565b61ffff8116905061ffff8216915060008261ffff0382111561158d5761158d6113c7565b500190565b61ffff8116610cf7565b6114208282611592565b60006115b0825190565b808452602093840193830160005b828110156114645781516115d2878261159c565b9650506020820191506001016115be565b60208082528101610fb281846115a6565b60006115fe825190565b808452602084019350836020820285016116188560200190565b60005b84811015611206578383038852815161163484826111a2565b9350506020820160209890980197915060010161161b565b60208082528101610fb281846115f4565b7fffff0000000000000000000000000000000000000000000000000000000000008116610cf7565b600061168f825190565b61169d818560208601610f04565b9290920192915050565b6116b1818561165d565b6002016116be8184611685565b9050610ccb8183611685565b6000821982111561158d5761158d6113c756fea2646970667358221220586ea11928810e05623f059c66499ca8e7eceffa276dde221fa8650e05f76df964736f6c634300080c0033",
+  "libraries": {
+    "Array": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  },
+  "devdoc": {
+    "author": "Clement Walter <clement0walter@gmail.com>",
+    "kind": "dev",
+    "methods": {
+      "encodeCharacteristic((((uint32,uint32,uint32,uint32,uint32)[],string)[],string))": {
+        "details": "Use this function to encode a characteristic, i.e. a list of traits belongings to the same group. Note that       there is no intrinsic difference between a characteristic and a whole collection (all the traits of all the       characteristics) but it's how it's used and expected today so we keep the wording here.       Use this off-chain and push the result using RendererCommon.storeBytes",
+        "params": {
+          "characteristic": "The list of Trait constituting the characteristic."
+        },
+        "returns": {
+          "_0": "The encoded characteristic (mainly a bytes memory whose encoding somehow follows solidity memory storage rules.)"
+        }
+      },
+      "encodeCollection(((((uint32,uint32,uint32,uint32,uint32)[],string)[],string)[],string))": {
+        "details": "Use this function to encode a full collection, i.e. a list of characteristics.       Use this off-chain and push the result using RendererCommon.storeBytes",
+        "params": {
+          "collection": "The list of Characteristic constituting the collection. The description is just returned in the        new object and can be used to store the description of the collection."
+        },
+        "returns": {
+          "_0": "The encoded collection (mainly a bytes memory whose encoding somehow follows solidity memory storage rules.)"
+        }
+      },
+      "encodeRect((uint32,uint32,uint32,uint32,uint32))": {
+        "details": "Use this function to encode a single <rect> as expected by the renderer. Use this off-chain!",
+        "params": {
+          "rect": "The <rect> to encode"
+        },
+        "returns": {
+          "_0": "The encoded rectangle as a bytes4"
+        }
+      },
+      "encodeTrait(((uint32,uint32,uint32,uint32,uint32)[],string))": {
+        "details": "Use this function to encode a _trait_, i.e. a list of <rect>s with a name, as expected by the renderer.       Use this off-chain!",
+        "params": {
+          "trait": "The list of <rect>s to encode with a given name; should be shorter than 32 char."
+        },
+        "returns": {
+          "_0": "The encoded list of rectangle"
+        }
+      }
+    },
+    "title": "RectEncoder   This library can be used (off-chain !) to encode a collection to be deployed and render on-chain images with the   RectRenderer.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
