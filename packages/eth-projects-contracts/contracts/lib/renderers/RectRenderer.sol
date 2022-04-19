@@ -8,8 +8,6 @@ import {Integers} from "../utils/Integers.sol";
 import {Bytes} from "../utils/Bytes.sol";
 import {Array} from "../utils/Array.sol";
 
-import "hardhat/console.sol";
-
 error InvalidLength(uint256 length);
 error CharacteristicOutOfRange(uint256 characteristic);
 error TraitOutOfRange(uint256 trait);
