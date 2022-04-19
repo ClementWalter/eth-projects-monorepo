@@ -1,10 +1,11 @@
-import { Contract } from 'ethers';
-import { ethers } from 'hardhat';
+import { Contract } from "ethers";
+import { ethers } from "hardhat";
 
-export async function setupUsers<T extends { [contractName: string]: Contract }>(
-  addresses: string[],
-  contracts: T,
-): Promise<({ address: string } & T)[]> {
+export * from "./rect";
+
+export async function setupUsers<
+  T extends { [contractName: string]: Contract }
+>(addresses: string[], contracts: T): Promise<({ address: string } & T)[]> {
   const users: ({ address: string } & T)[] = [];
   for (const address of addresses) {
     users.push(await setupUser(address, contracts));
@@ -14,7 +15,7 @@ export async function setupUsers<T extends { [contractName: string]: Contract }>
 
 export async function setupUser<T extends { [contractName: string]: Contract }>(
   address: string,
-  contracts: T,
+  contracts: T
 ): Promise<{ address: string } & T> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const user: any = { address };

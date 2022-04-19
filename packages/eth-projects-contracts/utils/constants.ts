@@ -5,4 +5,5 @@ export const TAGS = {
   RECT_RENDERER: "RectRenderer",
   ARRAY: "Array",
   BYTES: "Bytes",
+  SSTORE2: "SSTORE2",
 };

@@ -3,7 +3,7 @@ import { deployments, ethers } from "hardhat";
 import { solidity } from "ethereum-waffle";
 import { TAGS } from "../../utils/constants";
 import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
-import { RectRenderer, RendererCommons } from "../../typechain";
+import { RectRenderer, RendererCommons, SSTORE2 } from "../../typechain";
 import {
   encodeCharacteristic,
   encodeCollection,
@@ -12,36 +12,31 @@ import {
   inlineRect,
 } from "../../utils/encodings/rectEncoding";
 import { Characteristic, Collection, Rect, Trait } from "../../utils/types";
-import { cartesian } from "../../utils/arrays";
+import {
+  generateCharacteristic,
+  generateCollection,
+  generateRect,
+  generateTrait,
+} from "./utils";
 
 chai.use(jestSnapshotPlugin());
 chai.use(solidity);
 const { expect } = chai;
 
-const collection: Collection = {
-  characteristics: [...Array(20).keys()].map((characteristicIndex) => ({
-    traits: [...Array(characteristicIndex + 1).keys()].map((traitIndex) => ({
-      rects: [...Array(traitIndex + 1).keys()].map((rectIndex) => ({
-        x: rectIndex % 64,
-        y: rectIndex % 64,
-        width: rectIndex % 64,
-        height: rectIndex % 64,
-        fillIndex: (rectIndex * 4) % 256,
-      })),
-      name: `characteristic_${characteristicIndex}-trait_${traitIndex}`,
-    })),
-    name: `characteristic-${characteristicIndex}`,
-  })),
-  description: `collection-description`,
-};
+const collection: Collection = generateCollection(20);
 
 const setup = async () => {
-  await deployments.fixture([TAGS.RECT_RENDERER, TAGS.RENDERER_COMMONS]);
+  await deployments.fixture([
+    TAGS.RECT_RENDERER,
+    TAGS.RENDERER_COMMONS,
+    TAGS.SSTORE2,
+  ]);
   const contracts = {
     RendererCommons: (await ethers.getContract(
       "RendererCommons"
     )) as RendererCommons,
     RectRenderer: (await ethers.getContract("RectRenderer")) as RectRenderer,
+    SSTORE2: (await ethers.getContract("SSTORE2")) as SSTORE2,
   };
   return {
     ...contracts,
@@ -51,10 +46,10 @@ const setup = async () => {
 const deployedCollectionFixture = deployments.createFixture(async () => {
   const contracts = await setup();
   const collectionBytes = encodeCollection(collection);
-  const tx = await contracts.RendererCommons.storeBytes("0x" + collectionBytes);
+  const tx = await contracts.SSTORE2.write("0x" + collectionBytes);
   const receipt = await tx.wait();
   const pointer = receipt.events
-    ?.filter((event) => event.event == "BytesStored")
+    ?.filter((event) => event.event == "Write")
     .map((e) => e?.args?.pointer)
     .pop();
   return { ...contracts, pointer };
@@ -62,20 +57,9 @@ const deployedCollectionFixture = deployments.createFixture(async () => {
 
 describe("RectRenderer", function () {
   describe("encodeRect", async function () {
-    cartesian(
-      [0, 16, 32, 63],
-      [0, 16, 32, 63],
-      [0, 16, 32, 63],
-      [0, 16, 32, 63],
-      [0, 128, 255]
-    )
-      .map((rect: Array<number>) => ({
-        x: rect[0],
-        y: rect[1],
-        width: rect[2],
-        height: rect[3],
-        fillIndex: rect[4],
-      }))
+    [...Array(100).keys()]
+      .map(() => Math.floor(Math.random() * 255))
+      .map(generateRect)
       .forEach((rect: Rect) => {
         it(`should return the correct bytes4 string for ${inlineRect(
           rect
@@ -87,45 +71,18 @@ describe("RectRenderer", function () {
       });
   });
   describe("encodeTrait", async function () {
-    [...Array(64).keys()]
-      .map((i) => ({
-        rects: [...Array(i + 1).keys()].map((j) => ({
-          x: j,
-          y: j,
-          width: j,
-          height: j,
-          fillIndex: j * 4,
-        })),
-        name: i.toString(),
-      }))
-      .forEach((trait: Trait) => {
-        it(`should return the correct bytes and name for trait ${trait.name}`, async function () {
-          const { RectRenderer } = await setup();
-          const result = await RectRenderer.encodeTrait(trait);
-          expect(result.rects).to.equal("0x" + encodeTrait(trait));
-          expect(result.name).to.equal(trait.name);
-        });
+    [...Array(64).keys()].map(generateTrait).forEach((trait: Trait) => {
+      it(`should return the correct bytes and name for trait ${trait.name}`, async function () {
+        const { RectRenderer } = await setup();
+        const result = await RectRenderer.encodeTrait(trait);
+        expect(result.rects).to.equal("0x" + encodeTrait(trait));
+        expect(result.name).to.equal(trait.name);
       });
+    });
   });
   describe("encodeCharacteristic", async function () {
     [...Array(100).keys()]
-      .map((characteristicIndex) => {
-        return {
-          traits: [...Array(characteristicIndex + 1).keys()].map(
-            (traitIndex) => ({
-              rects: [...Array(traitIndex + 1).keys()].map((rectIndex) => ({
-                x: rectIndex % 64,
-                y: rectIndex % 64,
-                width: rectIndex % 64,
-                height: rectIndex % 64,
-                fillIndex: (rectIndex * 4) % 256,
-              })),
-              name: `characteristic_${characteristicIndex}-trait_${traitIndex}`,
-            })
-          ),
-          name: `characteristic-${characteristicIndex}`,
-        };
-      })
+      .map(generateCharacteristic)
       .forEach((characteristic: Characteristic) => {
         it(`should return the correct bytes and names for ${characteristic.name} of ${characteristic.traits.length} traits`, async () => {
           const { RectRenderer } = await setup();
@@ -143,39 +100,18 @@ describe("RectRenderer", function () {
       });
   });
   describe("encodeCollection", async function () {
-    [...Array(100).keys()]
-      .map((collectionIndex) => {
-        return {
-          characteristics: [...Array(collectionIndex + 1).keys()].map(
-            (characteristicIndex) => ({
-              traits: [...Array(characteristicIndex + 1).keys()].map(
-                (traitIndex) => ({
-                  rects: [...Array(traitIndex + 1).keys()].map((rectIndex) => ({
-                    x: rectIndex % 64,
-                    y: rectIndex % 64,
-                    width: rectIndex % 64,
-                    height: rectIndex % 64,
-                    fillIndex: (rectIndex * 4) % 256,
-                  })),
-                  name: `characteristic_${characteristicIndex}-trait_${traitIndex}`,
-                })
-              ),
-              name: `characteristic-${characteristicIndex}`,
-            })
-          ),
-          description: `collection-${collectionIndex}`,
-        };
-      })
+    [...Array(30).keys()]
+      .map(generateCollection)
       .forEach((collection: Collection) => {
         it(`should return the correct bytes and names for ${collection.description} of ${collection.characteristics.length} characteristics`, async () => {
           const { RectRenderer } = await setup();
           const result = await RectRenderer.encodeCollection(collection);
-          expect(result.characteristicsNames).to.deep.equal(
+          expect(result.characteristicNames).to.deep.equal(
             collection.characteristics.map(
               (characteristic) => characteristic.name
             )
           );
-          expect(result.traitsNames).to.deep.equal(
+          expect(result.traitNames).to.deep.equal(
             collection.characteristics.map((characteristic) =>
               characteristic.traits.map((trait) => trait.name)
             )

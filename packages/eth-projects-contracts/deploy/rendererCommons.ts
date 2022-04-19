@@ -10,15 +10,17 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deployer } = await getNamedAccounts();
 
   const Integers = await get("Integers");
+  const Array = await get("Array");
 
   await deploy("RendererCommons", {
     from: deployer,
     log: true,
     libraries: {
       Integers: Integers.address,
+      Array: Array.address,
     },
   });
 };
 export default func;
 func.tags = [TAGS.RENDERER_COMMONS];
-func.dependencies = [TAGS.INTEGERS];
+func.dependencies = [TAGS.INTEGERS, TAGS.ARRAY];

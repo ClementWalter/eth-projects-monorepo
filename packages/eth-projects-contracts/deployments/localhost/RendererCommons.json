@@ -1,0 +1,316 @@
+{
+  "address": "0x65cE0d8c7f13F821508201B1434b1e726C172c1E",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_size",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_start",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_end",
+          "type": "uint256"
+        }
+      ],
+      "name": "InvalidCodeAtRange",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "pointer",
+          "type": "address"
+        }
+      ],
+      "name": "BytesStored",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DATA_URI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "NUMBER_SIGN",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "QUOTE",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SPACE",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "TAG_END",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "TAG_START",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "XMLNS_HEADER",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string[]",
+          "name": "palette",
+          "type": "string[]"
+        }
+      ],
+      "name": "encodePalette",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "palette",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFill",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pointer",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFill",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pointer",
+          "type": "address"
+        }
+      ],
+      "name": "getPalette",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "palette",
+          "type": "bytes"
+        }
+      ],
+      "name": "getPalette",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xbbcaa3738aac5ede85cc22ba7a33f205f9e1b5c128165682d27899bfd27d42ee",
+  "receipt": {
+    "to": null,
+    "from": "0x6966Bdb480e7f7A48A7f6B198eE8b9462A265401",
+    "contractAddress": "0x65cE0d8c7f13F821508201B1434b1e726C172c1E",
+    "transactionIndex": 0,
+    "gasUsed": "954071",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xa7cf75b73c103ca652c3a047d90019450818f51f1e9a57f611d170a647daba84",
+    "transactionHash": "0xbbcaa3738aac5ede85cc22ba7a33f205f9e1b5c128165682d27899bfd27d42ee",
+    "logs": [],
+    "blockNumber": 5,
+    "cumulativeGasUsed": "954071",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "5a4065e98c83db14617d25d1485ebb78",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_size\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_end\",\"type\":\"uint256\"}],\"name\":\"InvalidCodeAtRange\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"pointer\",\"type\":\"address\"}],\"name\":\"BytesStored\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DATA_URI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"NUMBER_SIGN\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"QUOTE\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SPACE\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TAG_END\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"TAG_START\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"XMLNS_HEADER\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string[]\",\"name\":\"palette\",\"type\":\"string[]\"}],\"name\":\"encodePalette\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"palette\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getFill\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pointer\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getFill\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"pointer\",\"type\":\"address\"}],\"name\":\"getPalette\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"palette\",\"type\":\"bytes\"}],\"name\":\"getPalette\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Clement Walter <clement0walter@gmail.com>\",\"kind\":\"dev\",\"methods\":{\"encodePalette(string[])\":{\"details\":\"Usually colors are already defined in hex color space so we just concat all the colors. No check is made      and this function only concatenates the input colors.\",\"params\":{\"palette\":\"The list of colors as hex strings, without the leading #.\"},\"returns\":{\"_0\":\"The concatenated colors as string. To be used as bytes afterwards.\"}},\"getFill(address,uint256)\":{\"details\":\"Returns one single color reading directly from the storage.\",\"params\":{\"index\":\"The index of the color to retrieve\",\"pointer\":\"The pointer to the palette bytes array where each color is R, G, B at storage i, i+1, i+2.\"},\"returns\":{\"_0\":\"The hexstring representation of the color, e.g. \\\"a3120f\\\".\"}},\"getFill(bytes,uint256)\":{\"details\":\"Returns one single color from a pre-loaded whole palette as a bytes array.\",\"params\":{\"index\":\"The index of the color to retrieve\",\"palette\":\"A bytes array encoding several RGB colors. Length should be a multiple of 3.\"},\"returns\":{\"_0\":\"The hexstring representation of the color, e.g. \\\"a3120f\\\".\"}},\"getPalette(address)\":{\"details\":\"Decode the whole palette once for all and returns an array of hexstrings.\",\"params\":{\"pointer\":\"The pointer to the palette bytes array where each color is at storage at i, i+1, i+2.\"},\"returns\":{\"_0\":\"An array of hexstring representation of the color, e.g. \\\"a3120f\\\".\"}}},\"title\":\"BaseRenderer   This library contains shared functionality and constants for the renderers.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/lib/renderers/RendererCommons.sol\":\"RendererCommons\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"details\":{\"constantOptimizer\":true,\"cse\":true,\"deduplicate\":true,\"inliner\":true,\"jumpdestRemover\":true,\"orderLiterals\":true,\"peephole\":true,\"yul\":true,\"yulDetails\":{\"optimizerSteps\":\"dhfoDgvulfnTUtnIf\",\"stackAllocation\":true}},\"runs\":2000},\"remappings\":[]},\"sources\":{\"@0xsequence/sstore2/contracts/SSTORE2.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport \\\"./utils/Bytecode.sol\\\";\\n\\n/**\\n  @title A key-value storage with auto-generated keys for storing chunks of data with a lower write & read cost.\\n  @author Agustin Aguilar <aa@horizon.io>\\n\\n  Readme: https://github.com/0xsequence/sstore2#readme\\n*/\\nlibrary SSTORE2 {\\n  error WriteError();\\n\\n  /**\\n    @notice Stores `_data` and returns `pointer` as key for later retrieval\\n    @dev The pointer is a contract address with `_data` as code\\n    @param _data to be written\\n    @return pointer Pointer to the written `_data`\\n  */\\n  function write(bytes memory _data) internal returns (address pointer) {\\n    // Append 00 to _data so contract can't be called\\n    // Build init code\\n    bytes memory code = Bytecode.creationCodeFor(\\n      abi.encodePacked(\\n        hex'00',\\n        _data\\n      )\\n    );\\n\\n    // Deploy contract using create\\n    assembly { pointer := create(0, add(code, 32), mload(code)) }\\n\\n    // Address MUST be non-zero\\n    if (pointer == address(0)) revert WriteError();\\n  }\\n\\n  /**\\n    @notice Reads the contents of the `_pointer` code as data, skips the first byte \\n    @dev The function is intended for reading pointers generated by `write`\\n    @param _pointer to be read\\n    @return data read from `_pointer` contract\\n  */\\n  function read(address _pointer) internal view returns (bytes memory) {\\n    return Bytecode.codeAt(_pointer, 1, type(uint256).max);\\n  }\\n\\n  /**\\n    @notice Reads the contents of the `_pointer` code as data, skips the first byte \\n    @dev The function is intended for reading pointers generated by `write`\\n    @param _pointer to be read\\n    @param _start number of bytes to skip\\n    @return data read from `_pointer` contract\\n  */\\n  function read(address _pointer, uint256 _start) internal view returns (bytes memory) {\\n    return Bytecode.codeAt(_pointer, _start + 1, type(uint256).max);\\n  }\\n\\n  /**\\n    @notice Reads the contents of the `_pointer` code as data, skips the first byte \\n    @dev The function is intended for reading pointers generated by `write`\\n    @param _pointer to be read\\n    @param _start number of bytes to skip\\n    @param _end index before which to end extraction\\n    @return data read from `_pointer` contract\\n  */\\n  function read(address _pointer, uint256 _start, uint256 _end) internal view returns (bytes memory) {\\n    return Bytecode.codeAt(_pointer, _start + 1, _end + 1);\\n  }\\n}\\n\",\"keccak256\":\"0x79e6f5c7bb6b22d142ad0ec37e00930cdbef28ab405214f7c0f94cbd58255383\",\"license\":\"MIT\"},\"@0xsequence/sstore2/contracts/utils/Bytecode.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\n\\nlibrary Bytecode {\\n  error InvalidCodeAtRange(uint256 _size, uint256 _start, uint256 _end);\\n\\n  /**\\n    @notice Generate a creation code that results on a contract with `_code` as bytecode\\n    @param _code The returning value of the resulting `creationCode`\\n    @return creationCode (constructor) for new contract\\n  */\\n  function creationCodeFor(bytes memory _code) internal pure returns (bytes memory) {\\n    /*\\n      0x00    0x63         0x63XXXXXX  PUSH4 _code.length  size\\n      0x01    0x80         0x80        DUP1                size size\\n      0x02    0x60         0x600e      PUSH1 14            14 size size\\n      0x03    0x60         0x6000      PUSH1 00            0 14 size size\\n      0x04    0x39         0x39        CODECOPY            size\\n      0x05    0x60         0x6000      PUSH1 00            0 size\\n      0x06    0xf3         0xf3        RETURN\\n      <CODE>\\n    */\\n\\n    return abi.encodePacked(\\n      hex\\\"63\\\",\\n      uint32(_code.length),\\n      hex\\\"80_60_0E_60_00_39_60_00_F3\\\",\\n      _code\\n    );\\n  }\\n\\n  /**\\n    @notice Returns the size of the code on a given address\\n    @param _addr Address that may or may not contain code\\n    @return size of the code on the given `_addr`\\n  */\\n  function codeSize(address _addr) internal view returns (uint256 size) {\\n    assembly { size := extcodesize(_addr) }\\n  }\\n\\n  /**\\n    @notice Returns the code of a given address\\n    @dev It will fail if `_end < _start`\\n    @param _addr Address that may or may not contain code\\n    @param _start number of bytes of code to skip on read\\n    @param _end index before which to end extraction\\n    @return oCode read from `_addr` deployed bytecode\\n\\n    Forked from: https://gist.github.com/KardanovIR/fe98661df9338c842b4a30306d507fbd\\n  */\\n  function codeAt(address _addr, uint256 _start, uint256 _end) internal view returns (bytes memory oCode) {\\n    uint256 csize = codeSize(_addr);\\n    if (csize == 0) return bytes(\\\"\\\");\\n\\n    if (_start > csize) return bytes(\\\"\\\");\\n    if (_end < _start) revert InvalidCodeAtRange(csize, _start, _end); \\n\\n    unchecked {\\n      uint256 reqSize = _end - _start;\\n      uint256 maxSize = csize - _start;\\n\\n      uint256 size = maxSize < reqSize ? maxSize : reqSize;\\n\\n      assembly {\\n        // allocate output byte array - this could also be done without assembly\\n        // by using o_code = new bytes(size)\\n        oCode := mload(0x40)\\n        // new \\\"memory end\\\" including padding\\n        mstore(0x40, add(oCode, and(add(add(size, 0x20), 0x1f), not(0x1f))))\\n        // store length in memory\\n        mstore(oCode, size)\\n        // actually retrieve the code, this needs assembly\\n        extcodecopy(_addr, add(oCode, 0x20), _start, size)\\n      }\\n    }\\n  }\\n}\\n\",\"keccak256\":\"0x40ef4ee5697507566574eda36358a76b523b3dfe7cb65da1630004fe6c5a7a45\",\"license\":\"MIT\"},\"contracts/lib/renderers/RendererCommons.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.12;\\n\\nimport \\\"@0xsequence/sstore2/contracts/SSTORE2.sol\\\";\\n\\nimport {Integers} from \\\"../utils/Integers.sol\\\";\\nimport {Array} from \\\"../utils/Array.sol\\\";\\n\\n/**  @title BaseRenderer\\n *\\n *   This library contains shared functionality and constants for the renderers.\\n *\\n * @author Clement Walter <clement0walter@gmail.com>\\n */\\nlibrary RendererCommons {\\n    using Integers for uint256;\\n    using Integers for uint8;\\n    using Array for string[];\\n\\n    string public constant DATA_URI = \\\"data:image/svg+xml,\\\";\\n    string public constant XMLNS_HEADER =\\n        \\\"xmlns=%27http://www.w3.org/2000/svg%27\\\";\\n    string public constant SPACE = \\\"%20\\\";\\n    string public constant QUOTE = \\\"%27\\\";\\n    string public constant NUMBER_SIGN = \\\"%23\\\";\\n    string public constant TAG_START = \\\"%3c\\\";\\n    string public constant TAG_END = \\\"/%3e\\\";\\n\\n    event BytesStored(address pointer);\\n\\n    /**\\n     * @dev Usually colors are already defined in hex color space so we just concat all the colors. No check is made\\n     *      and this function only concatenates the input colors.\\n     * @param palette The list of colors as hex strings, without the leading #.\\n     * @return The concatenated colors as string. To be used as bytes afterwards.\\n     */\\n    function encodePalette(string[] memory palette)\\n        public\\n        pure\\n        returns (string memory)\\n    {\\n        return string.concat(\\\"0x\\\", palette.join());\\n    }\\n\\n    /** @dev Returns one single color reading directly from the storage.\\n     * @param pointer The pointer to the palette bytes array where each color is R, G, B at storage i, i+1, i+2.\\n     * @param index The index of the color to retrieve\\n     * @return The hexstring representation of the color, e.g. \\\"a3120f\\\".\\n     */\\n    function getFill(address pointer, uint256 index)\\n        public\\n        view\\n        returns (string memory)\\n    {\\n        bytes memory palette = SSTORE2.read(pointer, 3 * index, 3 * index + 3);\\n\\n        return\\n            string.concat(\\n                uint8(palette[0]).toString(16, 2),\\n                uint8(palette[1]).toString(16, 2),\\n                uint8(palette[2]).toString(16, 2)\\n            );\\n    }\\n\\n    /** @dev Returns one single color from a pre-loaded whole palette as a bytes array.\\n     * @param palette A bytes array encoding several RGB colors. Length should be a multiple of 3.\\n     * @param index The index of the color to retrieve\\n     * @return The hexstring representation of the color, e.g. \\\"a3120f\\\".\\n     */\\n    function getFill(bytes memory palette, uint256 index)\\n        public\\n        pure\\n        returns (string memory)\\n    {\\n        return\\n            string.concat(\\n                uint8(palette[3 * index]).toString(16, 2),\\n                uint8(palette[3 * index + 1]).toString(16, 2),\\n                uint8(palette[3 * index + 2]).toString(16, 2)\\n            );\\n    }\\n\\n    /** @dev Decode the whole palette once for all and returns an array of hexstrings.\\n     * @param pointer The pointer to the palette bytes array where each color is at storage at i, i+1, i+2.\\n     * @return An array of hexstring representation of the color, e.g. \\\"a3120f\\\".\\n     */\\n    function getPalette(address pointer) public view returns (string[] memory) {\\n        bytes memory palette = SSTORE2.read(pointer);\\n        return getPalette(palette);\\n    }\\n\\n    function getPalette(bytes memory palette)\\n        public\\n        pure\\n        returns (string[] memory)\\n    {\\n        uint256 paletteSize = palette.length / 3;\\n        string[] memory paletteHex = new string[](paletteSize);\\n        for (uint256 i = 0; i < paletteSize; i++) {\\n            paletteHex[i] = getFill(palette, i);\\n        }\\n        return paletteHex;\\n    }\\n}\\n\",\"keccak256\":\"0xa8682ba1c29f814c8fe708222cb89cdc0c9b28e2b34cf4534143b8ff5ff9a182\",\"license\":\"MIT\"},\"contracts/lib/utils/Array.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\n/*\\n * @title Arrays Utils\\n * @author Clement Walter <clement0walter@gmail.com>\\n *\\n * @notice An attempt at implementing some of the widely used javascript's Array functions in solidity.\\n */\\npragma solidity ^0.8.12;\\n\\nerror EmptyArray();\\n\\nlibrary Array {\\n    function join(string[] memory a) public pure returns (string memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return string(_joinReferenceType(pointer));\\n    }\\n\\n    function join(bytes[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinReferenceType(pointer);\\n    }\\n\\n    function join(bytes2[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 2, 0);\\n    }\\n\\n    /// @dev Join the underlying array of bytes2 to a string.\\n    function join(uint16[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 2, 256 - 16);\\n    }\\n\\n    function join(bytes3[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 3, 0);\\n    }\\n\\n    function join(bytes4[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 4, 0);\\n    }\\n\\n    function join(bytes8[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 8, 0);\\n    }\\n\\n    function join(bytes16[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 16, 0);\\n    }\\n\\n    function join(bytes32[] memory a) public pure returns (bytes memory) {\\n        uint256 pointer;\\n\\n        assembly {\\n            pointer := a\\n        }\\n        return _joinValueType(pointer, 32, 0);\\n    }\\n\\n    function _joinValueType(\\n        uint256 a,\\n        uint256 typeLength,\\n        uint256 shiftLeft\\n    ) private pure returns (bytes memory) {\\n        bytes memory tempBytes;\\n\\n        assembly {\\n            let inputLength := mload(a)\\n            let inputData := add(a, 0x20)\\n            let end := add(inputData, mul(inputLength, 0x20))\\n\\n            // Get a location of some free memory and store it in tempBytes as\\n            // Solidity does for memory variables.\\n            tempBytes := mload(0x40)\\n\\n            // Initialize the length of the final bytes: length is typeLength x inputLength (array of bytes4)\\n            mstore(tempBytes, mul(inputLength, typeLength))\\n            let memoryPointer := add(tempBytes, 0x20)\\n\\n            // Iterate over all bytes4\\n            for {\\n                let pointer := inputData\\n            } lt(pointer, end) {\\n                pointer := add(pointer, 0x20)\\n            } {\\n                let currentSlot := shl(shiftLeft, mload(pointer))\\n                mstore(memoryPointer, currentSlot)\\n                memoryPointer := add(memoryPointer, typeLength)\\n            }\\n\\n            mstore(0x40, and(add(memoryPointer, 31), not(31)))\\n        }\\n        return tempBytes;\\n    }\\n\\n    function _joinReferenceType(uint256 a)\\n        public\\n        pure\\n        returns (bytes memory tempBytes)\\n    {\\n        assembly {\\n            // Get a location of some free memory and store it in tempBytes as\\n            // Solidity does for memory variables.\\n            tempBytes := mload(0x40)\\n\\n            // Skip the first 32 bytes where we will store the length of the result\\n            let memoryPointer := add(tempBytes, 0x20)\\n\\n            // Load the length (first 32 bytes)\\n            let inputLength := mload(a)\\n            let inputData := add(a, 0x20)\\n            let end := add(inputData, mul(inputLength, 0x20))\\n\\n            // Initialize the length of the final string\\n            let stringLength := 0\\n\\n            // Iterate over all strings (a string is itself an array).\\n            for {\\n                let pointer := inputData\\n            } lt(pointer, end) {\\n                pointer := add(pointer, 0x20)\\n            } {\\n                let currentStringArray := mload(pointer)\\n                let currentStringLength := mload(currentStringArray)\\n                stringLength := add(stringLength, currentStringLength)\\n                let currentStringBytesCount := add(\\n                    div(currentStringLength, 0x20),\\n                    gt(mod(currentStringLength, 0x20), 0)\\n                )\\n\\n                let currentPointer := add(currentStringArray, 0x20)\\n\\n                for {\\n                    let copiedBytesCount := 0\\n                } lt(copiedBytesCount, currentStringBytesCount) {\\n                    copiedBytesCount := add(copiedBytesCount, 1)\\n                } {\\n                    mstore(\\n                        add(memoryPointer, mul(copiedBytesCount, 0x20)),\\n                        mload(currentPointer)\\n                    )\\n                    currentPointer := add(currentPointer, 0x20)\\n                }\\n                memoryPointer := add(memoryPointer, currentStringLength)\\n            }\\n\\n            mstore(tempBytes, stringLength)\\n            mstore(0x40, and(add(memoryPointer, 31), not(31)))\\n        }\\n        return tempBytes;\\n    }\\n}\\n\",\"keccak256\":\"0xce9af799b9822afd98b04a6a909873417cf0b71554d25b624f608b3673feeee1\",\"license\":\"MIT\"},\"contracts/lib/utils/Integers.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * Integers Library updated from https://github.com/willitscale/solidity-util\\n *\\n * In summary this is a simple library of integer functions which allow a simple\\n * conversion to and from strings\\n *\\n * @author Clement Walter <clement0walter@gmail.com>\\n */\\nlibrary Integers {\\n    /**\\n     * To String\\n     *\\n     * Converts an unsigned integer to the string equivalent value, returned as bytes\\n     * Equivalent to javascript's toString(base)\\n     *\\n     * @param _number The unsigned integer to be converted to a string\\n     * @param _base The base to convert the number to\\n     * @param  _padding The target length of the string; result will be padded with 0 to reach this length while padding\\n     *         of 0 means no padding\\n     * @return bytes The resulting ASCII string value\\n     */\\n    function toString(\\n        uint256 _number,\\n        uint8 _base,\\n        uint8 _padding\\n    ) public pure returns (string memory) {\\n        uint256 count = 0;\\n        uint256 b = _number;\\n        while (b != 0) {\\n            count++;\\n            b /= _base;\\n        }\\n        if (_number == 0) {\\n            count++;\\n        }\\n        bytes memory res;\\n        if (_padding == 0) {\\n            res = new bytes(count);\\n        } else {\\n            res = new bytes(_padding);\\n        }\\n        for (uint256 i = 0; i < res.length; ++i) {\\n            b = _number % _base;\\n            if (b < 10) {\\n                res[res.length - i - 1] = bytes1(uint8(b + 48)); // 0-9\\n            } else {\\n                res[res.length - i - 1] = bytes1(uint8((b % 10) + 65)); // A-F\\n            }\\n            _number /= _base;\\n        }\\n\\n        for (uint256 i = count; i < _padding; ++i) {\\n            res[res.length - i - 1] = hex\\\"30\\\"; // 0\\n        }\\n\\n        return string(res);\\n    }\\n\\n    function toString(uint256 _number) public pure returns (string memory) {\\n        return toString(_number, 10, 0);\\n    }\\n\\n    function toString(uint256 _number, uint8 _base)\\n        public\\n        pure\\n        returns (string memory)\\n    {\\n        return toString(_number, _base, 0);\\n    }\\n}\\n\",\"keccak256\":\"0x547aedd7ff0df60ed3dfaf6a7ec21210ed631beb6319de9e32f689f3fcb47a08\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x61105961003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106100de5760003560e01c8063890a161a1161008b578063c030f08d11610065578063c030f08d1461024a578063df5f0e0e1461025d578063e0c9ae691461029957600080fd5b8063890a161a146101bf5780639ad21855146101d25780639c5798391461020e57600080fd5b8063657fb2e1116100bc578063657fb2e11461015b5780637be266cc1461017b5780637df165211461018357600080fd5b8063067b7f9e146100e357806315cb3a051461010c5780633774c79814610148575b600080fd5b6100f66100f1366004610b91565b6102d5565b6040516101039190610c2e565b60405180910390f35b6100f66040518060400160405280600481526020017f2f2533650000000000000000000000000000000000000000000000000000000081525081565b6100f6610156366004610c5a565b610393565b61016e610169366004610ce3565b6105c4565b6040516101039190610d74565b6100f66105e3565b6100f66040518060400160405280600381526020017f253363000000000000000000000000000000000000000000000000000000000081525081565b6100f66101cd366004610d85565b6105ff565b6100f66040518060400160405280601381526020017f646174613a696d6167652f7376672b786d6c2c0000000000000000000000000081525081565b6100f66040518060400160405280600381526020017f253237000000000000000000000000000000000000000000000000000000000081525081565b61016e610258366004610da7565b61082d565b6100f66040518060400160405280600381526020017f253233000000000000000000000000000000000000000000000000000000000081525081565b6100f66040518060400160405280600381526020017f253230000000000000000000000000000000000000000000000000000000000081525081565b6040517f9bce4e1400000000000000000000000000000000000000000000000000000000815260609073824d304b7C17FF1E03bEA9b0f752BA9A2aff342690639bce4e1490610328908590600401610d74565b600060405180830381865af4158015610345573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261036d9190810190610e3a565b60405160200161037d9190610e97565b6040516020818303038152906040529050919050565b6060826103a1836003610edd565b815181106103b1576103b1610efc565b016020015160405163c1338a6960e01b815273f4B0EbA794Ab6A7803686398a782c909E45c0bD89163c1338a69916103f59160f81c90601090600290600401610f2e565b600060405180830381865af4158015610412573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261043a9190810190610e3a565b83610446846003610edd565b610451906001610f56565b8151811061046157610461610efc565b016020015160405163c1338a6960e01b815273f4B0EbA794Ab6A7803686398a782c909E45c0bD89163c1338a69916104a59160f81c90601090600290600401610f2e565b600060405180830381865af41580156104c2573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526104ea9190810190610e3a565b846104f6856003610edd565b610501906002610f56565b8151811061051157610511610efc565b016020015160405163c1338a6960e01b815273f4B0EbA794Ab6A7803686398a782c909E45c0bD89163c1338a69916105559160f81c90601090600290600401610f2e565b600060405180830381865af4158015610572573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261059a9190810190610e3a565b6040516020016105ac93929190610f6e565b60405160208183030381529060405290505b92915050565b606060006105d1836108df565b90506105dc8161082d565b9392505050565b604051806060016040528060268152602001610ffe6026913981565b6060600061062d84610612856003610edd565b61061d866003610edd565b610628906003610f56565b6108ef565b90508060008151811061064257610642610efc565b016020015160405163c1338a6960e01b815273f4B0EbA794Ab6A7803686398a782c909E45c0bD89163c1338a69916106869160f81c90601090600290600401610f2e565b600060405180830381865af41580156106a3573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526106cb9190810190610e3a565b816001815181106106de576106de610efc565b016020015160405163c1338a6960e01b815273f4B0EbA794Ab6A7803686398a782c909E45c0bD89163c1338a69916107229160f81c90601090600290600401610f2e565b600060405180830381865af415801561073f573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526107679190810190610e3a565b8260028151811061077a5761077a610efc565b016020015160405163c1338a6960e01b815273f4B0EbA794Ab6A7803686398a782c909E45c0bD89163c1338a69916107be9160f81c90601090600290600401610f2e565b600060405180830381865af41580156107db573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526108039190810190610e3a565b60405160200161081593929190610f6e565b60405160208183030381529060405291505092915050565b606060006003835161083f9190610fa6565b905060008167ffffffffffffffff81111561085c5761085c6109e0565b60405190808252806020026020018201604052801561088f57816020015b606081526020019060019003908161087a5790505b50905060005b828110156108d7576108a78582610393565b8282815181106108b9576108b9610efc565b602002602001018190525080806108cf90610fba565b915050610895565b509392505050565b60606105be826001600019610918565b606061091084610900856001610f56565b61090b856001610f56565b610918565b949350505050565b6060833b806109375750506040805160208101909152600081526105dc565b808411156109555750506040805160208101909152600081526105dc565b8383101561099e578084846040517f2c4a89fa00000000000000000000000000000000000000000000000000000000815260040161099593929190610fd5565b60405180910390fd5b83830384820360008282106109b357826109b5565b815b60408051603f8301601f19168101909152818152955090508087602087018a3c505050509392505050565b634e487b7160e01b600052604160045260246000fd5b601f19601f830116810181811067ffffffffffffffff82111715610a1c57610a1c6109e0565b6040525050565b6000610a2e60405190565b9050610a3a82826109f6565b919050565b600067ffffffffffffffff821115610a5957610a596109e0565b5060209081020190565b600067ffffffffffffffff821115610a7d57610a7d6109e0565b601f19601f83011660200192915050565b82818337506000910152565b6000610aad610aa884610a63565b610a23565b905082815260208101848484011115610ac857610ac8600080fd5b6108d7848285610a8e565b600082601f830112610ae757610ae7600080fd5b8135610910848260208601610a9a565b6000610b05610aa884610a3f565b83815290506020808201908402830185811115610b2457610b24600080fd5b835b81811015610b6357803567ffffffffffffffff811115610b4857610b48600080fd5b8501610b548882610ad3565b84525060209283019201610b26565b5050509392505050565b600082601f830112610b8157610b81600080fd5b8135610910848260208601610af7565b600060208284031215610ba657610ba6600080fd5b813567ffffffffffffffff811115610bc057610bc0600080fd5b61091084828501610b6d565b60005b83811015610be7578181015183820152602001610bcf565b83811115610bf6576000848401525b50505050565b6000610c06825190565b808452602084019350610c1d818560208601610bcc565b601f01601f19169290920192915050565b602080825281016105dc8184610bfc565b805b8114610c4c57600080fd5b50565b80356105be81610c3f565b60008060408385031215610c7057610c70600080fd5b823567ffffffffffffffff811115610c8a57610c8a600080fd5b610c9685828601610ad3565b9250506020610ca785828601610c4f565b9150509250929050565b600073ffffffffffffffffffffffffffffffffffffffff82166105be565b610c4181610cb1565b80356105be81610ccf565b600060208284031215610cf857610cf8600080fd5b60006109108484610cd8565b60006105dc8383610bfc565b6000610d1a825190565b80845260208401935083602082028501610d348560200190565b60005b84811015610d685783830388528151610d508482610d04565b93505060208201602098909801979150600101610d37565b50909695505050505050565b602080825281016105dc8184610d10565b60008060408385031215610d9b57610d9b600080fd5b6000610c968585610cd8565b600060208284031215610dbc57610dbc600080fd5b813567ffffffffffffffff811115610dd657610dd6600080fd5b61091084828501610ad3565b6000610df0610aa884610a63565b905082815260208101848484011115610e0b57610e0b600080fd5b6108d7848285610bcc565b600082601f830112610e2a57610e2a600080fd5b8151610910848260208601610de2565b600060208284031215610e4f57610e4f600080fd5b815167ffffffffffffffff811115610e6957610e69600080fd5b61091084828501610e16565b6000610e7f825190565b610e8d818560208601610bcc565b9290920192915050565b7f307800000000000000000000000000000000000000000000000000000000000081526002016105be8183610e75565b634e487b7160e01b600052601160045260246000fd5b6000816000190483118215151615610ef757610ef7610ec7565b500290565b634e487b7160e01b600052603260045260246000fd5b805b82525050565b600060ff82166105be565b610f1481610f1a565b60608101610f3c8286610f12565b610f496020830185610f25565b6109106040830184610f25565b60008219821115610f6957610f69610ec7565b500190565b610f788185610e75565b9050610f848184610e75565b90506109108183610e75565b634e487b7160e01b600052601260045260246000fd5b600082610fb557610fb5610f90565b500490565b6000600019821415610fce57610fce610ec7565b5060010190565b60608101610fe38286610f12565b610ff06020830185610f12565b6109106040830184610f1256fe786d6c6e733d253237687474703a2f2f7777772e77332e6f72672f323030302f737667253237a2646970667358221220b8831a5fcac878061975fa6fb77f7007cd7679bc00000eed895401eb3f1232fb64736f6c634300080c0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600436106100de5760003560e01c8063890a161a1161008b578063c030f08d11610065578063c030f08d1461024a578063df5f0e0e1461025d578063e0c9ae691461029957600080fd5b8063890a161a146101bf5780639ad21855146101d25780639c5798391461020e57600080fd5b8063657fb2e1116100bc578063657fb2e11461015b5780637be266cc1461017b5780637df165211461018357600080fd5b8063067b7f9e146100e357806315cb3a051461010c5780633774c79814610148575b600080fd5b6100f66100f1366004610b91565b6102d5565b6040516101039190610c2e565b60405180910390f35b6100f66040518060400160405280600481526020017f2f2533650000000000000000000000000000000000000000000000000000000081525081565b6100f6610156366004610c5a565b610393565b61016e610169366004610ce3565b6105c4565b6040516101039190610d74565b6100f66105e3565b6100f66040518060400160405280600381526020017f253363000000000000000000000000000000000000000000000000000000000081525081565b6100f66101cd366004610d85565b6105ff565b6100f66040518060400160405280601381526020017f646174613a696d6167652f7376672b786d6c2c0000000000000000000000000081525081565b6100f66040518060400160405280600381526020017f253237000000000000000000000000000000000000000000000000000000000081525081565b61016e610258366004610da7565b61082d565b6100f66040518060400160405280600381526020017f253233000000000000000000000000000000000000000000000000000000000081525081565b6100f66040518060400160405280600381526020017f253230000000000000000000000000000000000000000000000000000000000081525081565b6040517f9bce4e1400000000000000000000000000000000000000000000000000000000815260609073__$3d939fd680257e7df63fc3436eced304ff$__90639bce4e1490610328908590600401610d74565b600060405180830381865af4158015610345573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261036d9190810190610e3a565b60405160200161037d9190610e97565b6040516020818303038152906040529050919050565b6060826103a1836003610edd565b815181106103b1576103b1610efc565b016020015160405163c1338a6960e01b815273__$bddea793ab3ab242e0f42fcbbce9ecfcb5$__9163c1338a69916103f59160f81c90601090600290600401610f2e565b600060405180830381865af4158015610412573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261043a9190810190610e3a565b83610446846003610edd565b610451906001610f56565b8151811061046157610461610efc565b016020015160405163c1338a6960e01b815273__$bddea793ab3ab242e0f42fcbbce9ecfcb5$__9163c1338a69916104a59160f81c90601090600290600401610f2e565b600060405180830381865af41580156104c2573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526104ea9190810190610e3a565b846104f6856003610edd565b610501906002610f56565b8151811061051157610511610efc565b016020015160405163c1338a6960e01b815273__$bddea793ab3ab242e0f42fcbbce9ecfcb5$__9163c1338a69916105559160f81c90601090600290600401610f2e565b600060405180830381865af4158015610572573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f1916820160405261059a9190810190610e3a565b6040516020016105ac93929190610f6e565b60405160208183030381529060405290505b92915050565b606060006105d1836108df565b90506105dc8161082d565b9392505050565b604051806060016040528060268152602001610ffe6026913981565b6060600061062d84610612856003610edd565b61061d866003610edd565b610628906003610f56565b6108ef565b90508060008151811061064257610642610efc565b016020015160405163c1338a6960e01b815273__$bddea793ab3ab242e0f42fcbbce9ecfcb5$__9163c1338a69916106869160f81c90601090600290600401610f2e565b600060405180830381865af41580156106a3573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526106cb9190810190610e3a565b816001815181106106de576106de610efc565b016020015160405163c1338a6960e01b815273__$bddea793ab3ab242e0f42fcbbce9ecfcb5$__9163c1338a69916107229160f81c90601090600290600401610f2e565b600060405180830381865af415801561073f573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526107679190810190610e3a565b8260028151811061077a5761077a610efc565b016020015160405163c1338a6960e01b815273__$bddea793ab3ab242e0f42fcbbce9ecfcb5$__9163c1338a69916107be9160f81c90601090600290600401610f2e565b600060405180830381865af41580156107db573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526108039190810190610e3a565b60405160200161081593929190610f6e565b60405160208183030381529060405291505092915050565b606060006003835161083f9190610fa6565b905060008167ffffffffffffffff81111561085c5761085c6109e0565b60405190808252806020026020018201604052801561088f57816020015b606081526020019060019003908161087a5790505b50905060005b828110156108d7576108a78582610393565b8282815181106108b9576108b9610efc565b602002602001018190525080806108cf90610fba565b915050610895565b509392505050565b60606105be826001600019610918565b606061091084610900856001610f56565b61090b856001610f56565b610918565b949350505050565b6060833b806109375750506040805160208101909152600081526105dc565b808411156109555750506040805160208101909152600081526105dc565b8383101561099e578084846040517f2c4a89fa00000000000000000000000000000000000000000000000000000000815260040161099593929190610fd5565b60405180910390fd5b83830384820360008282106109b357826109b5565b815b60408051603f8301601f19168101909152818152955090508087602087018a3c505050509392505050565b634e487b7160e01b600052604160045260246000fd5b601f19601f830116810181811067ffffffffffffffff82111715610a1c57610a1c6109e0565b6040525050565b6000610a2e60405190565b9050610a3a82826109f6565b919050565b600067ffffffffffffffff821115610a5957610a596109e0565b5060209081020190565b600067ffffffffffffffff821115610a7d57610a7d6109e0565b601f19601f83011660200192915050565b82818337506000910152565b6000610aad610aa884610a63565b610a23565b905082815260208101848484011115610ac857610ac8600080fd5b6108d7848285610a8e565b600082601f830112610ae757610ae7600080fd5b8135610910848260208601610a9a565b6000610b05610aa884610a3f565b83815290506020808201908402830185811115610b2457610b24600080fd5b835b81811015610b6357803567ffffffffffffffff811115610b4857610b48600080fd5b8501610b548882610ad3565b84525060209283019201610b26565b5050509392505050565b600082601f830112610b8157610b81600080fd5b8135610910848260208601610af7565b600060208284031215610ba657610ba6600080fd5b813567ffffffffffffffff811115610bc057610bc0600080fd5b61091084828501610b6d565b60005b83811015610be7578181015183820152602001610bcf565b83811115610bf6576000848401525b50505050565b6000610c06825190565b808452602084019350610c1d818560208601610bcc565b601f01601f19169290920192915050565b602080825281016105dc8184610bfc565b805b8114610c4c57600080fd5b50565b80356105be81610c3f565b60008060408385031215610c7057610c70600080fd5b823567ffffffffffffffff811115610c8a57610c8a600080fd5b610c9685828601610ad3565b9250506020610ca785828601610c4f565b9150509250929050565b600073ffffffffffffffffffffffffffffffffffffffff82166105be565b610c4181610cb1565b80356105be81610ccf565b600060208284031215610cf857610cf8600080fd5b60006109108484610cd8565b60006105dc8383610bfc565b6000610d1a825190565b80845260208401935083602082028501610d348560200190565b60005b84811015610d685783830388528151610d508482610d04565b93505060208201602098909801979150600101610d37565b50909695505050505050565b602080825281016105dc8184610d10565b60008060408385031215610d9b57610d9b600080fd5b6000610c968585610cd8565b600060208284031215610dbc57610dbc600080fd5b813567ffffffffffffffff811115610dd657610dd6600080fd5b61091084828501610ad3565b6000610df0610aa884610a63565b905082815260208101848484011115610e0b57610e0b600080fd5b6108d7848285610bcc565b600082601f830112610e2a57610e2a600080fd5b8151610910848260208601610de2565b600060208284031215610e4f57610e4f600080fd5b815167ffffffffffffffff811115610e6957610e69600080fd5b61091084828501610e16565b6000610e7f825190565b610e8d818560208601610bcc565b9290920192915050565b7f307800000000000000000000000000000000000000000000000000000000000081526002016105be8183610e75565b634e487b7160e01b600052601160045260246000fd5b6000816000190483118215151615610ef757610ef7610ec7565b500290565b634e487b7160e01b600052603260045260246000fd5b805b82525050565b600060ff82166105be565b610f1481610f1a565b60608101610f3c8286610f12565b610f496020830185610f25565b6109106040830184610f25565b60008219821115610f6957610f69610ec7565b500190565b610f788185610e75565b9050610f848184610e75565b90506109108183610e75565b634e487b7160e01b600052601260045260246000fd5b600082610fb557610fb5610f90565b500490565b6000600019821415610fce57610fce610ec7565b5060010190565b60608101610fe38286610f12565b610ff06020830185610f12565b6109106040830184610f1256fe786d6c6e733d253237687474703a2f2f7777772e77332e6f72672f323030302f737667253237a2646970667358221220b8831a5fcac878061975fa6fb77f7007cd7679bc00000eed895401eb3f1232fb64736f6c634300080c0033",
+  "libraries": {
+    "Integers": "0xf4B0EbA794Ab6A7803686398a782c909E45c0bD8",
+    "Array": "0x824d304b7C17FF1E03bEA9b0f752BA9A2aff3426"
+  },
+  "devdoc": {
+    "author": "Clement Walter <clement0walter@gmail.com>",
+    "kind": "dev",
+    "methods": {
+      "encodePalette(string[])": {
+        "details": "Usually colors are already defined in hex color space so we just concat all the colors. No check is made      and this function only concatenates the input colors.",
+        "params": {
+          "palette": "The list of colors as hex strings, without the leading #."
+        },
+        "returns": {
+          "_0": "The concatenated colors as string. To be used as bytes afterwards."
+        }
+      },
+      "getFill(address,uint256)": {
+        "details": "Returns one single color reading directly from the storage.",
+        "params": {
+          "index": "The index of the color to retrieve",
+          "pointer": "The pointer to the palette bytes array where each color is R, G, B at storage i, i+1, i+2."
+        },
+        "returns": {
+          "_0": "The hexstring representation of the color, e.g. \"a3120f\"."
+        }
+      },
+      "getFill(bytes,uint256)": {
+        "details": "Returns one single color from a pre-loaded whole palette as a bytes array.",
+        "params": {
+          "index": "The index of the color to retrieve",
+          "palette": "A bytes array encoding several RGB colors. Length should be a multiple of 3."
+        },
+        "returns": {
+          "_0": "The hexstring representation of the color, e.g. \"a3120f\"."
+        }
+      },
+      "getPalette(address)": {
+        "details": "Decode the whole palette once for all and returns an array of hexstrings.",
+        "params": {
+          "pointer": "The pointer to the palette bytes array where each color is at storage at i, i+1, i+2."
+        },
+        "returns": {
+          "_0": "An array of hexstring representation of the color, e.g. \"a3120f\"."
+        }
+      }
+    },
+    "title": "BaseRenderer   This library contains shared functionality and constants for the renderers.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

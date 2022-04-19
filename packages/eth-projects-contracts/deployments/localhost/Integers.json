@@ -1,0 +1,130 @@
+{
+  "address": "0xf4B0EbA794Ab6A7803686398a782c909E45c0bD8",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_number",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_base",
+          "type": "uint8"
+        }
+      ],
+      "name": "toString",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_number",
+          "type": "uint256"
+        }
+      ],
+      "name": "toString",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_number",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_base",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_padding",
+          "type": "uint8"
+        }
+      ],
+      "name": "toString",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x5212bd0938afdd512a24a397e0fc91ee854ad4828980b07f9e108e96bf20d58a",
+  "receipt": {
+    "to": null,
+    "from": "0x6966Bdb480e7f7A48A7f6B198eE8b9462A265401",
+    "contractAddress": "0xf4B0EbA794Ab6A7803686398a782c909E45c0bD8",
+    "transactionIndex": 0,
+    "gasUsed": "383315",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x4d0b286890d915344b74ae6211703c12d8aa2e9d1e66f4c8093d453fa101ba5c",
+    "transactionHash": "0x5212bd0938afdd512a24a397e0fc91ee854ad4828980b07f9e108e96bf20d58a",
+    "logs": [],
+    "blockNumber": 3,
+    "cumulativeGasUsed": "383315",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "5a4065e98c83db14617d25d1485ebb78",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.12+commit.f00d7308\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_number\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"_base\",\"type\":\"uint8\"}],\"name\":\"toString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_number\",\"type\":\"uint256\"}],\"name\":\"toString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_number\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"_base\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"_padding\",\"type\":\"uint8\"}],\"name\":\"toString\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Clement Walter <clement0walter@gmail.com>\",\"kind\":\"dev\",\"methods\":{\"toString(uint256,uint8,uint8)\":{\"params\":{\"_base\":\"The base to convert the number to\",\"_number\":\"The unsigned integer to be converted to a string\",\"_padding\":\"The target length of the string; result will be padded with 0 to reach this length while padding         of 0 means no padding\"},\"returns\":{\"_0\":\"bytes The resulting ASCII string value\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"toString(uint256,uint8,uint8)\":{\"notice\":\"To String Converts an unsigned integer to the string equivalent value, returned as bytes Equivalent to javascript's toString(base)\"}},\"notice\":\"Integers Library updated from https://github.com/willitscale/solidity-util In summary this is a simple library of integer functions which allow a simple conversion to and from strings\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/lib/utils/Integers.sol\":\"Integers\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"details\":{\"constantOptimizer\":true,\"cse\":true,\"deduplicate\":true,\"inliner\":true,\"jumpdestRemover\":true,\"orderLiterals\":true,\"peephole\":true,\"yul\":true,\"yulDetails\":{\"optimizerSteps\":\"dhfoDgvulfnTUtnIf\",\"stackAllocation\":true}},\"runs\":2000},\"remappings\":[]},\"sources\":{\"contracts/lib/utils/Integers.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * Integers Library updated from https://github.com/willitscale/solidity-util\\n *\\n * In summary this is a simple library of integer functions which allow a simple\\n * conversion to and from strings\\n *\\n * @author Clement Walter <clement0walter@gmail.com>\\n */\\nlibrary Integers {\\n    /**\\n     * To String\\n     *\\n     * Converts an unsigned integer to the string equivalent value, returned as bytes\\n     * Equivalent to javascript's toString(base)\\n     *\\n     * @param _number The unsigned integer to be converted to a string\\n     * @param _base The base to convert the number to\\n     * @param  _padding The target length of the string; result will be padded with 0 to reach this length while padding\\n     *         of 0 means no padding\\n     * @return bytes The resulting ASCII string value\\n     */\\n    function toString(\\n        uint256 _number,\\n        uint8 _base,\\n        uint8 _padding\\n    ) public pure returns (string memory) {\\n        uint256 count = 0;\\n        uint256 b = _number;\\n        while (b != 0) {\\n            count++;\\n            b /= _base;\\n        }\\n        if (_number == 0) {\\n            count++;\\n        }\\n        bytes memory res;\\n        if (_padding == 0) {\\n            res = new bytes(count);\\n        } else {\\n            res = new bytes(_padding);\\n        }\\n        for (uint256 i = 0; i < res.length; ++i) {\\n            b = _number % _base;\\n            if (b < 10) {\\n                res[res.length - i - 1] = bytes1(uint8(b + 48)); // 0-9\\n            } else {\\n                res[res.length - i - 1] = bytes1(uint8((b % 10) + 65)); // A-F\\n            }\\n            _number /= _base;\\n        }\\n\\n        for (uint256 i = count; i < _padding; ++i) {\\n            res[res.length - i - 1] = hex\\\"30\\\"; // 0\\n        }\\n\\n        return string(res);\\n    }\\n\\n    function toString(uint256 _number) public pure returns (string memory) {\\n        return toString(_number, 10, 0);\\n    }\\n\\n    function toString(uint256 _number, uint8 _base)\\n        public\\n        pure\\n        returns (string memory)\\n    {\\n        return toString(_number, _base, 0);\\n    }\\n}\\n\",\"keccak256\":\"0x547aedd7ff0df60ed3dfaf6a7ec21210ed631beb6319de9e32f689f3fcb47a08\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6105fa61003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361061004b5760003560e01c8063338dc7fd146100505780636900a3ae14610079578063c1338a691461008c575b600080fd5b61006361005e366004610395565b61009f565b6040516100709190610452565b60405180910390f35b610063610087366004610463565b6100b6565b61006361009a36600461048c565b6100c1565b60606100ad838360006100c1565b90505b92915050565b60606100b082600a60005b60606000845b80156100ef57816100d7816104f2565b92506100e8905060ff861682610541565b90506100c7565b8561010257816100fe816104f2565b9250505b606060ff8516610157578267ffffffffffffffff81111561012557610125610555565b6040519080825280601f01601f19166020018201604052801561014f576020820181803683370190505b5090506101a1565b8460ff1667ffffffffffffffff81111561017357610173610555565b6040519080825280601f01601f19166020018201604052801561019d576020820181803683370190505b5090505b60005b81518110156102c3576101ba60ff88168961056b565b9250600a831015610231576101d083603061057f565b60f81b8260018385516101e39190610597565b6101ed9190610597565b815181106101fd576101fd6105ae565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053506102a4565b61023c600a8461056b565b61024790604161057f565b60f81b82600183855161025a9190610597565b6102649190610597565b81518110610274576102746105ae565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053505b6102b160ff881689610541565b97506102bc816104f2565b90506101a4565b50825b8560ff1681101561035b577f30000000000000000000000000000000000000000000000000000000000000008260018385516103029190610597565b61030c9190610597565b8151811061031c5761031c6105ae565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350610354816104f2565b90506102c6565b509695505050505050565b805b811461037357600080fd5b50565b80356100b081610366565b60ff8116610368565b80356100b081610381565b600080604083850312156103ab576103ab600080fd5b60006103b78585610376565b92505060206103c88582860161038a565b9150509250929050565b60005b838110156103ed5781810151838201526020016103d5565b838111156103fc576000848401525b50505050565b600061040c825190565b8084526020840193506104238185602086016103d2565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169290920192915050565b602080825281016100ad8184610402565b60006020828403121561047857610478600080fd5b60006104848484610376565b949350505050565b6000806000606084860312156104a4576104a4600080fd5b60006104b08686610376565b93505060206104c18682870161038a565b92505060406104d28682870161038a565b9150509250925092565b634e487b7160e01b600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff821415610524576105246104dc565b5060010190565b634e487b7160e01b600052601260045260246000fd5b6000826105505761055061052b565b500490565b634e487b7160e01b600052604160045260246000fd5b60008261057a5761057a61052b565b500690565b60008219821115610592576105926104dc565b500190565b6000828210156105a9576105a96104dc565b500390565b634e487b7160e01b600052603260045260246000fdfea2646970667358221220a94bfed9eac0fda2ed43da8eaa2e9f425c4f9ea9b2b8ecbe37913685bd6838ce64736f6c634300080c0033",
+  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040526004361061004b5760003560e01c8063338dc7fd146100505780636900a3ae14610079578063c1338a691461008c575b600080fd5b61006361005e366004610395565b61009f565b6040516100709190610452565b60405180910390f35b610063610087366004610463565b6100b6565b61006361009a36600461048c565b6100c1565b60606100ad838360006100c1565b90505b92915050565b60606100b082600a60005b60606000845b80156100ef57816100d7816104f2565b92506100e8905060ff861682610541565b90506100c7565b8561010257816100fe816104f2565b9250505b606060ff8516610157578267ffffffffffffffff81111561012557610125610555565b6040519080825280601f01601f19166020018201604052801561014f576020820181803683370190505b5090506101a1565b8460ff1667ffffffffffffffff81111561017357610173610555565b6040519080825280601f01601f19166020018201604052801561019d576020820181803683370190505b5090505b60005b81518110156102c3576101ba60ff88168961056b565b9250600a831015610231576101d083603061057f565b60f81b8260018385516101e39190610597565b6101ed9190610597565b815181106101fd576101fd6105ae565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053506102a4565b61023c600a8461056b565b61024790604161057f565b60f81b82600183855161025a9190610597565b6102649190610597565b81518110610274576102746105ae565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053505b6102b160ff881689610541565b97506102bc816104f2565b90506101a4565b50825b8560ff1681101561035b577f30000000000000000000000000000000000000000000000000000000000000008260018385516103029190610597565b61030c9190610597565b8151811061031c5761031c6105ae565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350610354816104f2565b90506102c6565b509695505050505050565b805b811461037357600080fd5b50565b80356100b081610366565b60ff8116610368565b80356100b081610381565b600080604083850312156103ab576103ab600080fd5b60006103b78585610376565b92505060206103c88582860161038a565b9150509250929050565b60005b838110156103ed5781810151838201526020016103d5565b838111156103fc576000848401525b50505050565b600061040c825190565b8084526020840193506104238185602086016103d2565b601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0169290920192915050565b602080825281016100ad8184610402565b60006020828403121561047857610478600080fd5b60006104848484610376565b949350505050565b6000806000606084860312156104a4576104a4600080fd5b60006104b08686610376565b93505060206104c18682870161038a565b92505060406104d28682870161038a565b9150509250925092565b634e487b7160e01b600052601160045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff821415610524576105246104dc565b5060010190565b634e487b7160e01b600052601260045260246000fd5b6000826105505761055061052b565b500490565b634e487b7160e01b600052604160045260246000fd5b60008261057a5761057a61052b565b500690565b60008219821115610592576105926104dc565b500190565b6000828210156105a9576105a96104dc565b500390565b634e487b7160e01b600052603260045260246000fdfea2646970667358221220a94bfed9eac0fda2ed43da8eaa2e9f425c4f9ea9b2b8ecbe37913685bd6838ce64736f6c634300080c0033",
+  "devdoc": {
+    "author": "Clement Walter <clement0walter@gmail.com>",
+    "kind": "dev",
+    "methods": {
+      "toString(uint256,uint8,uint8)": {
+        "params": {
+          "_base": "The base to convert the number to",
+          "_number": "The unsigned integer to be converted to a string",
+          "_padding": "The target length of the string; result will be padded with 0 to reach this length while padding         of 0 means no padding"
+        },
+        "returns": {
+          "_0": "bytes The resulting ASCII string value"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "toString(uint256,uint8,uint8)": {
+        "notice": "To String Converts an unsigned integer to the string equivalent value, returned as bytes Equivalent to javascript's toString(base)"
+      }
+    },
+    "notice": "Integers Library updated from https://github.com/willitscale/solidity-util In summary this is a simple library of integer functions which allow a simple conversion to and from strings",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

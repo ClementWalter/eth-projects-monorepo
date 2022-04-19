@@ -5,6 +5,7 @@ pragma solidity ^0.8.12;
 import "@0xsequence/sstore2/contracts/SSTORE2.sol";
 
 import {Integers} from "../utils/Integers.sol";
+import {Array} from "../utils/Array.sol";
 
 /**  @title BaseRenderer
  *
@@ -12,9 +13,10 @@ import {Integers} from "../utils/Integers.sol";
  *
  * @author Clement Walter <clement0walter@gmail.com>
  */
-contract RendererCommons {
+library RendererCommons {
     using Integers for uint256;
     using Integers for uint8;
+    using Array for string[];
 
     string public constant DATA_URI = "data:image/svg+xml,";
     string public constant XMLNS_HEADER =
@@ -27,15 +29,18 @@ contract RendererCommons {
 
     event BytesStored(address pointer);
 
-    /* @dev This can be used to store both images bytes and palettes bytes. It uses the SSTORE2 lib and returns the
-     *      pointer to the storage address to be used, for example, in getImageBytes and getFill.
-     * @param bytes The bytes to store.
-     * @return The pointer to the storage address.
+    /**
+     * @dev Usually colors are already defined in hex color space so we just concat all the colors. No check is made
+     *      and this function only concatenates the input colors.
+     * @param palette The list of colors as hex strings, without the leading #.
+     * @return The concatenated colors as string. To be used as bytes afterwards.
      */
-    function storeBytes(bytes calldata _bytes) external returns (address) {
-        address pointer = SSTORE2.write(_bytes);
-        emit BytesStored(pointer);
-        return pointer;
+    function encodePalette(string[] memory palette)
+        public
+        pure
+        returns (string memory)
+    {
+        return string.concat("0x", palette.join());
     }
 
     /** @dev Returns one single color reading directly from the storage.
@@ -48,7 +53,8 @@ contract RendererCommons {
         view
         returns (string memory)
     {
-        bytes memory palette = SSTORE2.read(pointer, index, index + 3);
+        bytes memory palette = SSTORE2.read(pointer, 3 * index, 3 * index + 3);
+
         return
             string.concat(
                 uint8(palette[0]).toString(16, 2),

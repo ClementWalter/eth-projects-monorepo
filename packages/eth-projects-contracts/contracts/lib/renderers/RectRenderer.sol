@@ -13,6 +13,47 @@ error CoordinatesOutOfRange(uint256 coordinate);
 error CharacteristicOutOfRange(uint256 characteristic);
 error TraitOutOfRange(uint256 trait);
 
+struct Rect {
+    uint32 x;
+    uint32 y;
+    uint32 width;
+    uint32 height;
+    uint32 fillIndex;
+}
+
+struct Trait {
+    Rect[] rects;
+    string name;
+}
+
+struct TraitEncoded {
+    bytes rects;
+    string name;
+}
+
+struct Characteristic {
+    Trait[] traits;
+    string name;
+}
+
+struct CharacteristicEncoded {
+    bytes traits;
+    string[] names;
+    string name;
+}
+
+struct Collection {
+    Characteristic[] characteristics;
+    string description;
+}
+
+struct CollectionEncoded {
+    bytes traits;
+    string[][] traitNames;
+    string[] characteristicNames;
+    string description;
+}
+
 /**  @title RectRenderer
  *
  *   This library can be used to render on-chain images stored as a layering of rectangles.
@@ -20,7 +61,7 @@ error TraitOutOfRange(uint256 trait);
  *
  * @author Clement Walter <clement0walter@gmail.com>
  */
-contract RectRenderer {
+library RectRenderer {
     using Integers for uint8;
     using Integers for uint32;
     using Integers for uint256;
@@ -36,47 +77,6 @@ contract RectRenderer {
     string public constant HEIGHT_TAG = "%27%20height=%27";
     string public constant FILL_TAG = "%27%20fill=%27%23";
     string public constant RECT_TAG_END = "%27/%3e";
-
-    struct Rect {
-        uint32 x;
-        uint32 y;
-        uint32 width;
-        uint32 height;
-        uint32 fillIndex;
-    }
-
-    struct Trait {
-        Rect[] rects;
-        string name;
-    }
-
-    struct TraitEncoded {
-        bytes rects;
-        string name;
-    }
-
-    struct Characteristic {
-        Trait[] traits;
-        string name;
-    }
-
-    struct CharacteristicEncoded {
-        bytes traits;
-        string[] names;
-        string name;
-    }
-
-    struct Collection {
-        Characteristic[] characteristics;
-        string description;
-    }
-
-    struct CollectionEncoded {
-        bytes traits;
-        string[][] traitsNames;
-        string[] characteristicsNames;
-        string description;
-    }
 
     /** @dev Use this function to encode a single <rect> as expected by the renderer. Use this off-chain!
      *
@@ -161,16 +161,23 @@ contract RectRenderer {
         );
     }
 
+    /** @dev Use this function to encode a full collection, i.e. a list of characteristics.
+     *       Use this off-chain and push the result using RendererCommon.storeBytes
+     *
+     * @param collection The list of Characteristic constituting the collection. The description is just returned in the
+     *        new object and can be used to store the description of the collection.
+     * @return The encoded collection (mainly a bytes memory whose encoding somehow follows solidity memory storage rules.)
+     */
     function encodeCollection(Collection memory collection)
         public
         pure
         returns (CollectionEncoded memory)
     {
         bytes[] memory traits = new bytes[](collection.characteristics.length);
-        string[] memory characteristicsNames = new string[](
+        string[] memory characteristicNames = new string[](
             collection.characteristics.length
         );
-        string[][] memory traitsNames = new string[][](
+        string[][] memory traitNames = new string[][](
             collection.characteristics.length
         );
         uint16[] memory lengths = new uint16[](
@@ -186,8 +193,8 @@ contract RectRenderer {
             );
             lengths[i] = cumSum;
             traits[i] = tmp.traits;
-            traitsNames[i] = tmp.names;
-            characteristicsNames[i] = tmp.name;
+            traitNames[i] = tmp.names;
+            characteristicNames[i] = tmp.name;
             cumSum += uint16(traits[i].length % type(uint16).max);
         }
         return (
@@ -201,8 +208,8 @@ contract RectRenderer {
                     lengths.join(),
                     traits.join()
                 ),
-                traitsNames,
-                characteristicsNames,
+                traitNames,
+                characteristicNames,
                 collection.description
             )
         );
