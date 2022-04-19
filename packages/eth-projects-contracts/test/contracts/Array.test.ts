@@ -21,20 +21,39 @@ const setup = async () => {
 
 describe("Array", function () {
   describe("join", async function () {
-    describe("join(string[])", async function () {
+    describe("join(string[],string)", async function () {
       [...Array(100).keys()].forEach((stringCount) => {
         [...Array(100).keys()].forEach((stringLength) => {
-          it(`should return the correct string for ${
-            stringCount + 1
-          } strings of length ${stringLength + 1}`, async function () {
-            const { ArraySol } = await setup();
-            const strings = [...Array(stringCount + 1).keys()].map(
-              (j) => `${j}${"-".repeat(stringLength)}`
-            );
-            const result = await ArraySol["join(string[])"](strings);
-            expect(result).to.equal(strings.join(""));
+          ["", ","].forEach((glue) => {
+            it(`should return the correct string for ${
+              stringCount + 1
+            } strings of length ${
+              stringLength + 1
+            } with glue "${glue}"`, async function () {
+              const { ArraySol } = await setup();
+              const strings = [...Array(stringCount + 1).keys()].map(
+                (j) => `${j}${"-".repeat(stringLength)}`
+              );
+              const result = await ArraySol["join(string[],string)"](
+                strings,
+                glue
+              );
+              expect(result).to.equal(strings.join(glue));
+            });
           });
         });
+      });
+
+      it("should revert when glue is longer than 32", async () => {
+        const { ArraySol } = await setup();
+        const limit = await ArraySol["join(string[],string)"](
+          ["strings"],
+          ",".repeat(32)
+        );
+        expect(limit).to.eq("strings");
+        await expect(
+          ArraySol["join(string[],string)"](["strings"], ",".repeat(33))
+        ).to.be.revertedWith("");
       });
     });
 
@@ -70,7 +89,7 @@ describe("Array", function () {
         key: `join(uint${l}[])`,
       }))
       .forEach((type) => {
-        describe.only(`uint${type.length}[]`, function () {
+        describe(`uint${type.length}[]`, function () {
           [...Array(100).keys()].forEach((length) => {
             it(`should return the correct bytes for uint${type.length}[${
               length + 1

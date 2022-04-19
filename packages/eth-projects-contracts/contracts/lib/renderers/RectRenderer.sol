@@ -8,6 +8,8 @@ import {Integers} from "../utils/Integers.sol";
 import {Bytes} from "../utils/Bytes.sol";
 import {Array} from "../utils/Array.sol";
 
+import "hardhat/console.sol";
+
 error InvalidLength(uint256 length);
 error CharacteristicOutOfRange(uint256 characteristic);
 error TraitOutOfRange(uint256 trait);
@@ -111,7 +113,10 @@ library RectRenderer {
         uint256 nbRects = rectsBytes.length / 4;
         string[] memory rects = new string[](nbRects);
         for (uint256 i = 0; i < rects.length; i++) {
-            rects[i] = decodeBytes4ToRect(rectsBytes.toBytes4(i * 4), palette);
+            rects[i] = decodeBytes4ToRect(
+                bytes4(rectsBytes.toUint32(i * 4)),
+                palette
+            );
         }
         return rects.join();
     }

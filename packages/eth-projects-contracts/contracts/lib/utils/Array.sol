@@ -9,24 +9,45 @@
 pragma solidity ^0.8.12;
 
 error EmptyArray();
+error GlueOutOfBounds(uint256 length);
 
 library Array {
-    function join(string[] memory a) public pure returns (string memory) {
-        uint256 pointer;
+    function join(string[] memory a, string memory glue)
+        public
+        pure
+        returns (string memory)
+    {
+        uint256 inputPointer;
+        uint256 gluePointer;
 
         assembly {
-            pointer := a
+            inputPointer := a
+            gluePointer := glue
         }
-        return string(_joinReferenceType(pointer));
+        return string(_joinReferenceType(inputPointer, gluePointer));
+    }
+
+    function join(string[] memory a) public pure returns (string memory) {
+        return join(a, "");
+    }
+
+    function join(bytes[] memory a, bytes memory glue)
+        public
+        pure
+        returns (bytes memory)
+    {
+        uint256 inputPointer;
+        uint256 gluePointer;
+
+        assembly {
+            inputPointer := a
+            gluePointer := glue
+        }
+        return _joinReferenceType(inputPointer, gluePointer);
     }
 
     function join(bytes[] memory a) public pure returns (bytes memory) {
-        uint256 pointer;
-
-        assembly {
-            pointer := a
-        }
-        return _joinReferenceType(pointer);
+        return join(a, bytes(""));
     }
 
     function join(bytes2[] memory a) public pure returns (bytes memory) {
@@ -129,7 +150,7 @@ library Array {
         return tempBytes;
     }
 
-    function _joinReferenceType(uint256 a)
+    function _joinReferenceType(uint256 inputPointer, uint256 gluePointer)
         public
         pure
         returns (bytes memory tempBytes)
@@ -142,9 +163,16 @@ library Array {
             // Skip the first 32 bytes where we will store the length of the result
             let memoryPointer := add(tempBytes, 0x20)
 
+            // Load glue
+            let glueLength := mload(gluePointer)
+            if gt(glueLength, 0x20) {
+                revert(gluePointer, 0x20)
+            }
+            let glue := mload(add(gluePointer, 0x20))
+
             // Load the length (first 32 bytes)
-            let inputLength := mload(a)
-            let inputData := add(a, 0x20)
+            let inputLength := mload(inputPointer)
+            let inputData := add(inputPointer, 0x20)
             let end := add(inputData, mul(inputLength, 0x20))
 
             // Initialize the length of the final string
@@ -178,9 +206,14 @@ library Array {
                     currentPointer := add(currentPointer, 0x20)
                 }
                 memoryPointer := add(memoryPointer, currentStringLength)
+                mstore(memoryPointer, glue)
+                memoryPointer := add(memoryPointer, glueLength)
             }
 
-            mstore(tempBytes, stringLength)
+            mstore(
+                tempBytes,
+                add(stringLength, mul(sub(inputLength, 1), glueLength))
+            )
             mstore(0x40, and(add(memoryPointer, 31), not(31)))
         }
         return tempBytes;

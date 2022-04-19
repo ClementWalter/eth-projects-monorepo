@@ -139,18 +139,6 @@ library Bytes {
         return toUint16(_bytes, 0);
     }
 
-    function toBytes2(bytes memory _bytes, uint256 _start)
-        public
-        pure
-        returns (bytes2 tmp)
-    {
-        require(_bytes.length >= _start + 2, "toBytes2_outOfBounds");
-
-        assembly {
-            tmp := mload(add(add(_bytes, 0x2), _start))
-        }
-    }
-
     function toUint24(bytes memory _bytes, uint256 _start)
         public
         pure
@@ -163,36 +151,12 @@ library Bytes {
         }
     }
 
-    function toBytes3(bytes memory _bytes, uint256 _start)
-        public
-        pure
-        returns (bytes3 tmp)
-    {
-        require(_bytes.length >= _start + 3, "toBytes3_outOfBounds");
-
-        assembly {
-            tmp := mload(add(add(_bytes, 0x3), _start))
-        }
-    }
-
     function toUint32(bytes memory _bytes, uint256 _start)
         public
         pure
         returns (uint32 tmp)
     {
         require(_bytes.length >= _start + 4, "toUint32_outOfBounds");
-
-        assembly {
-            tmp := mload(add(add(_bytes, 0x4), _start))
-        }
-    }
-
-    function toBytes4(bytes memory _bytes, uint256 _start)
-        public
-        pure
-        returns (bytes4 tmp)
-    {
-        require(_bytes.length >= _start + 4, "toBytes4_outOfBounds");
 
         assembly {
             tmp := mload(add(add(_bytes, 0x4), _start))
