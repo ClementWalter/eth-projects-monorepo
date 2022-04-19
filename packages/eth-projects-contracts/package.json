@@ -6,7 +6,6 @@
   "license": "MIT",
   "files": [
     "/contracts/**/*.sol",
-    "!/contracts/test_utils/**/*",
     "/artifacts/contracts/*.json",
     "/utils/**/*.ts",
     "/deploy/**/*.ts",
