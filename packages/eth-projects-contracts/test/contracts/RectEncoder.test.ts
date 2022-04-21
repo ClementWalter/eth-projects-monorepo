@@ -3,7 +3,7 @@ import { deployments, ethers } from "hardhat";
 import { solidity } from "ethereum-waffle";
 import { TAGS } from "../../utils/constants";
 import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
-import { RectEncoder } from "../../typechain";
+import { RectEncoder, RectRenderer } from "../../typechain";
 import {
   encodeCharacteristic,
   encodeCollection,
@@ -26,11 +26,13 @@ const { expect } = chai;
 const setup = async () => {
   await deployments.fixture([
     TAGS.RECT_ENCODER,
+    TAGS.RECT_RENDERER,
     TAGS.RENDERER_COMMONS,
     TAGS.SSTORE2,
   ]);
   const contracts = {
     RectEncoder: (await ethers.getContract("RectEncoder")) as RectEncoder,
+    RectRenderer: (await ethers.getContract("RectRenderer")) as RectRenderer,
   };
   return {
     ...contracts,
@@ -84,19 +86,20 @@ describe("RectEncoder", function () {
       .map(generateCollection)
       .forEach((collection: Collection) => {
         it(`should return the correct bytes and names for ${collection.description} of ${collection.characteristics.length} characteristics`, async () => {
-          const { RectEncoder } = await setup();
+          const { RectEncoder, RectRenderer } = await setup();
           const result = await RectEncoder.encodeCollection(collection);
-          expect(result.characteristicNames).to.deep.equal(
+          const resultDecoded = await RectRenderer.decodeNames(result.names);
+          expect(resultDecoded.characteristicNames).to.deep.equal(
             collection.characteristics.map(
               (characteristic) => characteristic.name
             )
           );
-          expect(result.traitNames).to.deep.equal(
+          expect(resultDecoded.traitNames).to.deep.equal(
             collection.characteristics.map((characteristic) =>
               characteristic.traits.map((trait) => trait.name)
             )
           );
-          expect(result.description).to.equal(collection.description);
+          expect(resultDecoded.description).to.equal(collection.description);
           expect(result.traits).to.equal("0x" + encodeCollection(collection));
         });
       });

@@ -41,10 +41,8 @@ struct Collection {
 }
 
 struct CollectionEncoded {
+    bytes names;
     bytes traits;
-    string[][] traitNames;
-    string[] characteristicNames;
-    string description;
 }
 
 /**  @title RectEncoder
@@ -181,6 +179,11 @@ contract RectEncoder {
         }
         return (
             CollectionEncoded(
+                abi.encode(
+                    collection.description,
+                    characteristicNames,
+                    traitNames
+                ),
                 bytes.concat(
                     bytes2(
                         uint16(
@@ -189,10 +192,7 @@ contract RectEncoder {
                     ),
                     lengths.join(),
                     traits.join()
-                ),
-                traitNames,
-                characteristicNames,
-                collection.description
+                )
             )
         );
     }

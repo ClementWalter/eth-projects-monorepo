@@ -118,4 +118,16 @@ library RectRenderer {
         }
         return rects.join();
     }
+
+    function decodeNames(bytes memory names)
+        public
+        pure
+        returns (
+            string memory description,
+            string[] memory characteristicNames,
+            string[][] memory traitNames
+        )
+    {
+        return abi.decode(names, (string, string[], string[][]));
+    }
 }
