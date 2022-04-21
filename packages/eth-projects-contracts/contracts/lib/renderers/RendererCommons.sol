@@ -7,6 +7,11 @@ import "@0xsequence/sstore2/contracts/SSTORE2.sol";
 import {Integers} from "../utils/Integers.sol";
 import {Array} from "../utils/Array.sol";
 
+struct Attribute {
+    string trait_type;
+    string value;
+}
+
 /**  @title BaseRenderer
  *
  *   This library contains shared functionality and constants for the renderers.
@@ -101,5 +106,55 @@ library RendererCommons {
             paletteHex[i] = getFill(palette, i);
         }
         return paletteHex;
+    }
+
+    /** @dev Retrieve the names encoded with the collection: description, characteristics and traits names array.
+     * @param names The bytes the names encoded by the RectEncoder.
+     */
+    function decodeNames(bytes memory names)
+        public
+        pure
+        returns (
+            string memory description,
+            string[] memory characteristicNames,
+            string[][] memory traitNames
+        )
+    {
+        return abi.decode(names, (string, string[], string[][]));
+    }
+
+    /** @dev Retrieve the names encoded with the collection: description, characteristics and traits names array.
+     * @param pointer The address of the SSTORE2 contract for the names.
+     */
+    function decodeNames(address pointer)
+        public
+        view
+        returns (
+            string memory description,
+            string[] memory characteristicNames,
+            string[][] memory traitNames
+        )
+    {
+        return decodeNames(SSTORE2.read(pointer));
+    }
+
+    function tokenAttributes(address pointer, uint256[] memory items)
+        public
+        view
+        returns (Attribute[] memory)
+    {
+        (
+            ,
+            string[] memory characteristicNames,
+            string[][] memory traitNames
+        ) = decodeNames(SSTORE2.read(pointer));
+        Attribute[] memory attributes = new Attribute[](items.length);
+        for (uint256 i = 0; i < items.length; i++) {
+            attributes[i] = Attribute(
+                characteristicNames[i],
+                traitNames[i][items[i]]
+            );
+        }
+        return attributes;
     }
 }

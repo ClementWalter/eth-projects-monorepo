@@ -88,7 +88,9 @@ describe("RectEncoder", function () {
         it(`should return the correct bytes and names for ${collection.description} of ${collection.characteristics.length} characteristics`, async () => {
           const { RectEncoder, RectRenderer } = await setup();
           const result = await RectEncoder.encodeCollection(collection);
-          const resultDecoded = await RectRenderer.decodeNames(result.names);
+          const resultDecoded = await RectRenderer["decodeNames(bytes)"](
+            result.names
+          );
           expect(resultDecoded.characteristicNames).to.deep.equal(
             collection.characteristics.map(
               (characteristic) => characteristic.name

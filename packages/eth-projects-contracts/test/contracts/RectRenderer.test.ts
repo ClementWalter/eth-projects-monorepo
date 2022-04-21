@@ -16,7 +16,7 @@ import {
   inlineRect,
 } from "../../utils/encodings/rectEncoding";
 import { Collection } from "../../utils/types";
-import { generateCollection } from "./utils";
+import { generateCollection, generateImageItems } from "./utils";
 
 chai.use(jestSnapshotPlugin());
 chai.use(solidity);
@@ -48,13 +48,19 @@ const setup = async () => {
 const deployedCollectionFixture = deployments.createFixture(async () => {
   const contracts = await setup();
   const collectionBytes = encodeCollection(collection);
-  const tx = await contracts.SSTORE2.write("0x" + collectionBytes);
-  const receipt = await tx.wait();
-  const pointer = receipt.events
+  let tx = await contracts.SSTORE2.write("0x" + collectionBytes);
+  let receipt = await tx.wait();
+  const collectionPointer = receipt.events
     ?.filter((event) => event.event == "Write")
     .map((e) => e?.args?.pointer)
     .pop();
-  return { ...contracts, pointer };
+  tx = await contracts.SSTORE2.write("0x" + palette.join(""));
+  receipt = await tx.wait();
+  const palettePointer = receipt.events
+    ?.filter((event) => event.event == "Write")
+    .map((e) => e?.args?.pointer)
+    .pop();
+  return { ...contracts, collectionPointer, palettePointer };
 });
 
 describe("RectRenderer", function () {
@@ -63,9 +69,10 @@ describe("RectRenderer", function () {
       (characteristic, characteristicIndex) => {
         characteristic.traits.forEach((trait, traitIndex) => {
           it(`should return the correct bytes for characteristic ${characteristicIndex} and trait ${traitIndex}`, async () => {
-            const { RectRenderer, pointer } = await deployedCollectionFixture();
+            const { RectRenderer, collectionPointer } =
+              await deployedCollectionFixture();
             const result = await RectRenderer.getTraitBytes(
-              pointer,
+              collectionPointer,
               characteristicIndex,
               traitIndex
             );
@@ -110,5 +117,51 @@ describe("RectRenderer", function () {
       );
       expect(result).to.matchSnapshot();
     });
+  });
+  describe("imageBytes", async function () {
+    [...Array(30).keys()]
+      .map(() => generateImageItems(collection))
+      .forEach((items) => {
+        it(`should return the correct image bytes for traits ${items.join(
+          "-"
+        )}`, async () => {
+          const { RectRenderer, collectionPointer } =
+            await deployedCollectionFixture();
+          const result = await RectRenderer.imageBytes(
+            collectionPointer,
+            items
+          );
+          expect(result).to.equal(
+            "0x" +
+              items
+                .map((traitIndex, characteristicIndex) =>
+                  encodeTrait(
+                    collection.characteristics[characteristicIndex].traits[
+                      traitIndex
+                    ]
+                  )
+                )
+                .join("")
+          );
+        });
+      });
+  });
+  describe("decodeImage", async function () {
+    [...Array(30).keys()]
+      .map(() => generateImageItems(collection))
+      .forEach((items) => {
+        it(`should return the correct image for traits ${items.join(
+          "-"
+        )}`, async () => {
+          const { RectRenderer, collectionPointer, palettePointer } =
+            await deployedCollectionFixture();
+          const result = await RectRenderer.decodeImage(
+            collectionPointer,
+            palettePointer,
+            items
+          );
+          expect(result).to.matchSnapshot();
+        });
+      });
   });
 });

@@ -7,6 +7,7 @@ import "@0xsequence/sstore2/contracts/SSTORE2.sol";
 import {Integers} from "../utils/Integers.sol";
 import {Bytes} from "../utils/Bytes.sol";
 import {Array} from "../utils/Array.sol";
+import {RendererCommons} from "./RendererCommons.sol";
 
 error InvalidLength(uint256 length);
 error CharacteristicOutOfRange(uint256 characteristic);
@@ -23,6 +24,7 @@ library RectRenderer {
     using Integers for uint8;
     using Integers for uint256;
     using Bytes for bytes;
+    using Array for bytes[];
     using Array for string[];
 
     string public constant RECT_TAG_START = "%3crect%20x=%27";
@@ -101,6 +103,11 @@ library RectRenderer {
             );
     }
 
+    /** @dev Decode a bytes array.
+     *  @param rectsBytes The bytes concatenating several rects, typically from getTraitsBytes
+     *  @param palette The image palette.
+     *  @return A string of all the decoded rects.
+     */
     function decodeBytesMemoryToRects(
         bytes memory rectsBytes,
         string[] memory palette
@@ -119,15 +126,39 @@ library RectRenderer {
         return rects.join();
     }
 
-    function decodeNames(bytes memory names)
+    /** @dev Usually, an image is made of a selection of one trait in each characteristic. This function can then be
+     *  used to get the single bytes array containing all the data for a given token (set of traits).
+     *  @param pointer The address of the SSTORE2 contract.
+     *  @param items A list of trait indexes, should be of the same length as the number of characteristics.
+     *  @return The bytes array for the whole image.
+     */
+    function imageBytes(address pointer, uint256[] memory items)
         public
-        pure
-        returns (
-            string memory description,
-            string[] memory characteristicNames,
-            string[][] memory traitNames
-        )
+        view
+        returns (bytes memory)
     {
-        return abi.decode(names, (string, string[], string[][]));
+        bytes[] memory traits = new bytes[](items.length);
+        for (uint256 i = 0; i < items.length; i++) {
+            traits[i] = getTraitBytes(pointer, i, items[i]);
+        }
+        return traits.join();
+    }
+
+    /** @dev Get the inner part (without the header) of an image, ie the concatenated list of <rect>s.
+     * @param collectionPointer The address of the SSTORE2 contract for the traits.
+     * @param palettePointer The address of the SSTORE2 contract for the palette.
+     * @param items A list of trait indexes, should be of the same length as the number of characteristics.
+     * @return The inner part of the svg as a string.
+     */
+    function decodeImage(
+        address collectionPointer,
+        address palettePointer,
+        uint256[] memory items
+    ) public view returns (string memory) {
+        return
+            decodeBytesMemoryToRects(
+                imageBytes(collectionPointer, items),
+                RendererCommons.getPalette(palettePointer)
+            );
     }
 }

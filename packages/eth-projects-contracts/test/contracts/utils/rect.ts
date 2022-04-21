@@ -26,3 +26,8 @@ export const generateCollection = (
   ),
   description: `collection-${characteristicCount}`,
 });
+
+export const generateImageItems = (collection: Collection): number[] =>
+  collection.characteristics.map((c) =>
+    Math.floor(Math.random() * c.traits.length)
+  );

@@ -12,6 +12,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const Array = await get("Array");
   const Bytes = await get("Bytes");
   const Integers = await get("Integers");
+  const RendererCommons = await get("RendererCommons");
 
   await deploy("RectRenderer", {
     from: deployer,
@@ -20,9 +21,15 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       Array: Array.address,
       Bytes: Bytes.address,
       Integers: Integers.address,
+      RendererCommons: RendererCommons.address,
     },
   });
 };
 export default func;
 func.tags = [TAGS.RECT_RENDERER];
-func.dependencies = [TAGS.ARRAY, TAGS.BYTES, TAGS.INTEGERS];
+func.dependencies = [
+  TAGS.ARRAY,
+  TAGS.BYTES,
+  TAGS.INTEGERS,
+  TAGS.RENDERER_COMMONS,
+];
