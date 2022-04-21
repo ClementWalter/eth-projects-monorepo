@@ -7,6 +7,7 @@ import { TAGS } from "../utils/constants";
 const func: DeployFunction = async function ({
   deployments,
   getNamedAccounts,
+  network,
 }: HardhatRuntimeEnvironment) {
   const { deploy } = deployments;
   const { deployer } = await getNamedAccounts();
@@ -16,6 +17,13 @@ const func: DeployFunction = async function ({
     log: true,
     contract: "contracts/lib/utils/Array.sol:Array",
   });
+
+  if (network.tags.local) {
+    await deploy("ArrayTestHelper", {
+      from: deployer,
+      log: true,
+    });
+  }
 };
 export default func;
 func.tags = [TAGS.ARRAY];
