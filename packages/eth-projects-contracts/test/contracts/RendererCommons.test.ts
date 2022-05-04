@@ -25,6 +25,21 @@ const palette: Array<string> = cartesian(
   )
 ).map((c: Array<string>) => c.join(""));
 
+const names = {
+  description: "description",
+  characteristicNames: [...Array(10).keys()].map((i) => `characteristic-${i}`),
+  traitNames: [...Array(10).keys()].map((i) =>
+    [...Array(10).keys()].map((j) => `characteristic-${i}-trait-${j}`)
+  ),
+};
+const items = names.traitNames.map((traits) =>
+  Math.floor(Math.random() * traits.length)
+);
+const attributes = names.characteristicNames.map((characteristic, i) => ({
+  trait_type: characteristic,
+  value: names.traitNames[i][items[i]],
+}));
+
 async function setup() {
   await deployments.fixture([TAGS.RENDERER_COMMONS, TAGS.SSTORE2]);
   const contracts = {
@@ -38,15 +53,25 @@ async function setup() {
   };
 }
 
-const deployedPaletteFixture = deployments.createFixture(async () => {
+const deployedPalettesFixture = deployments.createFixture(async () => {
   const contracts = await setup();
   const paletteEncoded = await contracts.RendererCommons.encodePalette(palette);
-  const tx = await contracts.SSTORE2.write(paletteEncoded);
-  const receipt = await tx.wait();
-  const pointer = receipt.events
+  let tx = await contracts.SSTORE2.write(paletteEncoded);
+  let receipt = await tx.wait();
+  const palettePointer = receipt.events
     ?.filter((e) => e.event === "Write")
     .map((e) => e?.args?.pointer)[0];
-  return { ...contracts, pointer };
+  const namesEncoded = await contracts.RendererCommons.encodeNames(
+    names.description,
+    names.characteristicNames,
+    names.traitNames
+  );
+  tx = await contracts.SSTORE2.write(namesEncoded);
+  receipt = await tx.wait();
+  const namesPointer = receipt.events
+    ?.filter((e) => e.event === "Write")
+    .map((e) => e?.args?.pointer)[0];
+  return { ...contracts, palettePointer, namesPointer };
 });
 
 describe("RendererCommons", function () {
@@ -61,9 +86,10 @@ describe("RendererCommons", function () {
     describe("getFill(address,uint256)", async function () {
       palette.forEach((color, index) => {
         it(`should return ${color} for ${index}`, async () => {
-          const { RendererCommons, pointer } = await deployedPaletteFixture();
+          const { RendererCommons, palettePointer } =
+            await deployedPalettesFixture();
           const fill = await RendererCommons["getFill(address,uint256)"](
-            pointer,
+            palettePointer,
             index
           );
           expect(fill).to.equal(color);
@@ -73,9 +99,9 @@ describe("RendererCommons", function () {
     describe("getFill(bytes,uint256)", function () {
       palette.forEach((color, index) => {
         it(`should return ${color} for ${index}`, async () => {
-          const { RendererCommons, SSTORE2, pointer } =
-            await deployedPaletteFixture();
-          const paletteBytes = await SSTORE2["read(address)"](pointer);
+          const { RendererCommons, SSTORE2, palettePointer } =
+            await deployedPalettesFixture();
+          const paletteBytes = await SSTORE2["read(address)"](palettePointer);
           const fill = await RendererCommons["getFill(bytes,uint256)"](
             paletteBytes,
             index
@@ -88,22 +114,57 @@ describe("RendererCommons", function () {
   describe("getPalette", function () {
     describe("getPalette(address)", function () {
       it("should return the original palette", async () => {
-        const { RendererCommons, pointer } = await deployedPaletteFixture();
+        const { RendererCommons, palettePointer } =
+          await deployedPalettesFixture();
         const paletteStored = await RendererCommons["getPalette(address)"](
-          pointer
+          palettePointer
         );
         expect(paletteStored).to.deep.equal(palette);
       });
     });
     describe("getPalette(bytes)", function () {
       it("should return the original palette", async () => {
-        const { RendererCommons, SSTORE2, pointer } =
-          await deployedPaletteFixture();
-        const paletteBytes = await SSTORE2["read(address)"](pointer);
+        const { RendererCommons, SSTORE2, palettePointer } =
+          await deployedPalettesFixture();
+        const paletteBytes = await SSTORE2["read(address)"](palettePointer);
         const paletteStored = await RendererCommons["getPalette(bytes)"](
           paletteBytes
         );
         expect(paletteStored).to.deep.equal(palette);
+      });
+    });
+  });
+  describe("tokenData", async function () {
+    it("should return token data as js object", async () => {
+      const { RendererCommons, namesPointer } = await deployedPalettesFixture();
+      const tokenData = await RendererCommons.tokenData(namesPointer, items);
+      expect({
+        image: tokenData.image,
+        description: tokenData.description,
+        name: tokenData.name,
+        attributes: tokenData.attributes.map((a) => ({
+          trait_type: a.trait_type,
+          value: a.value,
+        })),
+      }).to.deep.equal({
+        image: "",
+        name: "",
+        description: names.description,
+        attributes,
+      });
+    });
+  });
+  describe("tokenURI", async function () {
+    it("should return token URI as json object", async () => {
+      const { RendererCommons, namesPointer } = await deployedPalettesFixture();
+      const tokenURI = await RendererCommons.tokenURI(namesPointer, items);
+      expect(
+        JSON.parse(tokenURI.replace("data:application/json,", ""))
+      ).to.deep.equal({
+        image: "",
+        name: "",
+        description: names.description,
+        attributes,
       });
     });
   });

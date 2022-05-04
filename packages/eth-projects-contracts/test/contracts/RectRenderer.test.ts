@@ -3,12 +3,7 @@ import { deployments, ethers } from "hardhat";
 import { solidity } from "ethereum-waffle";
 import { TAGS } from "../../utils/constants";
 import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
-import {
-  RectEncoder,
-  RectRenderer,
-  RendererCommons,
-  SSTORE2,
-} from "../../typechain";
+import { RectRenderer, RendererCommons, SSTORE2 } from "../../typechain";
 import {
   encodeCollection,
   encodeRectToBytes4,

@@ -12,6 +12,13 @@ struct Attribute {
     string value;
 }
 
+struct TokenData {
+    string image;
+    string description;
+    string name;
+    Attribute[] attributes;
+}
+
 /**  @title BaseRenderer
  *
  *   This library contains shared functionality and constants for the renderers.
@@ -138,13 +145,30 @@ library RendererCommons {
         return decodeNames(SSTORE2.read(pointer));
     }
 
-    function tokenAttributes(address pointer, uint256[] memory items)
+
+    /** @dev This is just a direct call to abi.encode to insure standard encoding scheme for the names across renders.
+     * @param description The description of the collection.
+     * @param characteristicNames The names of the characteristics.
+     * @param traitNames The names of the traits.
+     * @return The encoded bytes.
+     */
+    function encodeNames(string memory description, string[] memory characteristicNames, string[][] memory traitNames)
+        public
+        pure
+        returns (bytes memory)
+    {
+        return abi.encode(
+            description, characteristicNames, traitNames
+        );
+    }
+
+    function tokenData(address pointer, uint256[] memory items)
         public
         view
-        returns (Attribute[] memory)
+        returns (TokenData memory)
     {
         (
-            ,
+            string memory description,
             string[] memory characteristicNames,
             string[][] memory traitNames
         ) = decodeNames(SSTORE2.read(pointer));
@@ -155,6 +179,38 @@ library RendererCommons {
                 traitNames[i][items[i]]
             );
         }
-        return attributes;
+        return TokenData("", description, "", attributes);
+    }
+
+    function tokenURI(address pointer, uint256[] memory items) public view returns (string memory) {
+        TokenData memory _tokenData = tokenData(pointer, items);
+        string[] memory attributes = new string[](_tokenData.attributes.length);
+        for (uint256 i = 0; i < _tokenData.attributes.length; i++) {
+            attributes[i] = string.concat(
+                '{"trait_type": "',
+                _tokenData.attributes[i].trait_type,
+                '", "value": "',
+                _tokenData.attributes[i].value,
+                '"}'
+            );
+        }
+        return
+            string.concat(
+                "data:application/json,",
+                '{"image": "',
+                _tokenData.image,
+                '"',
+                ',"description": "',
+                _tokenData.description,
+                '"',
+                ',"name": "',
+                _tokenData.name,
+                '"',
+                ',"attributes": ',
+                "[",
+                attributes.join(","),
+                "]",
+                "}"
+            );
     }
 }

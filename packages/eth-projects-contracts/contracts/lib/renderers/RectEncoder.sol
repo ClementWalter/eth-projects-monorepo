@@ -3,6 +3,7 @@
 pragma solidity ^0.8.12;
 
 import {Array} from "../utils/Array.sol";
+import {RendererCommons} from "./RendererCommons.sol";
 
 error CoordinatesOutOfRange(uint256 coordinate);
 
@@ -179,7 +180,7 @@ contract RectEncoder {
         }
         return (
             CollectionEncoded(
-                abi.encode(
+                RendererCommons.encodeNames(
                     collection.description,
                     characteristicNames,
                     traitNames

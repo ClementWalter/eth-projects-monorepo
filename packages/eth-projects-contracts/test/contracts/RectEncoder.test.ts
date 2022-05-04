@@ -3,7 +3,7 @@ import { deployments, ethers } from "hardhat";
 import { solidity } from "ethereum-waffle";
 import { TAGS } from "../../utils/constants";
 import { jestSnapshotPlugin } from "mocha-chai-jest-snapshot";
-import { RectEncoder, RectRenderer } from "../../typechain";
+import { RectEncoder, RectRenderer, RendererCommons } from "../../typechain";
 import {
   encodeCharacteristic,
   encodeCollection,
@@ -31,6 +31,9 @@ const setup = async () => {
     TAGS.SSTORE2,
   ]);
   const contracts = {
+    RendererCommons: (await ethers.getContract(
+      "RendererCommons"
+    )) as RendererCommons,
     RectEncoder: (await ethers.getContract("RectEncoder")) as RectEncoder,
     RectRenderer: (await ethers.getContract("RectRenderer")) as RectRenderer,
   };
@@ -86,9 +89,9 @@ describe("RectEncoder", function () {
       .map(generateCollection)
       .forEach((collection: Collection) => {
         it(`should return the correct bytes and names for ${collection.description} of ${collection.characteristics.length} characteristics`, async () => {
-          const { RectEncoder, RectRenderer } = await setup();
+          const { RectEncoder, RendererCommons } = await setup();
           const result = await RectEncoder.encodeCollection(collection);
-          const resultDecoded = await RectRenderer["decodeNames(bytes)"](
+          const resultDecoded = await RendererCommons["decodeNames(bytes)"](
             result.names
           );
           expect(resultDecoded.characteristicNames).to.deep.equal(
