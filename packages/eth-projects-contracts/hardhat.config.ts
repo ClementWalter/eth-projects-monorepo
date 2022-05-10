@@ -61,6 +61,11 @@ const config: HardhatUserConfig = {
       accounts: accounts("rinkeby"),
       tags: ["staging"],
     },
+    fuji: {
+      url: "https://api.avax-test.network/ext/bc/C/rpc",
+      accounts: accounts("fuji"),
+      tags: ["staging"],
+    },
     hardhat: {
       tags: ["local"],
       blockGasLimit: 10 * 50_000_000, // Geth new default is 50M, increased here for tests
